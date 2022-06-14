@@ -19,7 +19,7 @@ return new class extends Migration
             $table->float('latitude');
             $table->string('description', 255);
             $table->float('size');
-            $table->float('price', 255);
+            $table->float('price');
             $table->string('address', 255);
             $table->unsignedBigInteger('providers_id');
             $table->foreign('providers_id')->references('id')->on('providers');

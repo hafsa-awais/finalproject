@@ -11,8 +11,9 @@
 
 <body>
 <nav class="flex align-center">
-    <img src="../../css/assets/style.css
-  <p><span>at</span>Event</p>
+    <div class="logo">
+    <img src="../../css/assets/Logo.png">
+    </div>
   <ul>
     <li>
       <a href="#">Home</a>

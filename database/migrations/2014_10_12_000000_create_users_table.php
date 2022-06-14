@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('contact', 255);
             $table->string('address', 255);
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password', 255);
             $table->rememberToken();
             $table->timestamps();
         });

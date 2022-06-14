@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\RegisteredPropertyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +14,15 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/home', [RegisteredUserController::class, 'show'])
-                ->name('home');
+Route::get('/home', [RegisteredUserController::class, 'show'])->name('home');
 
 Route::get('/registration', [RegisteredUserController::class, 'register']);
               
 Route::post('/registration', [RegisteredUserController::class, 'register']);
+
+Route::get('/property', [RegisteredPropertyController::class, 'show']);
+              
+Route::post('/property', [RegisteredPropertyController::class, 'add']);
                 
 
 Route::get('/', function () {

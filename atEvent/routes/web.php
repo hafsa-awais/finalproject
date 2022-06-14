@@ -17,9 +17,9 @@ Route::get('/home', [RegisteredUserController::class, 'show'])
                 ->name('home');
 
 Route::get('/registration', [RegisteredUserController::class, 'register']);
+              
+Route::post('/registration', [RegisteredUserController::class, 'register']);
                 
-
-
 
 Route::get('/', function () {
     return view('welcome');

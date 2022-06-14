@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,8 +19,8 @@
     @csrf
     <input type="text" name="first_name"placeholder="firstname"><br>
     <input type="text" name="last_name"placeholder="lastname"><br>
-    <input type="text" name="city"placeholder="city"><br>
-    <input type="text" name="postal_code"placeholder="postal code"><br>
+    <input type="text" name="address"placeholder="address"><br>
+    <input type="text" name="contact"placeholder="contact"><br>
     <input type="text" name="email"placeholder="email"><br>
     <input type="text" name="password"placeholder="password"><br>
     <input type="text" name="password_confirmation"placeholder="Confirm password"><br> 

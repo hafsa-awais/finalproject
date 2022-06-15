@@ -2,11 +2,6 @@
 
 
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 body,
 html {
@@ -29,8 +24,6 @@ button,
 .btn {
   font-family: inherit;
 }
-
-
 
 
 nav {
@@ -93,12 +86,6 @@ nav .btn {
   border-radius: 5px;
 }
 
-.logo {
-    padding-top: 20px;
-    height: 80px;
-    width: 80px;
-    
-}
 
 img {
     max-width: 100%;
@@ -171,9 +158,9 @@ img {
   }
   
   .logo {
-      padding-top: 20px;
-      height: 100px;
-      width: 100px;
+      max-width: 150px;
+      max-height: 55px;
+      justify-content: center;
   }
   
   img {

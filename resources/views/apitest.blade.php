@@ -62,6 +62,61 @@
             });
         });
     </script>
+<<<<<<< Updated upstream
+=======
+
+    <br>
+    <hr>
+    <h1>API map test (OSM)</h1>
+
+
+    {{-- map --}}
+    <div id="map" style="width: 300px; height: 420px"></div>
+
+    {{-- JS script for OSM --}}
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script>
+        let mapOptions = {
+            center: [49.815273, 6.129583],
+            zoom: 9
+        }
+        let map = new L.map('map', mapOptions);
+        let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        map.addLayer(layer);
+        let customIcon = {
+            iconUrl: "https://cdn-icons-png.flaticon.com/128/1301/1301421.png",
+            iconSize: [40, 40]
+        }
+        let myIcon = L.icon(customIcon);
+
+        let iconOptions = {
+            title: "Propery1",
+            draggable: false,
+            icon: myIcon
+        }
+        let marker = new L.Marker([49.822603, 6.067958], iconOptions);
+        marker.addTo(map);
+        // marker.bindPopup("atEvent")
+        //     .openPopup();
+        // let popup = L.popup().setLatLng([49.503431, 5.946355]).setContent(atEvent).openOn(map);
+
+        let marker1 = new L.Marker([49.522603, 6.087958], iconOptions);
+        marker1.addTo(map);
+
+        let marker2 = new L.Marker([49.522603, 6.287958], iconOptions);
+        marker2.addTo(map);
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+>>>>>>> Stashed changes
 
     <br>
     <hr>

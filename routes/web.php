@@ -38,6 +38,16 @@ Route::get('/header', function () {
     return view('templates/headertemplate');
 });
 
+Route::get('/footer', function () {
+    return view('/mytemplatefooter');
+});
+
+
+Route::get('/description', function () {
+    return view('/description');
+});
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

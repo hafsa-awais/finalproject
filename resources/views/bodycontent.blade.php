@@ -16,9 +16,38 @@
         </button>
       </form>
     </div>
+    
+    <div class="picturecontainer">
+        <div class="headingsofpics">
+            <h1>Weddings</h1>
+        </div>
+        <div class="box">
+            <object data="../css/assets/propertypics/1.jpg" height=100% width=100%></object>
+            <p>Wedding</p>
+        </div>
+        <div class="box">
+            <object data="../css/assets/propertypics/2.jpg" height=100% width=100%></object>
+            <p>Wedding</p>
+        </div>
+        <div class="box">
+            <object data="../css/assets/propertypics/3.jpg" height=100% width=100%></object>
+            <p>Birthday</p>
+        </div>
+        <div class="box">
+            <object data="../css/assets/propertypics/4.jpg" height=100% width=100%></object>
+            <p>Birthday</p>
+        </div>
+        <div class="box">
+            <object data="../css/assets/propertypics/5.jpg" height=100% width=100%></object>
+            <p>Photography Studio</p>
+        </div>
+        <div class="box">
+            <object data="../css/assets/propertypics/6.jpg" height=100% width=100%></object>
+            <p>Music Studio</p>
+        </div>
+    </div>
 
-<div class="bodypictures">
 
-</div>
+
 </body>
 </html>

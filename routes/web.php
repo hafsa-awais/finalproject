@@ -30,13 +30,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::get('/body', function () {
     return view('bodycontent');
 });
 
 Route::get('/header', function () {
     return view('templates/headertemplate');
+=======
+Route::get('/homepage', function () {
+    return view('homepage');
+>>>>>>> 4e6b79b86d1da567efe74067b79edf1fa9849772
 });
+
+Route::get('/footer', function () {
+    return view('/mytemplatefooter');
+});
+
+
+Route::get('/description', function () {
+    return view('/description');
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

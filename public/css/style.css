@@ -84,14 +84,9 @@ img {
 }
 
 .picturecontainer {
-<<<<<<< HEAD
+
   display: flex;
   flex-direction: column;
-=======
-    display: flex;
-    flex-direction: column;
->>>>>>> searchbar
-
   align-content: space-between;
   justify-content: space-between;
   align-items: center;
@@ -194,7 +189,6 @@ img {
 .box {
   
     background-color: white;
-<<<<<<< HEAD
     color: #4caf50;
   }
   
@@ -232,14 +226,7 @@ img {
     padding: 60px;
     margin: 5px;
   
-=======
-    width: 40%;
-    height: 300px;
-    padding: 60px;
-    margin: 5px;
     
   }
 
-
->>>>>>> searchbar
 }

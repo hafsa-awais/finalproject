@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\RegisteredPropertyController;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,23 +31,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> searchbar
+
+
+
 Route::get('/body', function () {
     return view('bodycontent');
 });
 
 Route::get('/header', function () {
     return view('templates/headertemplate');
-<<<<<<< HEAD
-=======
-=======
+});
+
 Route::get('/homepage', function () {
     return view('homepage');
->>>>>>> 4e6b79b86d1da567efe74067b79edf1fa9849772
->>>>>>> searchbar
 });
 
 Route::get('/footer', function () {
@@ -69,4 +66,3 @@ Route::get('/apitest', [TestController::class, 'test']);
 
 
 require __DIR__.'/auth.php';
-

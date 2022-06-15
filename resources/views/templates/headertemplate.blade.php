@@ -3,7 +3,29 @@
     <div class="logo">
       <img src="../../css/assets/Logo.png">
     </div>
+<<<<<<< HEAD
     <ul class="navlist">
+=======
+<<<<<<< HEAD
+  <ul class="navlist">
+    <li>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <button class="btn register">Register</button>
+      <button class="btn login">Log In</button>
+    </li>
+  </ul>
+</nav>
+
+
+
+</body>
+
+
+</html>
+=======
+    <ul>
+>>>>>>> searchbar
       <li>
         <a href="#">Home</a>
         <a href="#">About Us</a>
@@ -13,4 +35,8 @@
     </ul>
   </nav>
 </section>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4e6b79b86d1da567efe74067b79edf1fa9849772
+>>>>>>> searchbar

@@ -30,6 +30,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/body', function () {
+    return view('bodycontent');
+});
+
 Route::get('/header', function () {
     return view('templates/headertemplate');
 });

@@ -14,7 +14,7 @@
     <div class="logo">
     <img src="../../css/assets/Logo.png">
     </div>
-  <ul>
+  <ul class="navlist">
     <li>
       <a href="#">Home</a>
       <a href="#">About Us</a>
@@ -23,6 +23,8 @@
     </li>
   </ul>
 </nav>
+
+
 
 </body>
 

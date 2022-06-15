@@ -39,34 +39,6 @@
 
 <body>
 
-    <h1>API map test (OSM)</h1>
-
-
-    {{-- map --}}
-    <div id="map" style="width: 300px; height: 420px"></div>
-
-    {{-- JS script for OSM --}}
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <script>
-        // Creating map options
-        var mapOptions = {
-            center: [49.815273, 6.129583],
-            zoom: 9
-        }
-
-        // Creating a maFp object
-        var map = new L.map('map', mapOptions);
-
-        // Creating a Layer object
-        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-
-        // Adding layer to the map
-        map.addLayer(layer);
-    </script>
-
-
-    <br>
-    <hr>
     <h1>API Lux villages</h1>
 
     <p>
@@ -76,10 +48,11 @@
         <input type="text" id="localityInput" placeholder="Locality:">
         <button type="button" id="searchBtn">Search</button>
     </p>
+    <p>example:<br>54, Avenue Gaston Diderich 1420 Luxembourg</p>
 
     <div id="addresscontainer"></div>
 
-
+    {{-- JS script for geoportail.lu (lat-lon finder by input address) --}}
     <script>
         const addressContainer = document.querySelector("#addresscontainer");
 
@@ -88,7 +61,6 @@
 
 
         // http://apiv3.geoportail.lu/geocode/search?num=54&street=Avenue%20Gaston%20Diderich&zip=&locality=Luxembourg&_dc=1386599465147&cb=stcCallback1001
-
         const searchAddress = searchBtn.addEventListener("click", () => {
             addressContainer.textcontent = "loading...";
 
@@ -100,21 +72,82 @@
             fetch("http://apiv3.geoportail.lu/geocode/search?num=" + streetnumValue + "&street=" + streetValue +
                 "&zip=" + postcodeValue + "&locality=" + localityValue).then((response) => {
                 return response.json();
-                
-            }).then((data)=>{
+
+            }).then((data) => {
 
                 console.log(data);
                 console.log(data.results[0].geomlonlat.coordinates[0]);
                 console.log(data.results[0].geomlonlat.coordinates[1]);
 
 
-                // addressContainer.innerHTML = data.results[0].name;
-                addressContainer.innerHTML = "lat " + data.results[0].geomlonlat.coordinates[0] + "<br>lon " + data.results[0].geomlonlat.coordinates[1];
-
-
+                if (data.results[0].accuracy == 8) {
+                    addressContainer.innerHTML = "Longitude " + data.results[0].geomlonlat.coordinates[1] +
+                        "<br>Latitude " + data.results[0].geomlonlat.coordinates[0];
+                } else {
+                    addressContainer.innerHTML = "cannot find address, do you mean:" + data.results[0]
+                        .address;
+                }
             });
         });
     </script>
+
+    <br>
+    <hr>
+    <h1>API map test (OSM)</h1>
+
+
+    {{-- map --}}
+    <div id="map" style="width: 300px; height: 420px"></div>
+
+    {{-- JS script for OSM --}}
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script>
+        let mapOptions = {
+            center: [49.815273, 6.129583],
+            zoom: 9
+        }
+        let map = new L.map('map', mapOptions);
+        let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        map.addLayer(layer);
+        let customIcon = {
+            iconUrl: "https://cdn-icons-png.flaticon.com/128/1301/1301421.png",
+            iconSize: [30, 30]
+        }
+        let myIcon = L.icon(customIcon);
+
+        //marker 1
+        let iconOptions1 = {
+            title: "Venus",
+            draggable: false,
+            icon: myIcon
+        }
+        let marker1 = new L.Marker([49.600603, 6.067958], iconOptions1);
+        marker1.addTo(map);
+
+
+        // marker 2
+        let iconOptions2 = {
+            title: "Peter",
+            draggable: false,
+            icon: myIcon
+        }
+        let marker2 = new L.Marker([49.758152, 6.508729], iconOptions2);
+        marker2.addTo(map);
+
+
+        // marker 3
+        let iconOptions3 = {
+            title: "Denis",
+            draggable: false,
+            icon: myIcon
+        }
+        let marker3 = new L.Marker([49.503431, 5.946355], iconOptions3);
+        marker3.addTo(map);
+
+    </script>
+
+
+
 </body>
 
 </html>

@@ -4,3 +4,4 @@
 
 @section('content')
 
+@extends('mytemplatefooter')

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\RegisteredPropertyController;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------

@@ -3,13 +3,17 @@
     <div class="logo">
       <img src="../../css/assets/Logo.png">
     </div>
-    <ul>
-      <li>
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <button class="btn register">Register</button>
-        <button class="btn login">Log In</button>
-      </li>
-    </ul>
-  </nav>
+    <ul class="navlist">
+  <ul class="navlist">
+    <li>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <button class="btn register">Register</button>
+      <button class="btn login">Log In</button>
+    </li>
+  </ul>
+</nav>
 </section>
+
+
+

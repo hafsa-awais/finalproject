@@ -4,20 +4,12 @@
 <head>
     <title>API map test</title>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 </head>
 
 <style>
     #addresscontainer {
-        background-color: rgb(230, 245, 230);
-        color: #000;
-        height: auto;
-        width: auto;
-        margin: 20px 10%;
-        padding: 5px;
-        border: 1px solid rgb(68, 68, 68);
-        border-radius: 10px;
-        box-shadow: 8px 0px 10px 5px rgba(68, 68, 68, 0.6);
-        display: none;
+        display: block;
     }
 
     #btncontainer {
@@ -38,9 +30,6 @@
 </style>
 
 <body>
-
-    <h1>API Lux villages</h1>
-
     <p>
         <input type="text" id="streetnumInput" placeholder="Street number:">
         <input type="text" id="streetInput" placeholder="Street:">
@@ -48,59 +37,17 @@
         <input type="text" id="localityInput" placeholder="Locality:">
         <button type="button" id="searchBtn">Search</button>
     </p>
-    <p>example:<br>54, Avenue Gaston Diderich 1420 Luxembourg</p>
 
+    <p>54, Avenue Gaston Diderich 1420 Luxembourg</p>
     <div id="addresscontainer"></div>
-
-    {{-- JS script for geoportail.lu (lat-lon finder by input address) --}}
-    <script>
-        const addressContainer = document.querySelector("#addresscontainer");
-
-        addressContainer.innerHTML = "";
-        addressContainer.style.display = "revert"
-
-
-        const searchAddress = searchBtn.addEventListener("click", () => {
-            addressContainer.textcontent = "loading...";
-
-            const streetnumValue = streetnumInput.value;
-            const streetValue = streetInput.value;
-            const postcodeValue = postcodeInput.value;
-            const localityValue = localityInput.value;
-
-            fetch("http://apiv3.geoportail.lu/geocode/search?num=" + streetnumValue + "&street=" + streetValue +
-                "&zip=" + postcodeValue + "&locality=" + localityValue).then((response) => {
-                return response.json();
-
-            }).then((data) => {
-
-                console.log(data);
-                console.log(data.results[0].geomlonlat.coordinates[0]);
-                console.log(data.results[0].geomlonlat.coordinates[1]);
-
-
-                if (data.results[0].accuracy == 8) {
-                    addressContainer.innerHTML = "Longitude " + data.results[0].geomlonlat.coordinates[1] +
-                        "<br>Latitude " + data.results[0].geomlonlat.coordinates[0];
-                } else {
-                    addressContainer.innerHTML = "cannot find address, do you mean:" + data.results[0]
-                        .address;
-                }
-            });
-        });
-    </script>
-
-    <br>
-    <hr>
-    <h1>API map test (OSM)</h1>
-
-
-    {{-- map --}}
     <div id="map" style="width: 300px; height: 420px"></div>
 
-    {{-- JS script for OSM --}}
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+
+
+
     <script>
+// Adding a Map
         let mapOptions = {
             center: [49.815273, 6.129583],
             zoom: 9
@@ -114,39 +61,33 @@
         }
         let myIcon = L.icon(customIcon);
 
-        //marker 1
-        let iconOptions1 = {
-            title: "Venus",
-            draggable: false,
-            icon: myIcon
-        }
-        let marker1 = new L.Marker([49.600603, 6.067958], iconOptions1);
-        marker1.addTo(map);
+// Find markers on click
+        const searchAddress = searchBtn.addEventListener("click", () => {
+            const streetnumValue = streetnumInput.value;
+            const streetValue = streetInput.value;
+            const postcodeValue = postcodeInput.value;
+            const localityValue = localityInput.value;
+            fetch("http://apiv3.geoportail.lu/geocode/search?num=" + streetnumValue + "&street=" + streetValue +
+                "&zip=" + postcodeValue + "&locality=" + localityValue).then((response) => {
+                return response.json();
+            }).then((data) => {
+                console.log(data);
+                let Latitude = data.results[0].geomlonlat.coordinates[0]
+                let Longitude = data.results[0].geomlonlat.coordinates[1]
 
+                console.log(Latitude, Longitude)
 
-        // marker 2
-        let iconOptions2 = {
-            title: "Peter",
-            draggable: false,
-            icon: myIcon
-        }
-        let marker2 = new L.Marker([49.758152, 6.508729], iconOptions2);
-        marker2.addTo(map);
-
-
-        // marker 3
-        let iconOptions3 = {
-            title: "Denis",
-            draggable: false,
-            icon: myIcon
-        }
-        let marker3 = new L.Marker([49.503431, 5.946355], iconOptions3);
-        marker3.addTo(map);
-
+                let iconOptions = {
+                    title: "Venus",
+                    draggable: false,
+                    icon: myIcon
+                }
+// Show marker on the map
+                let marker = new L.Marker([Longitude, Latitude], iconOptions);
+                marker.addTo(map)
+            });
+        })
     </script>
-
-
-
 </body>
 
 </html>

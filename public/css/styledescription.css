@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+
+.description-name {
+    color: rgb(24, 24, 24);
+    font-family: "Montserrat";
+    font-size: large;
+    font-variant: small-caps;
+    text-overflow: ellipsis;
+}

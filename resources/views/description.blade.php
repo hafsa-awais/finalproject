@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,19 @@
     <link href="/css/stylefooter.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../css/style.css">
 </head>
+
 <body>
-   
-@extends('templates/headertemplate')
-@extends('mytemplatefooter')
+    <div>
+        @extends('templates/headertemplate')
+    </div>
 
 
 
 
+
+
+
+    @extends('mytemplatefooter')
 </body>
+
 </html>

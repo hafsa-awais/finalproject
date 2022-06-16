@@ -31,6 +31,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/body', function () {
+    return view('bodycontent');
+});
+
+Route::get('/header', function () {
+    return view('templates/headertemplate');
+});
+
 Route::get('/homepage', function () {
     return view('homepage');
 });
@@ -55,4 +64,3 @@ Route::get('/apitest', [TestController::class, 'test']);
 
 
 require __DIR__.'/auth.php';
-

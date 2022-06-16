@@ -32,12 +32,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/body', function () {
-    return view('bodycontent');
-});
-
-Route::get('/header', function () {
-    return view('templates/headertemplate');
+Route::get('/headerfooter', function () {
+    return view('templates/headerAndFooterTemplate');
 });
 
 Route::get('/homepage', function () {

@@ -3,8 +3,8 @@
         <div id="round"></div>
         <div class="contener">
             <div class="grid">
-                <div class="box-init" >
-                    <div>
+                <div class="box-init" id="box-init-logo">
+                    <div id="box-init-logo">
                         <img id="logo" src="/css/assets/logo.png">
                     </div>
                 </div>

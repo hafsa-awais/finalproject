@@ -124,6 +124,9 @@ a.button:active {
       #logo {
         display: none;
       }
+      #box-init-logo {
+        display: none;
+      }
 
       .grid {
         display: grid;
@@ -132,12 +135,14 @@ a.button:active {
         grid-template-columns:  1fr 1fr 1fr 1fr 1fr ;
     }
 
-
     @media screen and (max-device-width: 425px) {
         .button {
             display: none;
           }
           #logo {
+            display: none;
+          }
+          #box-init-logo {
             display: none;
           }
     

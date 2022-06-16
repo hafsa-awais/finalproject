@@ -21,7 +21,7 @@ class Contact extends Model
         'last_name',
         'email' ,
         'phone',
-        'description' ,  
+        'message',  
     ];
 
     /**

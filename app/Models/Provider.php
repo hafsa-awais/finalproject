@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Provider extends Authenticatable
+class Provider extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -46,4 +46,3 @@ class Provider extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
-

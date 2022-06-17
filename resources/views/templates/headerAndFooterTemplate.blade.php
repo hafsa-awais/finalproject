@@ -8,6 +8,20 @@
   <link rel="stylesheet" href="{{ asset('css/stylebody.css') }}">
   <link rel="stylesheet" href="{{ asset('css/styleheader.css') }}">
   <link rel="stylesheet" href="{{ asset('css/stylefooter.css') }}">
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
+  rel="stylesheet"
+/>
   </head>
 
 <body>
@@ -15,6 +29,14 @@
   <nav class="headernav">
     <div class="headerlogo">
       <img src="assets/Logo.png">
+    </div>
+    <div class="searchcontainerbody">
+      <form action="/" method="GET" class="searchformbody">
+        <input type="search" placeholder="Search your desired location" class="search-fieldbody" />
+        <button type="submit" class="search-buttonbody">
+          <img src="assets/search.png">
+        </button>
+      </form>
     </div>
   <ul>
     <li class="headernavlist">
@@ -64,7 +86,10 @@
         </div>
     </div>
 </Section>
-
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"
+></script>
 </body>
 </html>
 

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
-@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Allura&family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Allura&family=Inter:wght@100;200;300;400;500;600;700&family=Roboto:wght@300;400&display=swap');
 
 
 
@@ -7,13 +7,45 @@
     display: none;
 }
 
+.searchcontainerbody {
+    margin: 30px auto;
+    width: 400px;
+    height: 30px
+  }
+  
+  .searchformbody {
+      display: flex;
+      flex-direction: row;
+  }
+  .search-fieldbody {
+      width: 100%;
+      padding: 10px 35px 10px 15px;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 100px;
+    
+  }
+  
+  .search-buttonbody {
+      background: transparent;
+      border: none;
+      outline: none;
+      margin-left: -33px;
+  }
+  
+  .search-buttonbody img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+  }
+
 @media only screen and (min-width:750px) {
     .headersection {
         position: fixed; top: 0 ;
         font-family: "Montserrat", serif;
         margin: 0;
         width: 100%;
-       
+        
       }
 
     .headernav {
@@ -23,10 +55,14 @@
     font-size: 20px;
     padding: 0.75rem 5vw;
     box-shadow: 0 0 30px lightgray;
+    background-color: white;
   }
   .headernavlist {
     display: flex;
-    align-items: center;list-style: none;
+    align-items: center;
+    list-style: none;
+    margin-top: 10px;
+
     }
     .headernav_a {
         text-decoration: none;
@@ -78,9 +114,9 @@
         max-width: 150px;
         max-height: 55px;
         justify-content: center;
-        padding-top: 20px;
-        height: 100px;
-        width: 100px;
+        padding-top: 4px;
+        height: 120px;
+        width: 120px;
     }
 
     nav img {

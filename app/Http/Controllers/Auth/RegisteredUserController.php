@@ -33,7 +33,7 @@ class RegisteredUserController extends Controller
      */
     public function register ()
     {
-        return view('/registration');
+        return view('register');
     }
     public function store(Request $request)
     {
@@ -58,5 +58,33 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
+    }
+    public function edit($id)
+    {
+        $user= User::find($id);
+        return view('update-user', ['user'=>$user]);
+    }
+    
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->address = $request->address;
+        $user->contact = $request->contact;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+        if ($user)
+            return redirect('register')->with('message', 'Succefully updated User');
+         else
+            return 'error'; 
     }
 }

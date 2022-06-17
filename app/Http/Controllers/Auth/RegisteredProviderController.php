@@ -33,7 +33,7 @@ class RegisteredProviderController extends Controller
      */
     public function register ()
     {
-        return view('provider-register');
+        return view ('provider-register');
     }
     public function store(Request $request)
     {
@@ -55,7 +55,7 @@ class RegisteredProviderController extends Controller
 
         event(new Registered($provider));
 
-        Auth::login($provider);
+        //Auth::login($provider);
 
         return redirect(RouteServiceProvider::HOME);
     }

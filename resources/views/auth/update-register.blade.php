@@ -14,7 +14,7 @@
     @endforeach
 @endif
 
-<h2>Registration Form</h2>
+<h2>Update registration Form</h2>
 <form action="" method="post" id="myForm">
     @csrf
     <input type="text" name="first_name"placeholder="firstname" value="{{$user->first_name}}"><br>

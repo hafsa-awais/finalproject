@@ -63,6 +63,28 @@ class RegisteredPropertyController extends Controller
 
             return redirect(RouteServiceProvider::HOME);
     }
+    public function edit($id)
+    {
+        $property = Property::find($id);
+        return view('update-property', ['property'=>$property]);
+    }
+   
+    public function update(Request $request, $id)
+    {
+        $property= Property::find($id);
+        $property->area = $request->area;
+        $property->price = $request->price;
+        $property->description = $request->description;
+        $property->house_no = $request->house_no;
+        $property->street_name = $request->street_name;
+        $property->city = $request->city;
+        $property->postal_code = $request->postal_code;
+        $property->save();
+        if ($property)
+            return redirect('login')->with('message', 'Succefully updated the property');
+         else
+            return 'error'; 
+    }
    
 }
 

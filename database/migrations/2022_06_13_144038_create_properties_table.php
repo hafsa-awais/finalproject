@@ -15,13 +15,16 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->float('longitude');
-            $table->float('latitude');
-            $table->string('description', 255);
+            $table->string('title', 60);
+            $table->text('description');
             $table->float('size');
             $table->float('price');
-            $table->string('address', 255);
-            $table->unsignedBigInteger('providers_id');
+            $table->string('houseno', 5);
+            $table->string('street', 60);
+            $table->string('postcode', 4);
+            $table->string('locality', 60);
+            $table->string('coverphoto', 255);
+            $table->unsignedBigInteger('providers_id')->nullable();
             $table->foreign('providers_id')->references('id')->on('providers');
             $table->timestamps();
         });

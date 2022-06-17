@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class UserSeeder extends Seeder
 {
@@ -15,14 +16,21 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $file_content = Storage::get('MOCK_DATA_users.json');
+        $users = json_decode($file_content);
+
+        foreach ($users as $user) {
             DB::table('users')->insert(
-            [
-                'first_name' => 'alice',
-                'last_name' => 'wonderland',
-                'email' => 'alice@abc.com',
-                'password' => '123456789',
-                'contact' => '123456',
-                'address' => '1, rue de longwy, villerupt L-2021'
-            ]);
+                [
+                    'first_name' => $user->first_name,
+                    'last_name' => $user->last_name,
+                    'email' => $user->email,
+                    'password' => $user->password,
+                    'contact' => $user->contact,
+                    'address1' => $user->address1,
+                    'address2' => $user->address2,
+                ]
+            );
+        }
     }
 }

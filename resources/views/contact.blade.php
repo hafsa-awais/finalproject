@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-   
-    <h2>Get in Touch</h2>
+@extends('templates/headerAndFooterTemplate')
+
+
+@section('title', 'Contact Page')
+
+
+@section('content')
+
+<h2>Get in Touch</h2>
 
 @if($errors->any())
 <div class="alert danger">
@@ -30,8 +28,4 @@
 </form>
 
 <p>Thanks for Submitting!!</p>
-
-</body>
-</html>
-
-
+@endsection

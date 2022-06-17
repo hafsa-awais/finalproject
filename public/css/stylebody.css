@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
-@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Allura&family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Allura&family=Inter:wght@100;200;300;400;500;600;700&family=Roboto:wght@300;400&display=swap');
+
 
 
 *,
@@ -10,7 +12,7 @@
 
 body,
 html {
-  font-family: "Montserrat", serif;
+font-family: 'Roboto', sans-serif;
     margin: 0;
 }
 
@@ -32,51 +34,8 @@ button,
 
 
 
-/* .logo {
-    padding-top: 20px;
-        height: 80px;
-    width: 80px;
-    
-}
-
-img {
-    max-width: 100%;
-    max-height: 100%;
-} */
-
 /* search bar */
 
-.searchcontainerbody {
-  margin: 20px auto;
-  width: 300px;
-  height: 60px
-}
-
-.searchformbody {
-    display: flex;
-    flex-direction: row;
-}
-.search-fieldbody {
-    width: 100%;
-    padding: 10px 35px 10px 15px;
-  border: 1px solid;
-  border-color: black;
-  border-radius: 100px;
-  
-}
-
-.search-buttonbody {
-    background: transparent;
-    border: none;
-    outline: none;
-    margin-left: -33px;
-}
-
-.search-buttonbody img {
-    width: 20px;
-    height: 20px;
-    object-fit: cover;
-}
 
 .picturecontainerbody {
 
@@ -101,49 +60,54 @@ img {
   width: 95%;
   padding: 7px;
   margin: 5px;
-  border: 2px rgb(216, 224, 216) solid;
+  
+}
+
+.proppics {
+  
   border-radius: 15px;
   box-shadow: 10px 10px 8px #888888;
 }
-
-.slogan2 {
-
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5px;
-  font-family: "Allura", sans-serif;
-  color: #4caf50;
-  margin-top: 20px;
+.proptext {
+  font-size: 20px;
+  padding-left: 7px;
 }
+
 
 .headingofweddings {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 20px;
   
 }
 
 .headingofbirthdays {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 20px;
   margin-top: 30px;
   
 }
 
 
-
-
-
 @media only screen and (min-width:800px) {
+
+ 
   
+
+  .searchcontainerbody {
+    margin:  30px auto;
+    width: 400px;
+    height: 60px
+  }
 
   .picturecontainerbody {
     display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
-   
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+
 }
 
 .picturecontainer2body {
@@ -152,26 +116,33 @@ display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: center;
+text-align: left;
 }
 
 
 .pictureboxes {
   
     background-color: white;
-    width: 30%;
+    width: 20%;
     padding: 7px;
     margin: 5px;
-    border: 2px rgb(216, 224, 216) solid;
+    /* border: 2px rgb(216, 224, 216) solid;
     border-radius: 15px;
-    box-shadow: 10px 10px 8px #888888;
+    box-shadow: 10px 10px 8px #888888; */
   
-    
   }
 
-/* .slogan1 {
-  margin: auto;
-  width: 400px;
-} */
+  .proppics {
+    /* border: 2px rgb(216, 224, 216) solid; */
+    border-radius: 15px;
+    box-shadow: 10px 10px 8px #888888;
+  }
+
+
+.proptext {
+  font-size: 20px;
+  padding-left: 7px;
+}
 
 .slogan2 {
 
@@ -185,16 +156,29 @@ justify-content: center;
 
 .headingofweddings {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 150px;
   margin-bottom: 20px;
+  
+  
   
 }
 
 .headingofbirthdays {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 100px;
+  margin-left: 150px;
   margin-bottom: 20px;
   
+}
+
+.iconscontainer {
+  display: flex;
+  margin: 20px auto 20px auto;
+  justify-content: space-between;
+  width: 50%;
+  padding-top: 130px;
 }
 
 }

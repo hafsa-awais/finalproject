@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
                     'first_name' => $user->first_name,
                     'last_name' => $user->last_name,
                     'email' => $user->email,
-                    'password' => $user->password,
+                    'password' => Hash::make($user->password),
                     'contact' => $user->contact,
                     'address1' => $user->address1,
                     'address2' => $user->address2,

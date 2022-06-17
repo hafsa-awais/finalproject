@@ -25,7 +25,7 @@ class ProviderSeeder extends Seeder
                     'first_name' => $provider->first_name,
                     'last_name' => $provider->last_name,
                     'email' => $provider->email,
-                    'password' => $provider->password,
+                    'password' => Hash::make($provider->password),
                     'contact' => $provider->contact,
                     'address1' => $provider->address1,
                     'address2' => $provider->address2,

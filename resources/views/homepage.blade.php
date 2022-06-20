@@ -42,16 +42,27 @@
         </div>
 
 
+
+
+    @foreach ($properties as $property)
+    
     <div class="picturecontainerbody">
         
         <div class="pictureboxes">
-            <object data="assets/propertypics/4.jpg" height=100% width=100% class="proppics"></object>
-            <p class="proptext"><strong>Petange, Luxembourg </strong><br>
-            746575 km away <br>
-            <strong>€ 675</strong> / day <br>
+            
+            <object data={{$property->coverphoto}}height=100% width=100% class="proppics"></object><br>
+            <strong>Place:</strong>{{$property->title}}<br>
+            <p class="proptext"><strong>{{$property->address}}
+            <strong>{{$property->price}}</strong> / day <br>
+            <strong>{{$property->locality}}</strong><br>
             </p>
         </div>
-        <div class="pictureboxes">
+        @endforeach
+
+
+
+        <!--
+            <div class="pictureboxes">
             <object data="assets/propertypics/2.jpg" height=100% width=100% class="proppics"></object>
             <p class="proptext"><strong>Petange, Luxembourg </strong><br>
             746575 km away <br>
@@ -101,6 +112,11 @@
             </p>
         </div>
     </div>
+-->
+
+
+
+
 
     <div class="headingofbirthdays">
             <h3>Birthday Venues</h3>

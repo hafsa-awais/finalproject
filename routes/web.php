@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\RegisteredPropertyController;
+use App\Http\Controllers\PropertiesController;
+
 use App\Http\Controllers\TestController;
 
 /*
@@ -16,7 +18,7 @@ use App\Http\Controllers\TestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/home', [RegisteredUserController::class, 'show'])->name('home');
+Route::get('/homepage', [PropertiesController::class, 'index'])->name('homepage');
 
 Route::get('/registration', [RegisteredUserController::class, 'register']);
               
@@ -32,9 +34,9 @@ Route::get('/headerfooter', function () {
     return view('templates/headerAndFooterTemplate');
 });
 
-Route::get('/homepage', function () {
+/*Route::get('/homepage', function () {
     return view('homepage');
-});
+});*/
 
 Route::get('/footer', function () {
     return view('/mytemplatefooter');

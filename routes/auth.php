@@ -11,9 +11,14 @@ use App\Http\Controllers\Auth\RegisteredProviderController;
 use App\Http\Controllers\Auth\RegisteredPropertyController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ContactFormController;
+//use App\Http\Controllers\PropertiesController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
+
+    //Route::get('homepage1', [PropertiesController::class, 'index'])->name('homepage');
+
+
     Route::get('register', [RegisteredUserController::class, 'create']) ->name('register');
 
     Route::post('register', [RegisteredUserController::class, 'store']);

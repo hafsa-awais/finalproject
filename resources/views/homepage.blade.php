@@ -14,32 +14,36 @@
             <h6>Exclusive events, priceless memories.</h6>
         </div> -->
 
+        
+        <div class="text">
+            
+            <div id="particles-js"></div>
     <div class="iconscontainer">
-        <div class="birthdayicon">
-            <i class="fas fa-2x fa-birthday-cake"></i>
+        <div class="categoryicons">
+        <i class="fas fa-2x fa-glass-cheers"></i>
             <p>Wedding Venues</p>
         </div>
-        <div class="birthdayicon">
+        <div class="categoryicons">
             <i class="fas fa-2x fa-birthday-cake"></i>
             <p>Birthday Venues</p>
         </div>
-        <div class="birthdayicon">
+        <div class="categoryicons">
             <i class="fas fa-2x fa-video"></i>
             <p>Photoshoot Venues</p>
         </div>
-        <div class="birthdayicon">
+        <div class="categoryicons">
             <i class="fas fa-2x fa-camera"></i>
             <p>Photography Studios</p>
         </div>
-        <div class="birthdayicon">
+        <div class="categoryicons">
             <i class="fas fa-2x fa-guitar"></i>
             <p>Music Studios</p>
         </div>
     </div>
     
-    <div class="headingofweddings">
+    <!-- <div class="headingofweddings">
             <h3>Wedding Venues</h3>
-        </div>
+        </div> -->
 
 
 
@@ -180,6 +184,7 @@
             746575 km away <br>
             <strong>€ 675</strong> / day <br>
             </p>
+        </div>
         </div>
     </div>
 </section>

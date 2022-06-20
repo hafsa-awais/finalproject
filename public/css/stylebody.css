@@ -12,7 +12,7 @@
 
 body,
 html {
-font-family: 'Roboto', sans-serif;
+  font-family: "Montserrat", serif;
     margin: 0;
 }
 
@@ -27,14 +27,17 @@ p {
     padding: 0;
 }
 
-button,
-.btn {
-  font-family: inherit;
+#particles-js {
+  /* height: 100%; */
+  position: absolute;
+  z-index: -1;
 }
-
-
-
-/* search bar */
+  .bodycontent {
+    
+    position: relative;
+    
+  
+  }
 
 
 .picturecontainerbody {
@@ -44,6 +47,7 @@ button,
   align-content: space-between;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
   
 }
 .picturecontainer2body {
@@ -68,45 +72,69 @@ button,
   border-radius: 15px;
   box-shadow: 10px 10px 8px #888888;
 }
+
+.proppics:hover {
+  opacity: 0.9;
+  transform: translateY(2px);
+}
+
+
 .proptext {
-  font-size: 20px;
+  margin-top: 10px;
+  font-size: 15px;
   padding-left: 7px;
 }
 
 
 .headingofweddings {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 20px;
-  
+  display: none;
+  /* justify-content: flex-start;
+  margin-left: 20px;
+  margin-bottom: 10px; */
+   
 }
 
 .headingofbirthdays {
-  display: flex;
-  justify-content: flex-start;
+  display: none;
+  /* justify-content: flex-start;
   margin-bottom: 20px;
-  margin-top: 30px;
+  margin-top: 30px; */
   
 }
+
+.iconscontainer {
+  
+    display: flex;
+    
+    justify-content: space-between;
+    width: 95%;
+    padding-top: 25px;
+    padding-left: 20px;
+        
+  }
+
+  .categoryicons:hover {
+    opacity: 0.9;
+  }
+
+
+.iconscontainer p {
+    font-size: 10px;
+    font-family: "Montserrat", serif;
+}
+
 
 
 @media only screen and (min-width:800px) {
 
  
-  
-
-  .searchcontainerbody {
-    margin:  30px auto;
-    width: 400px;
-    height: 60px
-  }
-
   .picturecontainerbody {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     text-align: left;
+    
 
 }
 
@@ -140,8 +168,9 @@ text-align: left;
 
 
 .proptext {
-  font-size: 20px;
+  font-size: 15px;
   padding-left: 7px;
+  font-family: "Montserrat", serif;
 }
 
 .slogan2 {
@@ -159,7 +188,7 @@ text-align: left;
   justify-content: flex-start;
   margin-left: 150px;
   margin-bottom: 20px;
-  
+  font-family: "Montserrat", serif;
   
   
 }
@@ -174,11 +203,15 @@ text-align: left;
 }
 
 .iconscontainer {
+  visibility: visible;
   display: flex;
-  margin: 20px auto 20px auto;
+  margin: 20px auto 40px auto;
   justify-content: space-between;
   width: 50%;
-  padding-top: 130px;
+  padding-top: 80px;
+}
+.iconscontainer p {
+  font-size: 15px;
 }
 
 }

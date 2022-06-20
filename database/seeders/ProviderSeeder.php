@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
 
 class ProviderSeeder extends Seeder
 {
@@ -25,7 +26,7 @@ class ProviderSeeder extends Seeder
                     'first_name' => $provider->first_name,
                     'last_name' => $provider->last_name,
                     'email' => $provider->email,
-                    'password' => $provider->password,
+                    'password' => Hash::make($provider->password),
                     'contact' => $provider->contact,
                     'address1' => $provider->address1,
                     'address2' => $provider->address2,

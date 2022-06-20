@@ -27,6 +27,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/registerform', function () {
+    return view('auth/register');
+});
+
+Route::get('/loginform', function () {
+    return view('auth/login');
+});
+
+Route::get('/contactform', function () {
+    return view('contact');
+});
+
+Route::get('/registerproperty', function () {
+    return view('register-property');
+});
 
 Route::get('/headerfooter', function () {
     return view('templates/headerAndFooterTemplate');

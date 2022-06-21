@@ -27,6 +27,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
+
+Route::get('/useraccount', function () {
+    return view('user-account');
+});
+
+Route::get('/provideraccount', function () {
+    return view('provider-account');
+});
+
 Route::get('/registerform', function () {
     return view('auth/register');
 });

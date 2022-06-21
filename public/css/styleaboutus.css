@@ -1,0 +1,52 @@
+.contentaboutus {
+    background-color: white;
+}
+
+
+.mainaboutus {
+    
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 150px;  
+    margin-left: 130px;
+   
+
+} 
+
+.aboutusslogan {
+    font-size: 60px;
+    color: #4caf50;
+    font-family: "Montserrat", serif;
+    margin-bottom: 40px; 
+    
+
+    
+    
+}
+.textourteam {
+    width: 50%;
+    
+}
+
+.aboutustext {
+    font-size: 20px;
+    color: rgb(25, 110, 25);
+    line-height: 20px;
+    font-family: "Montserrat", serif;
+     
+    
+}
+
+.aboutusimage {
+    width: 30%;
+    height: 50%;
+    margin: auto;
+    z-index: -5;
+}
+
+.aboutusimage img {
+    height: 100%;
+    width: 100%;
+}

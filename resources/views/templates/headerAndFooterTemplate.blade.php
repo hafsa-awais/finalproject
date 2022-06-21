@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="{{ asset('css/stylebody.css') }}">
   <link rel="stylesheet" href="{{ asset('css/styleheader.css') }}">
   <link rel="stylesheet" href="{{ asset('css/stylefooter.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/styleaboutus.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/styledescription.css') }}"  />
   <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   rel="stylesheet"
@@ -23,7 +25,15 @@
   rel="stylesheet"
 />
 <link rel="stylesheet" href="assets/particles.js-2.0.0/demo/css/style.css" />
-  </head>
+
+<!-- denis links boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- lottiefiles -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
 
 <body>
   <!-- mobile version -->
@@ -128,6 +138,19 @@
     <script src=
         "assets/particles.js-2.0.0/demo/js/app.js">
     </script>
+    <script src="{{ asset('js/calender.js') }}"></script>
+    <script src="{{ asset('js/map.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Popperjs -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <!-- Tempus Dominus JavaScript -->
+    <script src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/tempus-dominus.js" crossorigin="anonymous"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tempus Dominus Styles -->
+    <link href="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css" rel="stylesheet" crossorigin="anonymous">
+  </head>
 </body>
 </html>
 

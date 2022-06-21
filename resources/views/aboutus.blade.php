@@ -1,0 +1,25 @@
+@extends('templates/headerAndFooterTemplate')
+
+
+@section('title', 'About Us')
+
+
+@section('content')
+<div class="contentaboutus">
+<div class="mainaboutus">
+    <div class="textourteam">
+<h1 class="aboutusslogan"><strong>Exclusive events, priceless memories.</strong></h1><br>
+<p class="aboutustext"> Are you looking for a place to celebrate your birthday? Or a venue for a wedding? Or that big party that you've been planning for a while? <br>
+If yes, you've landed on the right page! atEvent is an online marketplace for small and large get togethers, and photography and music studios. We have a solution for all your needs, and it's just a click away! </p>
+
+
+</div>
+
+<div class="aboutusimage">
+<img src="assets/ourteam.jpg">
+</div>
+</div>
+</div>
+
+
+@endsection

@@ -15,10 +15,23 @@ use App\Http\Controllers\TestController;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "web" middlewa
+re group. Now create something great!
 |
 */
-Route::get('/homepage', [PropertiesController::class, 'index'])->name('homepage');
+//Route::get('/homepage', [PropertiesController::class, 'index'])->name('homepage');
+Route::get('/wedding', [PropertiesController::class, 'get_data_wedding'])->name('wedding');
+
+Route::get('/birthday', [PropertiesController::class, 'get_data_birthday'])->name('birthday');
+
+Route::get('/photoshoot', [PropertiesController::class, 'get_data_photoshoot'])->name('photoshoot');
+
+Route::get('/photography', [PropertiesController::class, 'get_data_photography'])->name('photography');
+
+Route::get('/music', [PropertiesController::class, 'get_data_music'])->name('music');
+
+
+
 
 Route::get('/registration', [RegisteredUserController::class, 'register']);
               

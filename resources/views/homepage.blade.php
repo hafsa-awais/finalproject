@@ -40,102 +40,53 @@
             <p>Music Studios</p>
         </div>
     </div>
+
     
-    <!-- <div class="headingofweddings">
+    <div class="headingofweddings">
             <h3>Wedding Venues</h3>
-        </div> -->
+        </div> 
 
-
-
-
-    @foreach ($properties as $property)
-    
-    <div class="picturecontainerbody">
         
+        <div class="picturecontainerbody">
+
+        @foreach ($properties as $property)
+
         <div class="pictureboxes">
             
-            <object data={{$property->coverphoto}}height=100% width=100% class="proppics"></object><br>
-            <strong>Place:</strong>{{$property->title}}<br>
+            <object data={{$property->coverphoto}} width=100% height=100%  class="proppics"></object><br>
+            <p class="proptext"><strong>Place: </strong>{{$property->title}}<br>
             <p class="proptext"><strong>{{$property->address}}
             <strong>{{$property->price}}</strong> / day <br>
             <strong>{{$property->locality}}</strong><br>
             </p>
         </div>
+    
         @endforeach
-
-
-
-        <!--
-            <div class="pictureboxes">
-            <object data="assets/propertypics/2.jpg" height=100% width=100% class="proppics"></object>
-            <p class="proptext"><strong>Petange, Luxembourg </strong><br>
-            746575 km away <br>
-            <strong>€ 675</strong> / day <br>
-            </p>
         </div>
-        <div class="pictureboxes">
-            <object data="assets/propertypics/3.jpg" height=100% width=100% class="proppics"></object>
-            <p class="proptext"><strong>Petange, Luxembourg </strong><br>
-            746575 km away <br>
-            <strong>€ 675</strong> / day <br>
-            </p>
-        </div>
-        <div class="pictureboxes">
-            <object data="assets/propertypics/4.jpg" height=100% width=100% class="proppics"></object>
-            <p class="proptext"><strong>Petange, Luxembourg </strong><br>
-            746575 km away <br>
-            <strong>€ 675</strong> / day <br>
-            </p>
-        </div>
-        <div class="pictureboxes">
-            <object data="assets/propertypics/5.jpg" height=100% width=100% class="proppics"></object>
-            <p class="proptext"><strong>Petange, Luxembourg </strong><br>
-            746575 km away <br>
-            <strong>€ 675</strong> / day <br>
-            </p>
-        </div>
-        <div class="pictureboxes">
-            <object data="assets/propertypics/6.jpg" height=100% width=100% class="proppics"></object>
-            <p class="proptext"><strong>Petange, Luxembourg </strong><br>
-            746575 km away <br>
-            <strong>€ 675</strong> / day <br>
-            </p>
-        </div>
-        <div class="pictureboxes">
-            <object data="assets/propertypics/3.jpg" height=100% width=100% class="proppics"></object>
-            <p class="proptext"><strong>Petange, Luxembourg </strong><br>
-            746575 km away <br>
-            <strong>€ 675</strong> / day <br>
-            </p>
-        </div>
-        <div class="pictureboxes">
-            <object data="assets/propertypics/8.jpg" height=100% width=100% class="proppics"></object>
-            <p class="proptext"><strong>Petange, Luxembourg </strong><br>
-            746575 km away <br>
-            <strong>€ 675</strong> / day <br>
-            </p>
-        </div>
-    </div>
--->
 
-
-
-
-
+    
     <div class="headingofbirthdays">
             <h3>Birthday Venues</h3>
         </div>
 
 
-    <div class="picturecontainer2body">
+        <div class="picturecontainer2body">
+        @foreach ($properties as $property)
         
         <div class="pictureboxes">
-            <object data="assets/propertypics/7.jpg" height=100% width=100% class="proppics"></object>
-            <p class="proptext"><strong>Petange, Luxembourg </strong><br>
-            746575 km away <br>
-            <strong>€ 675</strong> / day <br>
+            
+            <object data={{$property->coverphoto}} width=100% height=100%  class="proppics"></object><br>
+            <p class="proptext"><strong>Place: </strong>{{$property->title}}<br>
+            <p class="proptext"><strong>{{$property->address}}
+            <strong>{{$property->price}}</strong> / day <br>
+            <strong>{{$property->locality}}</strong><br>
             </p>
         </div>
+    
+        @endforeach
+        </div>
+
+<!--
         <div class="pictureboxes">
             <object data="assets/propertypics/8.jpg" height=100% width=100% class="proppics"></object>
             <p class="proptext"><strong>Petange, Luxembourg </strong><br>
@@ -188,5 +139,5 @@
         </div>
     </div>
 </section>
-@endsection
+-->
 

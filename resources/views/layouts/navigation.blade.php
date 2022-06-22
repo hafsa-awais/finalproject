@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
@@ -34,6 +34,11 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        <!-- Profile -->
+                        <x-dropdown-link :href="route('settings.profile.index')">
+                            {{ __('Profile') }}
+                        </x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -76,6 +81,11 @@
             </div>
 
             <div class="mt-3 space-y-1">
+                <!-- Profile -->
+                <x-responsive-nav-link :href="route('settings.profile.index')">
+                    {{ __('Profile') }}
+                </x-responsive-nav-link>
+
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

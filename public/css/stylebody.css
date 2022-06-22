@@ -1,18 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 
-@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Allura&family=Inter:wght@100;200;300;400;500;600;700&family=Roboto:wght@300;400&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Allura&family=Inter:wght@100;200;300;400;500;600;700&family=Roboto:wght@300;400&display=swap");
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body,
 html {
-  font-family: "Montserrat", serif;
+    font-family: "Montserrat", serif;
     margin: 0;
 }
 
@@ -28,190 +26,153 @@ p {
 }
 
 #particles-js {
-  /* height: 100%; */
-  position: absolute;
-  z-index: -1;
+    /* height: 100%; */
+    position: absolute;
+    z-index: -1;
 }
-  .bodycontent {
-    
+.bodycontent {
     position: relative;
-    
-  
-  }
-
+}
 
 .picturecontainerbody {
-
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
 }
-.picturecontainer2body {
-
+/* .picturecontainer2body {
   display: flex;
   flex-direction: column;
   align-content: space-between;
   justify-content: space-between;
   align-items: center;
   
-}
+} */
 .pictureboxes {
-  background-color: white;
-  width: 95%;
-  padding: 7px;
-  margin: 5px;
-  
+    background-color: white;
+    width: 95%;
+    padding: 7px;
+    margin: 5px;
 }
 
 .proppics {
-  
-  border-radius: 15px;
-  box-shadow: 10px 10px 8px #888888;
+    border-radius: 15px;
+    box-shadow: 10px 10px 8px #888888;
 }
 
 .proppics:hover {
-  opacity: 0.9;
-  transform: translateY(2px);
+    opacity: 0.9;
+    transform: translateY(2px);
 }
-
 
 .proptext {
-  margin-top: 10px;
-  font-size: 15px;
-  padding-left: 7px;
+    margin-top: 10px;
+    font-size: 15px;
+    padding-left: 7px;
 }
 
-
 .headingofweddings {
-  display: none;
-  /* justify-content: flex-start;
+    display: none;
+    /* justify-content: flex-start;
   margin-left: 20px;
   margin-bottom: 10px; */
-   
 }
 
 .headingofbirthdays {
-  display: none;
-  /* justify-content: flex-start;
+    display: none;
+    /* justify-content: flex-start;
   margin-bottom: 20px;
   margin-top: 30px; */
-  
 }
 
 .iconscontainer {
-  
     display: flex;
-    
+
     justify-content: space-between;
     width: 95%;
     padding-top: 25px;
     padding-left: 20px;
-        
-  }
+}
 
-  .categoryicons:hover {
+.categoryicons:hover {
     opacity: 0.9;
-  }
-
+}
 
 .iconscontainer p {
     font-size: 10px;
     font-family: "Montserrat", serif;
 }
 
+@media only screen and (min-width: 800px) {
+    .picturecontainerbody {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: center;
+        justify-content: space-between;
+        text-align: left;
+    }
 
+    .picturecontainer2body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: left;
+    }
 
-@media only screen and (min-width:800px) {
-
- 
-  .picturecontainerbody {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: left;
-    
-
-}
-
-.picturecontainer2body {
-
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
-text-align: left;
-}
-
-
-.pictureboxes {
-  
-    background-color: white;
-    width: 20%;
-    padding: 7px;
-    margin: 5px;
-    /* border: 2px rgb(216, 224, 216) solid;
+    .pictureboxes {
+        justify-content: space-between;
+        background-color: white;
+        width: 20%;
+        padding: 7px;
+        margin: 5px;
+        /* border: 2px rgb(216, 224, 216) solid;
     border-radius: 15px;
     box-shadow: 10px 10px 8px #888888; */
-  
-  }
+    }
 
-  .proppics {
-    /* border: 2px rgb(216, 224, 216) solid; */
-    border-radius: 15px;
-    box-shadow: 10px 10px 8px #888888;
-  }
+    .proppics {
+        /* border: 2px rgb(216, 224, 216) solid; */
+        border-radius: 15px;
+        box-shadow: 10px 10px 8px #888888;
+    }
 
+    .proptext {
+        font-size: 15px;
+        padding-left: 7px;
+        font-family: "Montserrat", serif;
+    }
 
-.proptext {
-  font-size: 15px;
-  padding-left: 7px;
-  font-family: "Montserrat", serif;
-}
+    .slogan2 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+        font-family: "Allura", sans-serif;
+        color: #4caf50;
+        margin-top: 130px;
+    }
 
-.slogan2 {
+    .pictureheadings {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 150px;
+        margin-bottom: 20px;
+        font-family: "Montserrat", serif;
+    }
 
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5px;
-  font-family: "Allura", sans-serif;
-  color: #4caf50;
-  margin-top: 130px;
-}
-
-.headingofweddings {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 150px;
-  margin-bottom: 20px;
-  font-family: "Montserrat", serif;
-  
-  
-}
-
-.headingofbirthdays {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 100px;
-  margin-left: 150px;
-  margin-bottom: 20px;
-  
-}
-
-.iconscontainer {
-  visibility: visible;
-  display: flex;
-  margin: 20px auto 40px auto;
-  justify-content: space-between;
-  width: 50%;
-  padding-top: 80px;
-}
-.iconscontainer p {
-  font-size: 15px;
-}
-
+    .iconscontainer {
+        visibility: visible;
+        display: flex;
+        margin: 20px auto 40px auto;
+        justify-content: space-between;
+        width: 50%;
+        padding-top: 80px;
+    }
+    .iconscontainer p {
+        font-size: 15px;
+    }
 }

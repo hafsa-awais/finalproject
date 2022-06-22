@@ -2,14 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\Provider as Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Provider extends Model
+class Provider extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -21,10 +20,11 @@ class Provider extends Model
     protected $fillable = [
         'first_name',
         'last_name',
-        'email' ,
+        'email',
+        'contact',
+        'address1',
+        'address2',
         'password',
-        'contact' ,
-        'address',
     ];
 
     /**

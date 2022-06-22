@@ -913,7 +913,7 @@ select {
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 .overflow-hidden {
-  overflow: hidden;
+  overflow: scroll;
 }
 .rounded-md {
   border-radius: 0.375rem;

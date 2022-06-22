@@ -80,13 +80,16 @@
                 <x-application-logo />
             </div>
             <div class="searchcontainerbody">
-                <form action="/" method="GET" class="searchformbody">
-                    <input type="search" placeholder="Search your desired location" class="search-fieldbody" />
+                <form action="{{ route('search') }}" method="GET" class="searchformbody">
+                    <input type="text" name="search" placeholder="Search your desired location" class="search-fieldbody" required /><span class="input-group-btn">
                     <button type="submit" class="search-buttonbody">
                         <img src="{{ asset('assets/search.png') }}">
                     </button>
+               
                 </form>
             </div>
+
+       
             <ul>
                 <li class="headernavlist">
                     <a href="{{ route('homepage') }}" class="headernav_a">Home</a>

@@ -18,6 +18,9 @@ use App\Http\Controllers\PropertiesController;
 Route::get('/', [PropertiesController::class, 'index'])->name('homepage');
 Route::get('descriptiondesk/{id}', [PropertiesController::class, 'show'])->name('descriptiondesk');
 
+Route::get('/search', [PropertiesController::class, 'search'])->name('search');
+
+
 Route::get('/provider/connect', function () {
     return view('provider.connect');
 })->name('connect');

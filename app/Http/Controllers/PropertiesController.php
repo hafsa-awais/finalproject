@@ -22,6 +22,23 @@ class PropertiesController extends Controller
         return view('/descriptiondesk', ['property' => $properties]);
     }
 
+    public function search(Request $request)
+
+    {
+        // $search = $request->input('search');
+        $properties = Properties::query()
+        
+        // ->where('locality', 'LIKE', '%{$search}%')
+        // ->get();
+
+            // if(count($properties) > 0)
+                return view('/search', ['properties' => $properties]);
+            // else 
+            //     return view ('search')->withMessage('No properties found in this location. Try to search again!');
+
+    }
+    
+
     public function get_data_wedding()
     {
         $properties = Properties::select(
@@ -37,6 +54,8 @@ class PropertiesController extends Controller
 
             return view('wedding', ['properties' => $properties]);  
     }
+
+    
 
     public function get_data_birthday()
     {

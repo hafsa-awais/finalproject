@@ -25,7 +25,27 @@ Route::get('/aboutus', function () {
     return view('aboutus');
 })->name('aboutus');
 
-Route::get('/contact', function () {
+Route::get('/transaction', function () {
+    return view('transaction');
+});
+
+Route::get('/useraccount', function () {
+    return view('user-account');
+});
+
+Route::get('/provideraccount', function () {
+    return view('provider-account');
+});
+
+Route::get('/registerform', function () {
+    return view('auth/register');
+});
+
+Route::get('/loginform', function () {
+    return view('auth/login');
+});
+
+Route::get('/contactform', function () {
     return view('contact');
 })->name('contact');
 

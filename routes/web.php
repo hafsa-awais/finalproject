@@ -19,7 +19,7 @@ use App\Http\Controllers\TestController;
 re group. Now create something great!
 |
 */
-//Route::get('/homepage', [PropertiesController::class, 'index'])->name('homepage');
+Route::get('/', [PropertiesController::class, 'index'])->name('homepage');
 Route::get('/wedding', [PropertiesController::class, 'get_data_wedding'])->name('wedding');
 
 Route::get('/birthday', [PropertiesController::class, 'get_data_birthday'])->name('birthday');
@@ -34,9 +34,6 @@ Route::get('/music', [PropertiesController::class, 'get_data_music'])->name('mus
 Route::get('property/{id}', [PropertiesController::class, 'show'])->name('property');
 
 
-Route::get('search', [PropertiesController::class, 'get_search'])->name('search');
-
-
 Route::get('provider-account', [RegisteredProviderController::class, 'show']);
 
 
@@ -44,13 +41,17 @@ Route::get('/registration', [RegisteredUserController::class, 'register']);
               
 Route::post('/registration', [RegisteredUserController::class, 'register']);
 
-// Route::get('/', function () { return view('homepage');})->name('homepage');
+
 
 
 Route::get('/', [PropertiesController::class, 'index'])->name('homepage');
-Route::get('descriptiondesk/{id}', [PropertiesController::class, 'show'])->name('descriptiondesk');
 
-Route::get('single/{id}', [PropertiesController::class, 'show'])->name('single');
+Route::get('/descriptiondesk/{id}', [PropertiesController::class, 'show'])->name('descriptiondesk');
+
+
+Route::get('/upload-file', [PropertiesController::class, 'upload_file']);
+Route::post('/upload-file', [PropertiesController::class, 'upload_file_submit']);
+
 
 Route::get('/provider/connect', function () {
     return view('provider.connect');

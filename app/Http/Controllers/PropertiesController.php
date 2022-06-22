@@ -60,7 +60,7 @@ class PropertiesController extends Controller
             ->where("events.event_name", "=", "wedding")
             ->get();
 
-            return view('wedding', ['properties' => $properties]);  
+            return view('categories.wedding', ['properties' => $properties]);  
     }
 
     public function get_data_birthday()
@@ -76,7 +76,7 @@ class PropertiesController extends Controller
             ->where("events.event_name", "=", "birthday")
             ->get();
 
-            return view('birthday', ['properties' => $properties]);  
+            return view('categories.birthday', ['properties' => $properties]);  
     }
     public function get_data_photoshoot()
     {
@@ -91,7 +91,7 @@ class PropertiesController extends Controller
             ->where("events.event_name", "=", "photoshoot")
             ->get();
 
-            return view('photoshoot', ['properties' => $properties]);  
+            return view('categories.photoshoot', ['properties' => $properties]);  
     }
     public function get_data_photography()
     {
@@ -106,7 +106,7 @@ class PropertiesController extends Controller
             ->where("events.event_name", "=", "photography")
             ->get();
 
-            return view('photography', ['properties' => $properties]);  
+            return view('categories.photography', ['properties' => $properties]);  
     }
     public function get_data_music()
     {
@@ -121,7 +121,7 @@ class PropertiesController extends Controller
             ->where("events.event_name", "=", "music_studios")
             ->get();
 
-            return view('music', ['properties' => $properties]);  
+            return view('categories.music', ['properties' => $properties]);  
     }
      
     

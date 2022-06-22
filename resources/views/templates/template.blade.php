@@ -64,14 +64,53 @@
         </div>
     </nav>
 
-    <div class="collapse" id="navbarToggleExternalContent3">
-        <div class="bg-light shadow-3 p-4">
-            <button class="btn btn-link btn-block border-bottom m-0">Link 1</button>
-            <button class="btn btn-link btn-block border-bottom m-0">Link 2</button>
-            <button class="btn btn-link btn-block m-0">Link 3</button>
+    <!-- if not logged in (guest auth only works with (default) user guard)-->
+    @guest
+        @guest('provider')
+            <div class="collapse" id="navbarToggleExternalContent3">
+                <div class="bg-light shadow-3 p-4">
+                    <button onclick="location.href='{{ route('connect') }}'" type="button"
+                    class="btn btn-link btn-block border-bottom m-0">Provider</button>
+                    <button onclick="location.href='{{ route('register') }}'" type="button"
+                    class="btn btn-link btn-block border-bottom m-0">Register</button>
+                    <button onclick="location.href='{{ route('login') }}'" type="button"
+                    class="btn btn-link btn-block m-0">Log In</button>
+                </div>
+            </div>
+        @endguest
+    @endguest
+
+
+    {{-- if logged in as user --}}
+    @auth('web')
+        <div class="collapse" id="navbarToggleExternalContent3">
+            <div class="bg-light shadow-3 p-4">
+                <button onclick="location.href='{{ route('dashboard') }}'" type="button"
+                class="btn btn-link btn-block border-bottom m-0">User account</button>
+                <button onclick="location.href='{{ route('settings.profile.index') }}'" type="button"
+                class="btn btn-link btn-block border-bottom m-0">Edit user information</button>
+                <button onclick="location.href='{{ route('logout') }}'" type="button"
+                class="btn btn-link btn-block m-0">Logout</button>
+            </div>
         </div>
-    </div>
+    @endauth
+
+
+    {{-- if logged in as provider --}}
+    @auth('provider')
+        <div class="collapse" id="navbarToggleExternalContent3">
+            <div class="bg-light shadow-3 p-4">
+                <button onclick="location.href='{{ route('provider.dashboard') }}'" type="button"
+                class="btn btn-link btn-block border-bottom m-0">User account</button>
+                {{-- <button onclick="location.href='{{ route('settings.profile.index') }}'" type="button"
+                class="btn btn-link btn-block border-bottom m-0">Edit user information</button> --}}
+                <button onclick="location.href='{{ route('provider.logout') }}'" type="button"
+                class="btn btn-link btn-block m-0">Logout</button>
+            </div>
+        </div>
+    @endauth
     <!--/end mobile version-->
+
 
     <!-- desktop version -->
     <section class="headersection">
@@ -196,7 +235,7 @@
 
         <!-- bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
         </script>
 
         <!-- popperjs positioning engine -->
@@ -205,7 +244,7 @@
 
         <!-- tempus dominus datepicker -->
         <script src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/tempus-dominus.js"
-                crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>
 
         <!-- tempus dominus datepicker styles -->
         <link href="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css"

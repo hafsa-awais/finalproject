@@ -8,10 +8,10 @@
         <div class="card-dis">
 
             <div class="card">
-                <h5 class="card-header">{{number_format($property->price)}} €/day</h5>
+                <h5 class="card-header" data-price="{{($property->price)}}">{{number_format($property->price)}} €/day</h5>
                 <div class="card-body">
                     <h5 class="card-title">special offer 10% discount</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in.</p>
+                    <p class="card-text"></p>
                     <a href="#" class="btn btn-primary">BOOK NOW</a>
                 </div>
             </div>
@@ -119,6 +119,9 @@
         <div class="calendar-dis">
             <div class="calendar-dis">
                 <div class='row'>
+
+
+                
                     <div class='col-sm-6'>
                         <label for='linkedPickers1Input' class='form-label'>From</label>
                         <div class='input-group log-event' id='linkedPickers1' data-td-target-input='nearest' data-td-target-toggle='nearest'>
@@ -128,6 +131,9 @@
                             </span>
                         </div>
                     </div>
+
+
+
                     <div class='col-sm-6'>
                         <label for='linkedPickers2Input' class='form-label'>To</label>
                         <div class='input-group log-event' id='linkedPickers2' data-td-target-input='nearest' data-td-target-toggle='nearest'>

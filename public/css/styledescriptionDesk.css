@@ -56,6 +56,11 @@
     margin-bottom: 20px;
 }
 
+.card-text {
+    font-family: "Montserrat"
+    
+}
+
 .container2-dis {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;

@@ -55,7 +55,7 @@
                   
                     
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" name="description" id="form3Example3c" class="form-control" />
+                      <input type="text" name="description" id="form3Example3c" class="form-control" />
                       <label class="form-label" for="form3Example3c">Small Description</label>
                     </div>
                   </div>

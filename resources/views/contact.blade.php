@@ -28,7 +28,7 @@
                   <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" name="last_name" id="form3Example3c" class="form-control" />
+                      <input type="text" name="last_name" id="form3Example3c" class="form-control" />
                       <label class="form-label" for="form3Example3c">Lastname</label>
                     </div>
                   </div>

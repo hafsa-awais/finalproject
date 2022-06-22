@@ -9,12 +9,11 @@ use App\Models\Properties;
 
 class PropertiesController extends Controller
 {
-    public function index()
-    {
-        $properties = Properties::limit(8)
-        ->get();
-        return view('/homepage', ['properties' => $properties]);
-    }
+    // public function index()
+    // {
+    //     $properties = Properties::all();
+    //     return view('homepage', ['properties' => $properties]);
+    // }
 
     public function get_data_wedding()
     {
@@ -92,5 +91,29 @@ class PropertiesController extends Controller
 
             return view('music', ['properties' => $properties]);  
     }
+    public function show($id)
+    {
+        $properties= Properties::find($id);
+        return view('single', ['property' => $properties]);
+    }
+    
+    public function search(Request $request)
+    {
+        $properties = Properties::where([
+            [function($query) use ($request){
+                if (($term = $request->term)){
+                    $query->orWhere('locality', 'LIKE', '%' . $term . '%')->get();
+                }
+            }]
+        ])
+       
+        ->orderby ('id', 'desc')
+        ->paginate(8);
+        dd($properties);
+
+        return view('projects.')
+    }
+    
+    
     
 }

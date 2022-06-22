@@ -97,15 +97,21 @@ class PropertiesController extends Controller
         return view('single', ['property' => $properties]);
     }
     
-    public function get_search()
+    public function search(Request $request)
     {
-        $properties = Properties::select(
-            "properties.locality"
-        )
-        ->where ('properties.locality', 'like', '%keyword%')
-        ->orderby ('properties.locality')
-        ->get();
+        $properties = Properties::where([
+            [function($query) use ($request){
+                if (($term = $request->term)){
+                    $query->orWhere('locality', 'LIKE', '%' . $term . '%')->get();
+                }
+            }]
+        ])
+       
+        ->orderby ('id', 'desc')
+        ->paginate(8);
         dd($properties);
+
+        return view('projects.')
     }
     
     

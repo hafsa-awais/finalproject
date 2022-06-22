@@ -48,10 +48,7 @@
     position: sticky;
     margin-left: 20px;
     padding-bottom: 100px;
-    
-
 }
-
 
 .container2-dis {
     display: grid;
@@ -62,196 +59,189 @@
     grid-auto-flow: row;
     justify-content: center;
     grid-template-areas: ". dancing-dis church-dis scenery-dis fireworks-dis karaoke-dis catering-dis .";
-    font-family: "Montserrat"
+    font-family: "Montserrat";
 }
 
 .dancing-dis {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "."
-      "dancingp-dis"; 
-    grid-area: dancing-dis; 
-  }
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "."
+        "dancingp-dis";
+    grid-area: dancing-dis;
+}
 
-  .catering-dis {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "."
-      "cateringp-dis"; 
-    grid-area: catering-dis; 
-  }
+.catering-dis {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "."
+        "cateringp-dis";
+    grid-area: catering-dis;
+}
 
-  .karaoke-dis {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "."
-      "karaokep-dis"; 
-    grid-area: karaoke-dis; 
-  }
+.karaoke-dis {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "."
+        "karaokep-dis";
+    grid-area: karaoke-dis;
+}
 
-  .fireworks-dis {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "."
-      "fireworksp-dis"; 
-    grid-area: fireworks-dis; 
-  }
+.fireworks-dis {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "."
+        "fireworksp-dis";
+    grid-area: fireworks-dis;
+}
 
-  .scenery-dis {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "."
-      "sceneryp-dis"; 
-    grid-area: scenery-dis; 
-  }
+.scenery-dis {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "."
+        "sceneryp-dis";
+    grid-area: scenery-dis;
+}
 
-  .church-dis {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "."
-      "churchp-dis"; 
-    grid-area: church-dis; 
-  }
+.church-dis {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "."
+        "churchp-dis";
+    grid-area: church-dis;
+}
 
-
-  .dancingp-dis {
-    justify-self: center; 
+.dancingp-dis {
+    justify-self: center;
     align-self: center;
-  }
+}
 
-  .cateringp-dis {
-    justify-self: center; 
+.cateringp-dis {
+    justify-self: center;
     align-self: center;
-  }
+}
 
-  .karaokep-dis {
-    justify-self: center; 
+.karaokep-dis {
+    justify-self: center;
     align-self: center;
-  }
+}
 
-  .fireworksp-dis {
-    justify-self: center; 
+.fireworksp-dis {
+    justify-self: center;
     align-self: center;
-  }
+}
 
-  .sceneryp-dis {
-    justify-self: center; 
+.sceneryp-dis {
+    justify-self: center;
     align-self: center;
-  }
+}
 
-  .churchp-dis {
-    justify-self: center; 
+.churchp-dis {
+    justify-self: center;
     align-self: center;
-  }
-
-
+}
 
 .dancing-dis {
     grid-area: dancing-dis;
-    justify-self: center; 
+    justify-self: center;
     align-self: center;
 }
 
 .church-dis {
     grid-area: church-dis;
-    justify-self: center; 
+    justify-self: center;
     align-self: center;
 }
 
 .scenery-dis {
     grid-area: scenery-dis;
-    justify-self: center; 
+    justify-self: center;
     align-self: center;
 }
 
 .fireworks-dis {
     grid-area: fireworks-dis;
-    justify-self: center; 
+    justify-self: center;
     align-self: center;
 }
 
 .karaoke-dis {
     grid-area: karaoke-dis;
-    justify-self: center; 
+    justify-self: center;
     align-self: center;
 }
 
 .catering-dis {
     grid-area: catering-dis;
-    justify-self: center; 
+    justify-self: center;
     align-self: center;
 }
 
 .main-dis {
-  font-family: "Montserrat";
-  margin-left: 10%;
-  margin-right: 18.5%;
-  justify-self: stretch; 
-  text-align: justify;
+    font-family: "Montserrat";
+    margin-left: 10%;
+    margin-right: 18.5%;
+    justify-self: stretch;
+    text-align: justify;
 }
-
 
 /* calendar */
 .input-group-append {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-
-.container3-dis {  display: grid;
-  grid-template-columns: 0.2fr 1.3fr 0.4fr;
-  grid-template-rows: 0fr 0.5fr 1.7fr;
-  grid-auto-columns: 1fr;
-  gap: 20px 3px;
-  grid-auto-flow: row;
-  justify-content: center;
+.container3-dis {
+    display: grid;
+    grid-template-columns: 0.2fr 1.3fr 0.4fr;
+    grid-template-rows: 0fr 0.5fr 1.7fr;
+    grid-auto-columns: 1fr;
+    gap: 20px 3px;
+    grid-auto-flow: row;
+    justify-content: center;
 }
 
 .calendar-dis {
-  justify-self: center;
-  align-self: center;
-  grid-area: 2 / 2 / 3 / 3;
+    justify-self: center;
+    align-self: center;
+    grid-area: 2 / 2 / 3 / 3;
 }
 
 .namemap-dis {
-  m: solid black;
-  justify-self: start;
-  align-self: end;
-  grid-area: 1 / 2 / 2 / 4;
+    justify-self: start;
+    align-self: end;
+    grid-area: 1 / 2 / 2 / 4;
 }
 
 .reviews-dis {
-  justify-self: center;
-  align-self: center;
-  grid-area: 3 / 2 / 4 / 3;
-  height: 400px;
+    justify-self: center;
+    align-self: center;
+    grid-area: 3 / 2 / 4 / 3;
+    height: 400px;
 }
 
 .map-dis {
-  justify-self: center;
-  align-self: center;
-  grid-area: 1 / 3 / 4 / 4;
-
+    justify-self: center;
+    align-self: center;
+    grid-area: 1 / 3 / 4 / 4;
 }
 
 #map {
-  border-radius: 20px;
-
+    border-radius: 20px;
 }

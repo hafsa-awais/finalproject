@@ -31,26 +31,26 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function register ()
-    {
-        return view('register');
-    }
     public function store(Request $request)
     {
         $request->validate([
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:60'],
+            'last_name' => ['required', 'string', 'max:60'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'contact' => ['required', 'string', 'max:60'],
+            'address1' => ['required', 'string', 'max:60'],
+            'address2' => ['required', 'string', 'max:60'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
-            'first_name'=> $request->first_name,
+            'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
             'contact' => $request->contact,
-            'address' => $request->address,
+            'address1' => $request->address1,
+            'address2' => $request->address2,
+            'password' => Hash::make($request->password),
         ]);
 
         event(new Registered($user));
@@ -58,33 +58,5 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
-    }
-    public function edit($id)
-    {
-        $user= User::find($id);
-        return view('update-user', ['user'=>$user]);
-    }
-    
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $user = User::find($id);
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->address = $request->address;
-        $user->contact = $request->contact;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->save();
-        if ($user)
-            return redirect('register')->with('message', 'Succefully updated User');
-         else
-            return 'error'; 
     }
 }

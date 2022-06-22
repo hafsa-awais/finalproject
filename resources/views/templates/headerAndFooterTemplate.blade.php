@@ -73,7 +73,7 @@
       <img src="assets/Logo.png">
     </div>
     <div class="searchcontainerbody">
-      <form action="/" method="GET" class="searchformbody">
+      <form action="" method="GET" class="searchformbody">
         <input type="search" placeholder="Search your desired location" class="search-fieldbody" />
         <button type="submit" class="search-buttonbody">
           <img src="assets/search.png">
@@ -154,8 +154,4 @@
   </head>
 </body>
 </html>
-
-
-
-
 

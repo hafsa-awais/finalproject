@@ -173,7 +173,7 @@
                             <a href="#." class="footerbox-init-description">Carrieres</a>
                         </div>
                         <div class="footerbox-init">
-                            <a href="{{ route('contact') }}" class="footerbutton">Send us a message</a>
+                            <a href="" class="footerbutton">Send us a message</a>
                         </div>
                     </div>
                 </div>

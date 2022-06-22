@@ -26,7 +26,7 @@
           <div class="card-body text-center">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
-            <h5 class="my-3">Denis Gorshenko</h5>
+            <h5 class="my-3">{{Auth::user()->first_name}}</h5>
             <p class="text-muted mb-4">Luxembourg, Luxembourg</p>
     
           </div>
@@ -41,7 +41,7 @@
                 <p class="mb-0">First Name</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Denis </p>
+                <p class="text-muted mb-0">{{Auth::user()->first_name}} </p>
               </div>
             </div>
             <hr>
@@ -50,7 +50,7 @@
                 <p class="mb-0">Last Name</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Gorshenko</p>
+                <p class="text-muted mb-0">{{Auth::user()->last_name}}</p>
               </div>
             </div>
             <hr>
@@ -59,7 +59,7 @@
                 <p class="mb-0">Phone</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">00352661928374</p>
+                <p class="text-muted mb-0">{{Auth::user()->contact}}</p>
               </div>
             </div>
             <hr>
@@ -68,7 +68,7 @@
                 <p class="mb-0">Email</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">denis@denis.com</p>
+                <p class="text-muted mb-0">email</p>
               </div>
             </div>
             <hr>
@@ -77,7 +77,7 @@
                 <p class="mb-0">Address</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Luxembourg, Luxembourg</p>
+                <p class="text-muted mb-0">{{Auth::user()->address}}</p>
               </div>
             </div>
           </div>
@@ -91,7 +91,7 @@
                 <p class="mb-0">Properties:</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">-locality</p><br>
+                <p class="text-muted mb-0">{{Auth::user()->locality}}</p><br>
         
               </div>
             </div>

@@ -9,17 +9,16 @@ use App\Models\Properties;
 
 class PropertiesController extends Controller
 {
-    public function index()
+     public function index()
     {
-        $properties = Properties::limit(8)
-        ->get();
-        return view('/homepage', ['properties' => $properties]);
+        $properties = Properties::all();
+        return view('homepage', ['properties' => $properties]);
     }
 
     public function show($id)
     {
         $properties = Properties::find($id);
-        return view('/descriptiondesk', ['property' => $properties]);
+        return view('descriptiondesk', ['property' => $properties]);
     }
 
     public function search(Request $request)
@@ -38,6 +37,32 @@ class PropertiesController extends Controller
 
     }
     
+
+
+    public function upload_file()
+    {
+        return view('upload-file');
+    }
+
+    public function upload_file_submit(Request $request)
+    {
+        // Validate the file
+        $request->validate([
+            'myFile' => 'required|mimes:jpg,png'
+        ]);
+
+        // Rename the file
+        // $fileName = time() . '.' . $request->myFile->extension();
+        $fileName = $request->myFile->getClientOriginalName();
+
+        // Save the public path 
+        $publicPath = public_path('uploads');
+
+        // Save the file in the public/uploads folder
+        $request->myFile->move($publicPath, $fileName);
+    }
+
+
 
     public function get_data_wedding()
     {
@@ -117,5 +142,6 @@ class PropertiesController extends Controller
 
             return view('music', ['properties' => $properties]);  
     }
+     
     
 }

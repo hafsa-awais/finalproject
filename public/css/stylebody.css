@@ -43,6 +43,7 @@ p {
     margin-top: 20px;
 }
 /* .picturecontainer2body {
+
   display: flex;
   flex-direction: column;
   align-content: space-between;
@@ -106,6 +107,7 @@ p {
 }
 
 @media only screen and (min-width: 800px) {
+    
     .picturecontainerbody {
         display: flex;
         flex-direction: row;
@@ -163,6 +165,7 @@ p {
         margin-bottom: 20px;
         font-family: "Montserrat", serif;
     }
+
 
     .iconscontainer {
         visibility: visible;

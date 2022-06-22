@@ -1,11 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\RegisteredPropertyController;
-use App\Http\Controllers\TestController;
-
+use App\Http\Controllers\PropertiesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,70 +12,42 @@ use App\Http\Controllers\TestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/home', [RegisteredUserController::class, 'show'])->name('home');
 
-Route::get('/registration', [RegisteredUserController::class, 'register']);
-              
-Route::post('/registration', [RegisteredUserController::class, 'register']);
+// Route::get('/', function () { return view('homepage');})->name('homepage');
 
+Route::get('/', [PropertiesController::class, 'index'])->name('homepage');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/provider/connect', function () {
+    return view('provider.connect');
+})->name('connect');
 
 Route::get('/aboutus', function () {
     return view('aboutus');
-});
+})->name('aboutus');
 
-Route::get('/useraccount', function () {
-    return view('user-account');
-});
-
-Route::get('/provideraccount', function () {
-    return view('provider-account');
-});
-
-Route::get('/registerform', function () {
-    return view('auth/register');
-});
-
-Route::get('/loginform', function () {
-    return view('auth/login');
-});
-
-Route::get('/contactform', function () {
+Route::get('/contact', function () {
     return view('contact');
-});
-
-Route::get('/registerproperty', function () {
-    return view('register-property');
-});
-
-Route::get('/headerfooter', function () {
-    return view('templates/headerAndFooterTemplate');
-});
-
-Route::get('/homepage', function () {
-    return view('homepage');
-});
-
-Route::get('/footer', function () {
-    return view('/mytemplatefooter');
-});
-
-
-Route::get('/description', function () {
-    return view('/description');
-});
-
+})->name('contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 
+// property category pages
+Route::prefix('categories')->name('categories.')->group(function () {
+    Route::get('/wedding', [PropertiesController::class, 'get_data_wedding'])->name('wedding');
 
-Route::get('/apitest', [TestController::class, 'test']);
+    Route::get('/birthday', [PropertiesController::class, 'get_data_birthday'])->name('birthday');
+
+    Route::get('/photoshoot', [PropertiesController::class, 'get_data_photoshoot'])->name('photoshoot');
+
+    Route::get('/photography', [PropertiesController::class, 'get_data_photography'])->name('photography');
+
+    Route::get('/music', [PropertiesController::class, 'get_data_music'])->name('music');
+});
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+require __DIR__ . '/settings.php';
+require __DIR__ . '/provider.php';

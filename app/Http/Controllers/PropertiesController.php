@@ -15,6 +15,12 @@ class PropertiesController extends Controller
     //     return view('homepage', ['properties' => $properties]);
     // }
 
+    public function show($id)
+    {
+        $properties = Properties::find($id);
+        return view('/descriptiondesk', ['property' => $properties]);
+    }
+
     public function get_data_wedding()
     {
         $properties = Properties::select(

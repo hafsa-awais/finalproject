@@ -25,9 +25,13 @@ Route::get('/loginform', function () {
     return view('auth/login');
 });
 
-Route::get('/contactform', function () {
-    return view('contact');
-})->name('contact');
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->name('aboutus');
+
+Route::get('/description', function () {
+    return view('description');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

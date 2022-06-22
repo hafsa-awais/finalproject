@@ -36,4 +36,4 @@ window.onload = (e) => {
     );
 };
 
-
+console.log(e.detail.date);

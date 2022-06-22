@@ -16,6 +16,7 @@ use App\Http\Controllers\PropertiesController;
 // Route::get('/', function () { return view('homepage');})->name('homepage');
 
 Route::get('/', [PropertiesController::class, 'index'])->name('homepage');
+Route::get('descriptiondesk/{id}', [PropertiesController::class, 'show'])->name('descriptiondesk');
 
 Route::get('/provider/connect', function () {
     return view('provider.connect');
@@ -29,8 +30,8 @@ Route::get('/aboutus', function () {
     return view('aboutus');
 })->name('aboutus');
 
-Route::get('/description', function () {
-    return view('description');
+Route::get('/descriptionmobi', function () {
+    return view('descriptionmobi');
 });
 
 Route::get('/dashboard', function () {

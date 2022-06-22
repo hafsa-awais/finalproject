@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertiesController;
+use App\Http\Controllers\ContactController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +15,6 @@ use App\Http\Controllers\PropertiesController;
 |
 */
 
-// Route::get('/', function () { return view('homepage');})->name('homepage');
-
 Route::get('/', [PropertiesController::class, 'index'])->name('homepage');
 
 Route::get('/provider/connect', function () {
@@ -25,9 +25,15 @@ Route::get('/aboutus', function () {
     return view('aboutus');
 })->name('aboutus');
 
+Route::get('/description', [PropertiesController::class, 'show'])->name('description');
+
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::get('/contact-form', [App\Http\Controllers\ContactController::class, 'contactForm'])->name('contact-form');
+Route::post('/contact-form', [App\Http\Controllers\ContactController::class, 'storeContactForm'])->name('contact-form.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

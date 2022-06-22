@@ -48,6 +48,7 @@ Route::post('/registration', [RegisteredUserController::class, 'register']);
 
 
 Route::get('/', [PropertiesController::class, 'index'])->name('homepage');
+Route::get('descriptiondesk/{id}', [PropertiesController::class, 'show'])->name('descriptiondesk');
 
 Route::get('single/{id}', [PropertiesController::class, 'show'])->name('single');
 
@@ -63,11 +64,8 @@ Route::get('/aboutus', function () {
     return view('aboutus');
 })->name('aboutus');
 
-Route::get('/contact', function () {
-    return view('contact');})
-->name('contact');
-Route::get('/description', function () {
-    return view('description');
+Route::get('/descriptionmobi', function () {
+    return view('descriptionmobi');
 });
 
 Route::get('/registerproperty', function () {

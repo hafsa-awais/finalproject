@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/styledescriptionMobi.css') }}">
 @extends('templates/headerAndFooterTemplate')
 
 

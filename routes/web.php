@@ -29,6 +29,10 @@ Route::get('/transaction', function () {
     return view('transaction');
 });
 
+Route::get('/description', function () {
+    return view('description');
+});
+
 Route::get('/useraccount', function () {
     return view('user-account');
 });

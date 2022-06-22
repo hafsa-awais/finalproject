@@ -49,19 +49,12 @@
         
         <div class="picturecontainerbody">
 
-        @foreach ($properties as $property)
 
         <div class="pictureboxes">
             
-            <object data={{$property->coverphoto}} width=100% height=100%  class="proppics"></object><br>
-            <p class="proptext"><strong>Place: </strong>{{$property->title}}<br>
-            <p class="proptext"><strong>{{$property->address}}
-            <strong>{{$property->price}}</strong> / day <br>
-            <strong>{{$property->locality}}</strong><br>
-            </p>
-        </div>
+
     
-        @endforeach
+
         </div>
 
     
@@ -70,21 +63,7 @@
         </div>
 
 
-        <div class="picturecontainer2body">
-        @foreach ($properties as $property)
-        
-        <div class="pictureboxes">
-            
-            <object data={{$property->coverphoto}} width=100% height=100%  class="proppics"></object><br>
-            <p class="proptext"><strong>Place: </strong>{{$property->title}}<br>
-            <p class="proptext"><strong>{{$property->address}}
-            <strong>{{$property->price}}</strong> / day <br>
-            <strong>{{$property->locality}}</strong><br>
-            </p>
-        </div>
-    
-        @endforeach
-        </div>
+ 
 
 <!--
         <div class="pictureboxes">

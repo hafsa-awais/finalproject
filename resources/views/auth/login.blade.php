@@ -15,7 +15,7 @@
 
 <!-- <h2>LOGIN</h2>
 <form action="" method="post">
-    @csrf
+   
     <input type="text" name="email"placeholder="email"><br>
     <input type="text" name="password"placeholder="password"><br>
     <input type="submit" value="Login">
@@ -35,7 +35,7 @@
 
                 <form class="mx-1 mx-md-4" action="" method="post">
 
-                  
+                   @csrf
                   <div class="d-flex flex-row align-items-center mb-4">
                   <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">

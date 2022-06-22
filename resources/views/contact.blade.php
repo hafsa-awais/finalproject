@@ -16,13 +16,12 @@
 </div>
 
 <!-- <form action="" method="post">
-    @csrf
+    
     <input type="text" name="first_name"placeholder="first name"><br>
     <input type="text" name="last_name"placeholder="last name"><br>
     <input type="text" name="email"placeholder="email"><br>
     <input type="text" name="phone"placeholder="Contact no."><br>
-    <input type="text" 
-    name="description" placeholder="Type your message here"><br>
+    <input type="text" name="description" placeholder="Type your message here"><br>
     <input type="submit" value="Login">    
 </form> -->
 
@@ -40,7 +39,7 @@
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Contact Us</p>
 
                 <form class="mx-1 mx-md-4" action="" method="post">
-
+                  @csrf
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
@@ -53,7 +52,7 @@
                   <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" name="last_name" id="form3Example3c" class="form-control" />
+                      <input type="text" name="last_name" id="form3Example3c" class="form-control" />
                       <label class="form-label" for="form3Example3c">Lastname</label>
                     </div>
                   </div>

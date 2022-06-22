@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\RegisteredPropertyController;
 use App\Http\Controllers\PropertiesController;
-
+use App\Http\Controllers\Auth\RegisteredProviderController;
 use App\Http\Controllers\TestController;
 
 /*
@@ -31,6 +31,13 @@ Route::get('/photography', [PropertiesController::class, 'get_data_photography']
 Route::get('/music', [PropertiesController::class, 'get_data_music'])->name('music');
 
 
+Route::get('property/{id}', [PropertiesController::class, 'show'])->name('property');
+
+
+Route::get('search', [PropertiesController::class, 'get_search'])->name('search');
+
+
+Route::get('provider-account', [RegisteredProviderController::class, 'show']);
 
 
 Route::get('/registration', [RegisteredUserController::class, 'register']);
@@ -39,7 +46,7 @@ Route::post('/registration', [RegisteredUserController::class, 'register']);
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
 
 Route::get('/registerform', function () {

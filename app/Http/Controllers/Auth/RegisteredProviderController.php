@@ -59,6 +59,11 @@ class RegisteredProviderController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+    public function show()
+    {
+        return view('provider-account');
+    }
+
 
 }
 

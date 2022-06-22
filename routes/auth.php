@@ -58,7 +58,7 @@ Route::middleware('guest')->group(function () {
 
 
     Route::get('contact',[ContactFormController::class, 'show'])->name('contact');
-    Route::post('contact', [AuthenticatedSessionController::class, 'store']);
+    Route::post('contact', [ContactFormController::class, 'store']);
 
 
 

@@ -91,5 +91,23 @@ class PropertiesController extends Controller
 
             return view('music', ['properties' => $properties]);  
     }
+    public function show($id)
+    {
+        $properties= Properties::find($id);
+        return view('single', ['property' => $properties]);
+    }
+    
+    public function get_search()
+    {
+        $properties = Properties::select(
+            "properties.locality"
+        )
+        ->where ('properties.locality', 'like', '%keyword%')
+        ->orderby ('properties.locality')
+        ->get();
+        dd($properties);
+    }
+    
+    
     
 }

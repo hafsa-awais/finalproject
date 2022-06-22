@@ -111,9 +111,6 @@ class PropertiesController extends Controller
         ->paginate(8);
         dd($properties);
 
-        return view('projects.')
-    }
-    
-    
-    
+        return view('projects.');
+    }   
 }

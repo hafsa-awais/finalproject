@@ -48,6 +48,8 @@ Route::post('/registration', [RegisteredUserController::class, 'register']);
 
 Route::get('/', [PropertiesController::class, 'index'])->name('homepage');
 
+Route::get('single/{id}', [PropertiesController::class, 'show'])->name('single');
+
 Route::get('/provider/connect', function () {
     return view('provider.connect');
 })->name('connect');

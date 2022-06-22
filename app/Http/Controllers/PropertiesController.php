@@ -97,7 +97,7 @@ class PropertiesController extends Controller
         return view('single', ['property' => $properties]);
     }
     
-    public function search(Request $request)
+    /*public function search(Request $request)
     {
         $properties = Properties::where([
             [function($query) use ($request){
@@ -112,5 +112,8 @@ class PropertiesController extends Controller
         dd($properties);
 
         return view('projects.');
-    }   
+    }*/
+    
+    
+    
 }

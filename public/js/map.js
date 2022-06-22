@@ -1,9 +1,8 @@
-// default map coordinates and zoom
+// Adding a Map
 let mapOptions = {
     center: [49.815273, 6.129583],
     zoom: 10
 }
-
 let map = new L.map('map', mapOptions);
 let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 map.addLayer(layer);
@@ -11,11 +10,9 @@ let customIcon = {
     iconUrl: "https://cdn-icons-png.flaticon.com/128/1301/1301421.png",
     iconSize: [30, 30]
 }
-
-// map marker
 let myIcon = L.icon(customIcon);
 
-// find markers on click
+// Find markers on click
 const searchAddress = searchBtn.addEventListener("click", () => {
     const streetnumValue = streetnumInput.value;
     const streetValue = streetInput.value;
@@ -36,7 +33,6 @@ const searchAddress = searchBtn.addEventListener("click", () => {
             draggable: false,
             icon: myIcon
         }
-        
 // Show marker on the map
         let marker1 = new L.Marker([Longitude, Latitude], iconOptions1);
         marker1.addTo(map)

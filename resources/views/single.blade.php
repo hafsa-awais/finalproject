@@ -1,3 +1,4 @@
+
 @extends('templates/headerAndFooterTemplate')
 @section('title', "{{$property->title}}")
 @section('content')
@@ -10,7 +11,7 @@
                 <div class="card-body">
                     <h5 class="card-title">special offer 10% discount</h5>
                     <p class="card-text">With supporting text below as a natural lead-in.</p>
-                    <a href="#" class="btn btn-primary">BOOk NOW</a>
+                    <a href="#" class="btn btn-primary">BOOK NOW</a>
                 </div>
             </div>
 

@@ -21,11 +21,11 @@ Route::get('/provider/connect', function () {
     return view('provider.connect');
 })->name('connect');
 
-Route::get('/aboutus', function () {
-    return view('aboutus');
-})->name('aboutus');
+Route::get('/loginform', function () {
+    return view('auth/login');
+});
 
-Route::get('/contact', function () {
+Route::get('/contactform', function () {
     return view('contact');
 })->name('contact');
 

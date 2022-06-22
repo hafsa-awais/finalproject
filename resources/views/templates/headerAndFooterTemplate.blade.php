@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{ asset('css/stylefooter.css') }}">
   <link rel="stylesheet" href="{{ asset('css/styleaboutus.css') }}">
   <link rel="stylesheet" href="{{ asset('css/styledescription.css') }}"  />
+  <link rel="stylesheet" href="{{ asset('css/styletransaction.css') }}">
   <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   rel="stylesheet"

@@ -44,7 +44,7 @@
     }
 
     .headersection {
-        position: fixed;
+        position: sticky;
         top: 0;
         font-family: "Montserrat", serif;
         margin: 0;

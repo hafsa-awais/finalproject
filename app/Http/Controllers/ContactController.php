@@ -15,7 +15,7 @@ class ContactController extends Controller
      */
     public function contactForm()
     {
-        return view('contactForm');
+        return view('contact.contactForm');
     }
 
     /**
@@ -45,7 +45,7 @@ class ContactController extends Controller
             'content' => $input['content'],
         ), function($message) use ($request){
             $message->from($request->email);
-            $message->to('pbrown.code@gmail.com', 'Admin')->subject($request->get('subject'));
+            $message->to('p.brown@tutanota.com', 'Admin')->subject($request->get('subject'));
         });
 
         return redirect()->back()->with(['success' => 'Message submitted! We will get in touch with you as soon as possible. ']);

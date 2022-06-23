@@ -31,7 +31,7 @@
 
 
 
-                                    <form class="mx-1 mx-md-4" action="{{ route('contact-form.store') }}" method="post">
+                                    <form class="mx-1 mx-md-4" action="{{ route('contact.contact-form.store') }}" method="post">
                                         @csrf
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                                    <img src="assets/contactus.jpg" class="img-fluid" alt="Sample image">
+                                    <img src="{{ asset('aassets/contactus.jpg') }}" class="img-fluid">
 
                                 </div>
                             </div>

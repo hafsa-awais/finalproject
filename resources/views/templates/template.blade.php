@@ -119,7 +119,7 @@
                 <x-application-logo />
             </div>
             <div class="searchcontainerbody">
-                <form action="{{ route('search') }}" method="GET" class="searchformbody">
+                {{-- <form action="{{ route('search') }}" method="GET" class="searchformbody"> --}}
                     <input type="text" name="search" placeholder="Search your desired location" class="search-fieldbody" required /><span class="input-group-btn">
                     <button type="submit" class="search-buttonbody">
                         <img src="{{ asset('assets/search.png') }}">
@@ -212,7 +212,7 @@
                             <a href="#." class="footerbox-init-description">Carrieres</a>
                         </div>
                         <div class="footerbox-init">
-                            <a href="" class="footerbutton">Send us a message</a>
+                            <a href="{{ route('contact.contact') }}" class="footerbutton">Contact us</a>
                         </div>
                     </div>
                 </div>

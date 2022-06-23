@@ -24,6 +24,7 @@ Route::get('/wedding', [PropertiesController::class, 'get_data_wedding'])->name(
 Route::get('/', [PropertiesController::class, 'index'])->name('homepage');
 
 Route::get('/descriptiondesk/{id}', [PropertiesController::class, 'show'])->name('descriptiondesk');
+Route::get('/descriptionmobi/{id}', [PropertiesController::class, 'bla'])->name('descriptionmobi');
 
 
 Route::get('/upload-file', [PropertiesController::class, 'upload_file']);

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ asset('css/styledescriptionDesk.css') }}">
 
-@extends('templates/headerAndFooterTemplate')
+@extends('templates/template')
 @section('title', "{{$property->title}}")
 @section('content')
 
@@ -17,7 +17,7 @@
             </div>
 
             <div class="map-dis">
-                <!-- <p>
+                <p>
                 <input type="text" id="streetnumInput" placeholder="Street number:">
                 <input type="text" id="streetInput" placeholder="Street:">
                 <input type="text" id="postcodeInput" placeholder="Post code:">
@@ -25,7 +25,7 @@
                 <button type="button" id="searchBtn">Search</button>
             </p>
             <p>54, Avenue Gaston Diderich 1420 Luxembourg</p>
-            <div id="addresscontainer"></div> -->
+            <div id="addresscontainer"></div>
                 <div id="map" style="width: 250px; height: 250px"></div>
             </div>
         </div>

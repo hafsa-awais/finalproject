@@ -29,7 +29,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
 
     <!-- particles -->
-    <link rel="stylesheet" href="assets/particles.js-2.0.0/demo/css/style.css" />
+    <link rel="stylesheet" href="{{ asset('assets/particles.js-2.0.0/demo/css/style.css') }}" />
 
     <!-- animation icons -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -227,8 +227,8 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
 
         <!-- particles -->
-        <script src="assets/particles.js-2.0.0/particles.js"></script>
-        <script src="assets/particles.js-2.0.0/demo/js/app.js"></script>
+        <script src="{{ asset('assets/particles.js-2.0.0/particles.js') }}"></script>
+        <script src="{{ asset('assets/particles.js-2.0.0/demo/js/app.js') }}"></script>
 
         <!-- calendar -->
         <script src="{{ asset('js/calender.js') }}"></script>

@@ -21,7 +21,7 @@
             <div class="iconscontainer">
                 <div class="categoryicons">
                     <i class="fas fa-2x fa-glass-cheers"></i>
-                    <p>Birthday Venues</p>
+                    <p>Wedding Venues</p>
                 </div>
                 <div class="categoryicons">
                     <i class="fas fa-2x fa-birthday-cake"></i>
@@ -51,7 +51,7 @@
             <div class="picturecontainerbody">
                 @foreach ($properties as $property)
                     <div class="pictureboxes">
-                        <object data={{ $property->coverphoto }} width=100% height=100% class="proppics"></object><br>
+                        <object data={{ asset("$property->coverphoto") }} width=100% height=100% class="proppics"></object><br>
                         <p class="proptext"><strong>Place:</strong>{{ $property->title }}<br>
                         <p class="proptext"><strong>{{ $property->address }}</strong>
                             <strong>{{ $property->price }}</strong> / day <br>

@@ -8,6 +8,11 @@ use App\Http\Controllers\PropertiesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SearchController;
 
+use Illuminate\Http\Request;
+use App\Models\Properties;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,9 +35,6 @@ Route::get('/description', [PropertiesController::class, 'show'])->name('descrip
 Route::get('/upload-file', [PropertiesController::class, 'upload_file']);
 Route::post('/upload-file', [PropertiesController::class, 'upload_file_submit']);
 
-Route::get('/1', [SearchController::class, 'index']);
-Route::get('/search', [SearchController::class, 'search']);
-
 // landing page for provider
 Route::get('/provider/connect', function () {
     return view('provider.connect');
@@ -45,11 +47,10 @@ Route::get('/aboutus', function () {
 
 // search
 // Route::get('/search', [PropertiesController::class, 'search'])->name('search');
+// Route::get('/search', [SearchController::class, 'index']);
+// Route::get('/1', [SearchController::class, 'index']);
+// Route::get('/search', [SearchController::class, 'search']);
 
-
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
 
 // contact form pages
 Route::prefix('contact')->name('contact.')->group(function () {
@@ -74,3 +75,6 @@ Route::prefix('categories')->name('categories.')->group(function () {
 require __DIR__ . '/auth.php';
 require __DIR__ . '/settings.php';
 require __DIR__ . '/provider.php';
+
+
+

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->float('size');
             $table->float('price');
+            $table->float('nopersons');
             $table->string('houseno', 5);
             $table->string('street', 60);
             $table->string('postcode', 4);

@@ -19,9 +19,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    <!-- font-awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 
@@ -29,14 +26,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
 
     <!-- particles -->
-    <link rel="stylesheet" href="assets/particles.js-2.0.0/demo/css/style.css" />
+    <link rel="stylesheet" href="{{ asset('assets/particles.js-2.0.0/demo/css/style.css') }} " />
 
-    <!-- animation icons -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <!-- tempus dominus datepicker styles -->
+    <link href="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css" rel="stylesheet"
+        crossorigin="anonymous">
 
-    <!-- OSM with leaflet -->
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 </head>
 
@@ -70,11 +70,11 @@
             <div class="collapse" id="navbarToggleExternalContent3">
                 <div class="bg-light shadow-3 p-4">
                     <button onclick="location.href='{{ route('connect') }}'" type="button"
-                    class="btn btn-link btn-block border-bottom m-0">Provider</button>
+                        class="btn btn-link btn-block border-bottom m-0">Provider</button>
                     <button onclick="location.href='{{ route('register') }}'" type="button"
-                    class="btn btn-link btn-block border-bottom m-0">Register</button>
+                        class="btn btn-link btn-block border-bottom m-0">Register</button>
                     <button onclick="location.href='{{ route('login') }}'" type="button"
-                    class="btn btn-link btn-block m-0">Log In</button>
+                        class="btn btn-link btn-block m-0">Log In</button>
                 </div>
             </div>
         @endguest
@@ -86,11 +86,11 @@
         <div class="collapse" id="navbarToggleExternalContent3">
             <div class="bg-light shadow-3 p-4">
                 <button onclick="location.href='{{ route('dashboard') }}'" type="button"
-                class="btn btn-link btn-block border-bottom m-0">User account</button>
+                    class="btn btn-link btn-block border-bottom m-0">User account</button>
                 <button onclick="location.href='{{ route('settings.profile.index') }}'" type="button"
-                class="btn btn-link btn-block border-bottom m-0">Edit user information</button>
+                    class="btn btn-link btn-block border-bottom m-0">Edit user information</button>
                 <button onclick="location.href='{{ route('logout') }}'" type="button"
-                class="btn btn-link btn-block m-0">Logout</button>
+                    class="btn btn-link btn-block m-0">Logout</button>
             </div>
         </div>
     @endauth
@@ -101,11 +101,11 @@
         <div class="collapse" id="navbarToggleExternalContent3">
             <div class="bg-light shadow-3 p-4">
                 <button onclick="location.href='{{ route('provider.dashboard') }}'" type="button"
-                class="btn btn-link btn-block border-bottom m-0">User account</button>
+                    class="btn btn-link btn-block border-bottom m-0">User account</button>
                 {{-- <button onclick="location.href='{{ route('settings.profile.index') }}'" type="button"
                 class="btn btn-link btn-block border-bottom m-0">Edit user information</button> --}}
                 <button onclick="location.href='{{ route('provider.logout') }}'" type="button"
-                class="btn btn-link btn-block m-0">Logout</button>
+                    class="btn btn-link btn-block m-0">Logout</button>
             </div>
         </div>
     @endauth
@@ -120,15 +120,16 @@
             </div>
             <div class="searchcontainerbody">
                 {{-- <form action="{{ route('search') }}" method="GET" class="searchformbody"> --}}
-                    <input type="text" name="search" placeholder="Search your desired location" class="search-fieldbody" required /><span class="input-group-btn">
+                <input type="text" name="search" placeholder="Search your desired location" class="search-fieldbody"
+                    required /><span class="input-group-btn">
                     <button type="submit" class="search-buttonbody">
                         <img src="{{ asset('assets/search.png') }}">
                     </button>
-               
-                </form>
+
+                    </form>
             </div>
 
-       
+
             <ul>
                 <li class="headernavlist">
                     <a href="{{ route('homepage') }}" class="headernav_a">Home</a>
@@ -231,10 +232,10 @@
         <script src="assets/particles.js-2.0.0/demo/js/app.js"></script>
 
         <!-- calendar -->
-        <script src="{{ asset('js/calender.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/calender.js') }}"></script>
 
         <!-- OSM & geoportail APIs -->
-        <script src="{{ asset('js/map.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/map.js') }}"></script>
 
         <!-- bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -249,14 +250,14 @@
         <script src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/tempus-dominus.js"
             crossorigin="anonymous"></script>
 
-        <!-- tempus dominus datepicker styles -->
-        <link href="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css"
-            rel="stylesheet" crossorigin="anonymous">
+        <!-- animation icons -->
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
-        <!-- font awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- OSM with leaflet -->
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+
 
 </body>
 

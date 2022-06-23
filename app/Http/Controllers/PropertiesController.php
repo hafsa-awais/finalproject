@@ -21,21 +21,21 @@ class PropertiesController extends Controller
         return view('descriptiondesk', ['property' => $properties]);
     }
 
-    public function search(Request $request)
+    //public function search(Request $request)
 
-    {
+    //{
         // $search = $request->input('search');
-        $properties = Properties::query()
+        //$properties = Properties::query()
         
         // ->where('locality', 'LIKE', '%{$search}%')
         // ->get();
 
             // if(count($properties) > 0)
-                return view('/search', ['properties' => $properties]);
+               // return view('/search', ['properties' => $properties]);
             // else 
             //     return view ('search')->withMessage('No properties found in this location. Try to search again!');
 
-    }
+    //}
     
 
 

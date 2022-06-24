@@ -6,7 +6,6 @@
 
     <div>
         <div class="card-dis">
-
             <div class="card">
                 <h5 class="card-header" data-price="{{($property->price)}}">{{number_format($property->price)}} €/day</h5>
                 <div class="card-body">
@@ -88,7 +87,6 @@
         <!-- Basic explanation -->
         <div class="main-dis">
             <h3>
-                
                 {{$property->locality}}
             </h3>
             <p>
@@ -101,20 +99,6 @@
             </p>
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="container3-dis">
         <div class="calendar-dis">
             <div class="calendar-dis">
@@ -131,9 +115,6 @@
                             </span>
                         </div>
                     </div>
-
-
-
                     <div class='col-sm-6'>
                         <label for='linkedPickers2Input' class='form-label'>To</label>
                         <div class='input-group log-event' id='linkedPickers2' data-td-target-input='nearest' data-td-target-toggle='nearest'>
@@ -152,7 +133,6 @@
         <div class="reviews-dis">
 
             <section class=" gradient-custom">
-
                 <div class="col col-l-10">
                     <div class="card">
                         <div class="card-body py-5">
@@ -269,7 +249,6 @@
                         </div>
                     </div>
                 </div>
-
             </section>
         </div>
     </div>

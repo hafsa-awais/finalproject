@@ -50,3 +50,4 @@ window.onload = (e) => {
         }
     );
 };
+console.log('griha')

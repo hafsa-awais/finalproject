@@ -16,8 +16,7 @@
     <link rel="stylesheet" href="{{ asset('css/dropdown.css') }}">
 
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <!-- font-awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -36,12 +35,11 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
     <!-- OSM with leaflet -->
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
 </head>
 
 <body>
-
     <!-- HEADER -->
 
     <!-- mobile version -->
@@ -56,9 +54,7 @@
                     </button>
                 </form>
             </div>
-            <button class="navbar-toggler ms-auto" type="button" data-mdb-toggle="collapse"
-                data-mdb-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent3"
-                aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler ms-auto" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent3" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -66,48 +62,40 @@
 
     <!-- if not logged in (guest auth only works with (default) user guard)-->
     @guest
-        @guest('provider')
-            <div class="collapse" id="navbarToggleExternalContent3">
-                <div class="bg-light shadow-3 p-4">
-                    <button onclick="location.href='{{ route('connect') }}'" type="button"
-                    class="btn btn-link btn-block border-bottom m-0">Provider</button>
-                    <button onclick="location.href='{{ route('register') }}'" type="button"
-                    class="btn btn-link btn-block border-bottom m-0">Register</button>
-                    <button onclick="location.href='{{ route('login') }}'" type="button"
-                    class="btn btn-link btn-block m-0">Log In</button>
-                </div>
-            </div>
-        @endguest
+    @guest('provider')
+    <div class="collapse" id="navbarToggleExternalContent3">
+        <div class="bg-light shadow-3 p-4">
+            <button onclick="location.href='{{ route('connect') }}'" type="button" class="btn btn-link btn-block border-bottom m-0">Provider</button>
+            <button onclick="location.href='{{ route('register') }}'" type="button" class="btn btn-link btn-block border-bottom m-0">Register</button>
+            <button onclick="location.href='{{ route('login') }}'" type="button" class="btn btn-link btn-block m-0">Log In</button>
+        </div>
+    </div>
+    @endguest
     @endguest
 
 
     {{-- if logged in as user --}}
     @auth('web')
-        <div class="collapse" id="navbarToggleExternalContent3">
-            <div class="bg-light shadow-3 p-4">
-                <button onclick="location.href='{{ route('dashboard') }}'" type="button"
-                class="btn btn-link btn-block border-bottom m-0">User account</button>
-                <button onclick="location.href='{{ route('settings.profile.index') }}'" type="button"
-                class="btn btn-link btn-block border-bottom m-0">Edit user information</button>
-                <button onclick="location.href='{{ route('logout') }}'" type="button"
-                class="btn btn-link btn-block m-0">Logout</button>
-            </div>
+    <div class="collapse" id="navbarToggleExternalContent3">
+        <div class="bg-light shadow-3 p-4">
+            <button onclick="location.href='{{ route('dashboard') }}'" type="button" class="btn btn-link btn-block border-bottom m-0">User account</button>
+            <button onclick="location.href='{{ route('settings.profile.index') }}'" type="button" class="btn btn-link btn-block border-bottom m-0">Edit user information</button>
+            <button onclick="location.href='{{ route('logout') }}'" type="button" class="btn btn-link btn-block m-0">Logout</button>
         </div>
+    </div>
     @endauth
 
 
     {{-- if logged in as provider --}}
     @auth('provider')
-        <div class="collapse" id="navbarToggleExternalContent3">
-            <div class="bg-light shadow-3 p-4">
-                <button onclick="location.href='{{ route('provider.dashboard') }}'" type="button"
-                class="btn btn-link btn-block border-bottom m-0">User account</button>
-                {{-- <button onclick="location.href='{{ route('settings.profile.index') }}'" type="button"
-                class="btn btn-link btn-block border-bottom m-0">Edit user information</button> --}}
-                <button onclick="location.href='{{ route('provider.logout') }}'" type="button"
-                class="btn btn-link btn-block m-0">Logout</button>
-            </div>
+    <div class="collapse" id="navbarToggleExternalContent3">
+        <div class="bg-light shadow-3 p-4">
+            <button onclick="location.href='{{ route('provider.dashboard') }}'" type="button" class="btn btn-link btn-block border-bottom m-0">User account</button>
+            {{-- <button onclick="location.href='{{ route('settings.profile.index') }}'" type="button"
+            class="btn btn-link btn-block border-bottom m-0">Edit user information</button> --}}
+            <button onclick="location.href='{{ route('provider.logout') }}'" type="button" class="btn btn-link btn-block m-0">Logout</button>
         </div>
+    </div>
     @endauth
     <!--/end mobile version-->
 
@@ -121,52 +109,49 @@
             <div class="searchcontainerbody">
                 <form action="{{ route('search') }}" method="GET" class="searchformbody">
                     <input type="text" name="search" placeholder="Search your desired location" class="search-fieldbody" required /><span class="input-group-btn">
-                    <button type="submit" class="search-buttonbody">
-                        <img src="{{ asset('assets/search.png') }}">
-                    </button>
-               
+                        <button type="submit" class="search-buttonbody">
+                            <img src="{{ asset('assets/search.png') }}">
+                        </button>
+
                 </form>
             </div>
 
-       
+
             <ul>
                 <li class="headernavlist">
                     <a href="{{ route('homepage') }}" class="headernav_a">Home</a>
                     <a href="{{ route('aboutus') }}" class="headernav_a">About Us</a>
                     <!-- if not logged in (guest auth only works with (default) user guard)-->
                     @guest
-                        @guest('provider')
-                            <button onclick="location.href='{{ route('connect') }}'" type="button"
-                                class="headerbtn headerregister">Provider</button>
-                            <button onclick="location.href='{{ route('register') }}'" type="button"
-                                class="headerbtn headerregister">Register</button>
-                            <button onclick="location.href='{{ route('login') }}'" type="button"
-                                class="headerbtn headerlogin">Log In</button>
-                        @endguest
+                    @guest('provider')
+                    <button onclick="location.href='{{ route('connect') }}'" type="button" class="headerbtn headerregister">Provider</button>
+                    <button onclick="location.href='{{ route('register') }}'" type="button" class="headerbtn headerregister">Register</button>
+                    <button onclick="location.href='{{ route('login') }}'" type="button" class="headerbtn headerlogin">Log In</button>
+                    @endguest
                     @endguest
 
                     {{-- if logged in as user --}}
                     @auth('web')
-                        <div class="dropdown">
-                            <button class="btn dashboard">{{ Auth::user()->first_name }}</button>
-                            <div class="dropdown-content">
-                                <a href="{{ route('dashboard') }}">User account</a>
-                                <a href="{{ route('settings.profile.index') }}">Edit user information</a>
-                                <a href="{{ route('logout') }}">Logout</a>
-                            </div>
+                    <div class="dropdown">
+                        <button class="btn dashboard">{{ Auth::user()->first_name }}</button>
+                        <div class="dropdown-content">
+                            <a href="{{ route('dashboard') }}">User account</a>
+                            <a href="{{ route('settings.profile.index') }}">Edit user information</a>
+                            <a href="{{ route('logout') }}">Logout</a>
                         </div>
+                    </div>
                     @endauth
 
                     {{-- if logged in as provider --}}
                     @auth('provider')
-                        <div class="dropdown">
-                            <button class="btn dashboard">{{ Auth::guard('provider')->user()->first_name }}</button>
-                            <div class="dropdown-content">
-                                <a href="{{ route('provider.dashboard') }}">User account</a>
-                                {{-- <a href="{{ route('settings.profile.index') }}">Edit user information</a> --}}
-                                <a href="{{ route('provider.logout') }}">Logout</a>
-                            </div>
+                    <div class="dropdown">
+                        <button class="btn dashboard">{{ Auth::guard('provider')->user()->first_name }}</button>
+                        <div class="dropdown-content">
+                            <a href="{{ route('provider.dashboard') }}">User account</a>
+                            {{-- <a href="{{ route('settings.profile.index') }}">Edit user information</a> --}}
+                            <a href="{{ route('provider.logout') }}">Logout</a>
                         </div>
+                    </div>
                     @endauth
                 </li>
             </ul>
@@ -180,11 +165,11 @@
         <main class="content">
             {{-- validation errors --}}
             @if ($errors->any())
-                <div class="alert danger">
-                    @foreach ($errors->all() as $error)
-                        <li style="color: red"> {{ $error }}</li>
-                    @endforeach
-                </div>
+            <div class="alert danger">
+                @foreach ($errors->all() as $error)
+                <li style="color: red"> {{ $error }}</li>
+                @endforeach
+            </div>
             @endif
 
             @yield('content')
@@ -237,8 +222,7 @@
         <script src="{{ asset('js/map.js') }}"></script>
 
         <!-- bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
         </script>
 
         <!-- popperjs positioning engine -->
@@ -246,17 +230,13 @@
         </script>
 
         <!-- tempus dominus datepicker -->
-        <script src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/tempus-dominus.js"
-            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/tempus-dominus.js" crossorigin="anonymous"></script>
 
         <!-- tempus dominus datepicker styles -->
-        <link href="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css"
-            rel="stylesheet" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css" rel="stylesheet" crossorigin="anonymous">
 
         <!-- font awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </body>
 

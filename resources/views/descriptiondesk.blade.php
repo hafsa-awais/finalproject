@@ -9,14 +9,15 @@
         <div class="card">
             <h5 class="card-header" data-price="{{($property->price)}}">{{number_format($property->price)}} €/day</h5>
             <div class="card-body">
-                <h5 class="card-title">special offer 10% discount</h5>
+                <h5 class="card-title">Total price</h5>
                 <p class="card-text"></p>
+                <br>
                 <a href="#" class="btn btn-primary">BOOK NOW</a>
             </div>
         </div>
 
         <div class="map-dis">
-            <p>
+            <!-- <p>
                 <input type="text" id="streetnumInput" placeholder="Street number:">
                 <input type="text" id="streetInput" placeholder="Street:">
                 <input type="text" id="postcodeInput" placeholder="Post code:">
@@ -24,7 +25,7 @@
                 <button type="button" id="searchBtn">Search</button>
             </p>
             <p>54, Avenue Gaston Diderich 1420 Luxembourg</p>
-            <div id="addresscontainer"></div>
+            <div id="addresscontainer"></div> -->
             <div id="map" style="width: 250px; height: 250px"></div>
         </div>
     </div>
@@ -59,23 +60,23 @@
     <!-- Grid icons -->
     <div class="container2-dis">
         <div class="dancing-dis">
-            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qrvqpgft.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qrvqpgft.json" background="transparent" speed="0.5" style="width: 50px; height: 50px;" autoplay></lottie-player>
             <p class="dancingp-dis">DANCE FLOOR</p>
         </div>
         <div class="church-dis">
-            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_1gtlkp5r.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
+            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_1gtlkp5r.json" background="transparent" speed="0.5" style="width: 50px; height: 50px;" autoplay></lottie-player>
             <p class="churchp-dis">CHURCH</p>
         </div>
         <div class="scenery-dis">
-            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_h9qzdfz8.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
+            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_h9qzdfz8.json" background="transparent" speed="0.5" style="width: 50px; height: 50px;" autoplay></lottie-player>
             <p class="sceneryp-dis">DECOR</p>
         </div>
         <div class="fireworks-dis">
-            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_idbtqrtg.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_idbtqrtg.json" background="transparent" speed="0.5" style="width: 50px; height: 50px;" autoplay></lottie-player>
             <p class="fireworksp-dis">FIREWORKS</p>
         </div>
         <div class="karaoke-dis">
-            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_7rvfhjdu.json" background="transparent" speed="0.5" style="width: 70px; height: 70px;" autoplay></lottie-player>
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_7rvfhjdu.json" background="transparent" speed="0.5" style="width: 70px; height: 50px;" autoplay></lottie-player>
             <p class="karaokep-dis">DJ</p>
         </div>
 
@@ -89,12 +90,16 @@
         <h3>
             {{$property->locality}}
         </h3>
+  
         <p>
             {{$property->size}} m<sup>2</sup><br>
+            <br>
+            <br>
             @auth
             {{$property->houseno}} | {{$property->street}} |
             @endauth
             {{$property->postcode}} | {{$property->locality}} <br>
+            <br>
             {{$property->description}}
         </p>
 

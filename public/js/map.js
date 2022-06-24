@@ -13,31 +13,29 @@ let customIcon = {
 let myIcon = L.icon(customIcon);
 
 // Find markers on click
-const searchAddress = searchBtn.addEventListener("click", () => {
-    const streetnumValue = streetnumInput.value;
-    const streetValue = streetInput.value;
-    const postcodeValue = postcodeInput.value;
-    const localityValue = localityInput.value;
-    fetch("http://apiv3.geoportail.lu/geocode/search?num=" + streetnumValue + "&street=" + streetValue +
-        "&zip=" + postcodeValue + "&locality=" + localityValue).then((response) => {
-        return response.json();
-    }).then((data) => {
-        console.log(data);
-        let Latitude = data.results[0].geomlonlat.coordinates[0]
-        let Longitude = data.results[0].geomlonlat.coordinates[1]
 
-        console.log(Latitude, Longitude)
+// const searchAddress = searchBtn.addEventListener("click", () => {
+//     const streetnumValue = streetnumInput.value;
+//     const streetValue = streetInput.value;
+//     const postcodeValue = postcodeInput.value;
+//     const localityValue = localityInput.value;
+//     fetch("http://apiv3.geoportail.lu/geocode/search?num=" + streetnumValue + "&street=" + streetValue +
+//         "&zip=" + postcodeValue + "&locality=" + localityValue).then((response) => {
+//         return response.json();
+//     }).then((data) => {
+//         console.log(data);
+//         let Latitude = data.results[0].geomlonlat.coordinates[0]
+//         let Longitude = data.results[0].geomlonlat.coordinates[1]
 
-        let iconOptions1 = {
-            title: "Venus",
-            draggable: false,
-            icon: myIcon
-        }
-// Show marker on the map
-        let marker1 = new L.Marker([Longitude, Latitude], iconOptions1);
-        marker1.addTo(map)
-    });
-})
+//         console.log(Latitude, Longitude)
 
-
-console.log('griha')
+//         let iconOptions1 = {
+//             title: "Venus",
+//             draggable: false,
+//             icon: myIcon
+//         }
+// // Show marker on the map
+//         let marker1 = new L.Marker([Longitude, Latitude], iconOptions1);
+//         marker1.addTo(map)
+//     });
+// })

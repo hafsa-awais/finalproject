@@ -4,19 +4,19 @@
 @section('title', "{{$property->title}}")
 @section('content')
 
-    <div>
-        <div class="card-dis">
-            <div class="card">
-                <h5 class="card-header" data-price="{{($property->price)}}">{{number_format($property->price)}} €/day</h5>
-                <div class="card-body">
-                    <h5 class="card-title">special offer 10% discount</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">BOOK NOW</a>
-                </div>
+<div>
+    <div class="card-dis">
+        <div class="card">
+            <h5 class="card-header" data-price="{{($property->price)}}">{{number_format($property->price)}} €/day</h5>
+            <div class="card-body">
+                <h5 class="card-title">special offer 10% discount</h5>
+                <p class="card-text"></p>
+                <a href="#" class="btn btn-primary">BOOK NOW</a>
             </div>
+        </div>
 
-            <div class="map-dis">
-                <p>
+        <div class="map-dis">
+            <p>
                 <input type="text" id="streetnumInput" placeholder="Street number:">
                 <input type="text" id="streetInput" placeholder="Street:">
                 <input type="text" id="postcodeInput" placeholder="Post code:">
@@ -25,87 +25,87 @@
             </p>
             <p>54, Avenue Gaston Diderich 1420 Luxembourg</p>
             <div id="addresscontainer"></div>
-                <div id="map" style="width: 250px; height: 250px"></div>
-            </div>
+            <div id="map" style="width: 250px; height: 250px"></div>
         </div>
-        <!-- photos grid -->
-        <div class="container-dis">
-            <div class="name-dis"> {{$property->title}} </div>
-            <div class="img-dis">
-                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="10000">
-                            <img src={{asset($property->coverphoto)}}  class="d-block w-100" id="foto-dis" alt="...">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="2000">
-                            <img src={{asset($property->coverphoto)}}  class="d-block w-100" id="foto-dis" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src={{asset($property->coverphoto)}}  class="d-block w-100" id="foto-dis" alt="...">
-                        </div>
+    </div>
+    <!-- photos grid -->
+    <div class="container-dis">
+        <div class="name-dis"> {{$property->title}} </div>
+        <div class="img-dis">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src={{asset($property->coverphoto)}} class="d-block w-100" id="foto-dis" alt="...">
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src={{asset($property->coverphoto)}} class="d-block w-100" id="foto-dis" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src={{asset($property->coverphoto)}} class="d-block w-100" id="foto-dis" alt="...">
+                    </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div class="place-des"></div>
         </div>
-        <!-- Grid icons -->
-        <div class="container2-dis">
-            <div class="dancing-dis">
-                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qrvqpgft.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
-                <p class="dancingp-dis">DANCE FLOOR</p>
-            </div>
-            <div class="church-dis">
-                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_1gtlkp5r.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
-                <p class="churchp-dis">CHURCH</p>
-            </div>
-            <div class="scenery-dis">
-                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_h9qzdfz8.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
-                <p class="sceneryp-dis">DECOR</p>
-            </div>
-            <div class="fireworks-dis">
-                <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_idbtqrtg.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
-                <p class="fireworksp-dis">FIREWORKS</p>
-            </div>
-            <div class="karaoke-dis">
-                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_7rvfhjdu.json" background="transparent" speed="0.5" style="width: 70px; height: 70px;" autoplay></lottie-player>
-                <p class="karaokep-dis">DJ</p>
-            </div>
+        <div class="place-des"></div>
+    </div>
+    <!-- Grid icons -->
+    <div class="container2-dis">
+        <div class="dancing-dis">
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qrvqpgft.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
+            <p class="dancingp-dis">DANCE FLOOR</p>
+        </div>
+        <div class="church-dis">
+            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_1gtlkp5r.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
+            <p class="churchp-dis">CHURCH</p>
+        </div>
+        <div class="scenery-dis">
+            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_h9qzdfz8.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
+            <p class="sceneryp-dis">DECOR</p>
+        </div>
+        <div class="fireworks-dis">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_idbtqrtg.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
+            <p class="fireworksp-dis">FIREWORKS</p>
+        </div>
+        <div class="karaoke-dis">
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_7rvfhjdu.json" background="transparent" speed="0.5" style="width: 70px; height: 70px;" autoplay></lottie-player>
+            <p class="karaokep-dis">DJ</p>
+        </div>
 
-            <div class="catering-dis">
-                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_7tduzoyu.json" background="transparent" speed="0.5" style="width: 70px; height: 70px;" autoplay></lottie-player>
-                <p class="cateringp-dis">CATERING</p>
-            </div>
+        <div class="catering-dis">
+            <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_7tduzoyu.json" background="transparent" speed="0.5" style="width: 70px; height: 70px;" autoplay></lottie-player>
+            <p class="cateringp-dis">CATERING</p>
         </div>
-        <!-- Basic explanation -->
-        <div class="main-dis">
-            <h3>
-                {{$property->locality}}
-            </h3>
-            <p>
-               {{$property->size}} m<sup>2</sup><br>
-               @auth
-               {{$property->houseno}} |  {{$property->street}} | 
-               @endauth
-               {{$property->postcode}} | {{$property->locality}} <br> 
-               {{$property->description}}
-            </p>
+    </div>
+    <!-- Basic explanation -->
+    <div class="main-dis">
+        <h3>
+            {{$property->locality}}
+        </h3>
+        <p>
+            {{$property->size}} m<sup>2</sup><br>
+            @auth
+            {{$property->houseno}} | {{$property->street}} |
+            @endauth
+            {{$property->postcode}} | {{$property->locality}} <br>
+            {{$property->description}}
+        </p>
 
-        </div>
-        <div class="container3-dis">
+    </div>
+    <div class="container3-dis">
         <div class="calendar-dis">
             <div class="calendar-dis">
                 <div class='row'>
 
 
-                
+
                     <div class='col-sm-6'>
                         <label for='linkedPickers1Input' class='form-label'>From</label>
                         <div class='input-group log-event' id='linkedPickers1' data-td-target-input='nearest' data-td-target-toggle='nearest'>
@@ -253,7 +253,7 @@
         </div>
     </div>
 
-    </div>
+</div>
 
 
 @endsection

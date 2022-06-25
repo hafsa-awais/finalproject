@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="{{ asset('css/styleheader.css') }}">
     <link rel="stylesheet" href="{{ asset('css/stylefooter.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styleaboutus.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dropdown.css') }}">
 
     <!-- bootstrap -->

@@ -15,16 +15,18 @@ let myIcon = L.icon(customIcon);
 // Find markers on click
 
 
-const localityValue = document.getElementsByClassName("locality-des")[0].getAttribute('property-locality')
+const localityValue = document.getElementsByClassName("locality-des")[0].getAttribute('data-locality')
 const streetnumValue = document.getElementsByClassName("houseno-des")[0].getAttribute('data-houseno')
 const streetValue = document.getElementsByClassName("street-des")[0].getAttribute('data-street')
 const postcodeValue = document.getElementsByClassName("postcode-des")[0].getAttribute('data-postcode')
+
+
+console.log(localityValue)
 
     fetch("http://apiv3.geoportail.lu/geocode/search?num=" + streetnumValue + "&street=" + streetValue +
         "&zip=" + postcodeValue + "&locality=" + localityValue).then((response) => {
         return response.json();
     }).then((data) => {
-        console.log(data);
         let Latitude = data.results[0].geomlonlat.coordinates[0]
         let Longitude = data.results[0].geomlonlat.coordinates[1]
 

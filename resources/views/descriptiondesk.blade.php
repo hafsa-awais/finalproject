@@ -115,9 +115,6 @@
     <div class="calendar-dis">
         <div class="calendar-dis">
             <div class='row'>
-
-
-
                 <div class='col-sm-6'>
                     <label for='linkedPickers1Input' class='form-label'>From</label>
                     <div class='input-group log-event' id='linkedPickers1' data-td-target-input='nearest' data-td-target-toggle='nearest'>

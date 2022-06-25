@@ -19,9 +19,10 @@ return new class extends Migration
             $table->text('description');
             $table->float('size');
             $table->float('price');
-            $table->string('houseno', 5);
-            $table->string('street', 60);
-            $table->string('postcode', 4);
+            $table->float('nopersons');
+            $table->string('houseno', 5)->nullable();
+            $table->string('street', 60)->nullable();
+            $table->string('postcode', 4)->nullable();
             $table->string('locality', 60);
             $table->string('coverphoto', 255);
             $table->unsignedBigInteger('providers_id')->nullable();

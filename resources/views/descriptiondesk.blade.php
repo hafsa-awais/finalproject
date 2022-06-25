@@ -35,15 +35,11 @@
         <div class="img-dis">
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
-                        <img src={{asset($property->coverphoto)}} class="d-block w-100" id="foto-dis" alt="...">
+                    @foreach (File::allFiles(public_path() . "/assets/propertypics/" . $property->id) as $file)
+                    <div class="carousel-item {{ $file->getFilename() == basename($property->coverphoto) ? 'active' : '' }}" ata-bs-interval="3000">
+                        <img class="d-block w-100" src="{{ '/assets/propertypics/' . $property->id . '/' . $file->getFilename() }}" />
                     </div>
-                    <div class="carousel-item" data-bs-interval="2000">
-                        <img src={{asset($property->coverphoto)}} class="d-block w-100" id="foto-dis" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src={{asset($property->coverphoto)}} class="d-block w-100" id="foto-dis" alt="...">
-                    </div>
+                    @endforeach
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -111,156 +107,156 @@
 
 
 
-<div class="container3-dis">
-    <div class="calendar-dis">
+    <div class="container3-dis">
         <div class="calendar-dis">
-            <div class='row'>
-                <div class='col-sm-6'>
-                    <label for='linkedPickers1Input' class='form-label'>From</label>
-                    <div class='input-group log-event' id='linkedPickers1' data-td-target-input='nearest' data-td-target-toggle='nearest'>
-                        <input id='linkedPickers1Input' type='text' class='form-control' data-td-target='#linkedPickers1' />
-                        <span class='input-group-text' data-td-target='#linkedPickers1' data-td-toggle='datetimepicker'>
-                            <span class='fa-solid fa-calendar'></span>
-                        </span>
+            <div class="calendar-dis">
+                <div class='row'>
+                    <div class='col-sm-6'>
+                        <label for='linkedPickers1Input' class='form-label'>From</label>
+                        <div class='input-group log-event' id='linkedPickers1' data-td-target-input='nearest' data-td-target-toggle='nearest'>
+                            <input id='linkedPickers1Input' type='text' class='form-control' data-td-target='#linkedPickers1' />
+                            <span class='input-group-text' data-td-target='#linkedPickers1' data-td-toggle='datetimepicker'>
+                                <span class='fa-solid fa-calendar'></span>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div class='col-sm-6'>
-                    <label for='linkedPickers2Input' class='form-label'>To</label>
-                    <div class='input-group log-event' id='linkedPickers2' data-td-target-input='nearest' data-td-target-toggle='nearest'>
-                        <input id='linkedPickers2Input' type='text' class='form-control' data-td-target='#linkedPickers2' />
-                        <span class='input-group-text' data-td-target='#linkedPickers2' data-td-toggle='datetimepicker'>
-                            <span class='fa-solid fa-calendar'></span>
-                        </span>
+                    <div class='col-sm-6'>
+                        <label for='linkedPickers2Input' class='form-label'>To</label>
+                        <div class='input-group log-event' id='linkedPickers2' data-td-target-input='nearest' data-td-target-toggle='nearest'>
+                            <input id='linkedPickers2Input' type='text' class='form-control' data-td-target='#linkedPickers2' />
+                            <span class='input-group-text' data-td-target='#linkedPickers2' data-td-toggle='datetimepicker'>
+                                <span class='fa-solid fa-calendar'></span>
+                            </span>
+                        </div>
                     </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
-    </div>
-    <div class="namemap-dis"></div>
+        <div class="namemap-dis"></div>
 
-    <div class="reviews-dis">
+        <div class="reviews-dis">
 
-        <section class=" gradient-custom">
-            <div class="col col-l-10">
-                <div class="card">
-                    <div class="card-body py-5">
+            <section class=" gradient-custom">
+                <div class="col col-l-10">
+                    <div class="card">
+                        <div class="card-body py-5">
 
-                        <!-- Carousel wrapper -->
-                        <div id="carouselDarkVariant" class="carousel slide carousel-dark" data-mdb-ride="carousel">
-                            <!-- Indicators -->
-                            <div class="carousel-indicators mb-0">
-                                <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="1" aria-label="Slide 1"></button>
-                                <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="2" aria-label="Slide 1"></button>
+                            <!-- Carousel wrapper -->
+                            <div id="carouselDarkVariant" class="carousel slide carousel-dark" data-mdb-ride="carousel">
+                                <!-- Indicators -->
+                                <div class="carousel-indicators mb-0">
+                                    <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="1" aria-label="Slide 1"></button>
+                                    <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="2" aria-label="Slide 1"></button>
+                                </div>
+
+                                <!-- Inner -->
+                                <div class="carousel-inner pt-2 pb-5">
+                                    <!-- Single item -->
+                                    <div class="carousel-item active">
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-md-8 col-lg-9 col-xl-8">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90" height="90">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-4 ps-3">
+                                                        <figure>
+                                                            <blockquote class="blockquote mb-4">
+                                                                <p>
+                                                                    <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                                                                    <span class="font-italic">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                                        elit. Pariatur sint nesciunt ad itaque aperiam expedita officiis incidunt
+                                                                        minus facere, molestias quisquam impedit inventore.</span>
+                                                                </p>
+                                                            </blockquote>
+                                                            <figcaption class="blockquote-footer">
+                                                                Miranda Smith in <cite title="Source Title">The Guardian</cite>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single item -->
+                                    <div class="carousel-item">
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-md-8 col-lg-9 col-xl-8">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp" class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90" height="90">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-4 ps-3">
+                                                        <figure>
+                                                            <blockquote class="blockquote mb-4">
+                                                                <p>
+                                                                    <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                                                                    <span class="font-italic">Sed ut perspiciatis unde omnis iste natus error sit
+                                                                        voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                                                                        quae ab illo inventore veritatis.</span>
+                                                                </p>
+                                                            </blockquote>
+                                                            <figcaption class="blockquote-footer">
+                                                                Annie Hall <cite title="Source Title">New York Times</cite>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single item -->
+                                    <div class="carousel-item">
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-md-8 col-lg-9 col-xl-8">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp" class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90" height="90">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-4 ps-3">
+                                                        <figure>
+                                                            <blockquote class="blockquote mb-4">
+                                                                <p>
+                                                                    <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                                                                    <span class="font-italic">At vero eos et accusamus et iusto odio dignissimos
+                                                                        qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+                                                                        et quas molestias excepturi sint amet dolore.</span>
+                                                                </p>
+                                                            </blockquote>
+                                                            <figcaption class="blockquote-footer">
+                                                                Jason More in <cite title="Source Title">Smash Magazine</cite>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Inner -->
+
+                                <!-- Controls -->
+                                <button class="carousel-control-prev" type="button" data-mdb-target="#carouselDarkVariant" data-mdb-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-mdb-target="#carouselDarkVariant" data-mdb-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
                             </div>
+                            <!-- Carousel wrapper -->
 
-                            <!-- Inner -->
-                            <div class="carousel-inner pt-2 pb-5">
-                                <!-- Single item -->
-                                <div class="carousel-item active">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-md-8 col-lg-9 col-xl-8">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90" height="90">
-                                                </div>
-                                                <div class="flex-grow-1 ms-4 ps-3">
-                                                    <figure>
-                                                        <blockquote class="blockquote mb-4">
-                                                            <p>
-                                                                <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
-                                                                <span class="font-italic">Lorem ipsum dolor sit amet consectetur adipisicing
-                                                                    elit. Pariatur sint nesciunt ad itaque aperiam expedita officiis incidunt
-                                                                    minus facere, molestias quisquam impedit inventore.</span>
-                                                            </p>
-                                                        </blockquote>
-                                                        <figcaption class="blockquote-footer">
-                                                            Miranda Smith in <cite title="Source Title">The Guardian</cite>
-                                                        </figcaption>
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single item -->
-                                <div class="carousel-item">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-md-8 col-lg-9 col-xl-8">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp" class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90" height="90">
-                                                </div>
-                                                <div class="flex-grow-1 ms-4 ps-3">
-                                                    <figure>
-                                                        <blockquote class="blockquote mb-4">
-                                                            <p>
-                                                                <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
-                                                                <span class="font-italic">Sed ut perspiciatis unde omnis iste natus error sit
-                                                                    voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                                                                    quae ab illo inventore veritatis.</span>
-                                                            </p>
-                                                        </blockquote>
-                                                        <figcaption class="blockquote-footer">
-                                                            Annie Hall <cite title="Source Title">New York Times</cite>
-                                                        </figcaption>
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single item -->
-                                <div class="carousel-item">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-md-8 col-lg-9 col-xl-8">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp" class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90" height="90">
-                                                </div>
-                                                <div class="flex-grow-1 ms-4 ps-3">
-                                                    <figure>
-                                                        <blockquote class="blockquote mb-4">
-                                                            <p>
-                                                                <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
-                                                                <span class="font-italic">At vero eos et accusamus et iusto odio dignissimos
-                                                                    qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-                                                                    et quas molestias excepturi sint amet dolore.</span>
-                                                            </p>
-                                                        </blockquote>
-                                                        <figcaption class="blockquote-footer">
-                                                            Jason More in <cite title="Source Title">Smash Magazine</cite>
-                                                        </figcaption>
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Inner -->
-
-                            <!-- Controls -->
-                            <button class="carousel-control-prev" type="button" data-mdb-target="#carouselDarkVariant" data-mdb-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-mdb-target="#carouselDarkVariant" data-mdb-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
                         </div>
-                        <!-- Carousel wrapper -->
-
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
-</div>
 
 
 </div>

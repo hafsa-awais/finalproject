@@ -37,7 +37,7 @@
                 <div class="carousel-inner">
                     @foreach (File::allFiles(public_path() . "/assets/propertypics/" . $property->id) as $file)
                     <div class="carousel-item {{ $file->getFilename() == basename($property->coverphoto) ? 'active' : '' }}" ata-bs-interval="3000">
-                        <img class="d-block w-100" src="{{ '/assets/propertypics/' . $property->id . '/' . $file->getFilename() }}" />
+                        <img class="d-block w-100" src="{{ '/assets/propertypics/' . $property->id . '/' . $file->getFilename() }}" id="map"/>
                     </div>
                     @endforeach
                 </div>
@@ -260,5 +260,8 @@
 
 
 </div>
+
+
+
 
 @endsection

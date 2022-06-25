@@ -20,18 +20,12 @@ const streetnumValue = document.getElementsByClassName("houseno-des")[0].getAttr
 const streetValue = document.getElementsByClassName("street-des")[0].getAttribute('data-street')
 const postcodeValue = document.getElementsByClassName("postcode-des")[0].getAttribute('data-postcode')
 
-
-console.log(localityValue)
-
     fetch("http://apiv3.geoportail.lu/geocode/search?num=" + streetnumValue + "&street=" + streetValue +
         "&zip=" + postcodeValue + "&locality=" + localityValue).then((response) => {
         return response.json();
     }).then((data) => {
         let Latitude = data.results[0].geomlonlat.coordinates[0]
         let Longitude = data.results[0].geomlonlat.coordinates[1]
-
-        console.log(Latitude, Longitude)
-
         let iconOptions1 = {
             title: "Venus",
             draggable: false,

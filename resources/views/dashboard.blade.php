@@ -31,15 +31,14 @@
                         {{-- edit & logout buttons --}}
                         <div class="d-flex justify-content-center mb-2">
                             <button onclick="location.href='{{ route('settings.profile.index') }}'" type="button"
-                                class="btn btn-primary">Edit user information</button>
+                                class="btn btn-primary">Edit profile</button>
                             <button onclick="location.href='{{ route('logout') }}'"
                                 class="btn btn-outline-primary ms-1">Logout</button>
                         </div>
                     </div>
                 </div>
-
-
             </div>
+            
             <div class="col-lg-8">
                 <div class="card mb-4">
                     <div class="card-body">
@@ -151,7 +150,5 @@
             </div>
         </div>
     </div>
-    </div>
-
 
 @endsection

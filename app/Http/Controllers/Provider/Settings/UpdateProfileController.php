@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Settings;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Settings\UpdateContactRequest;
+use App\Http\Requests\Settings\UpdateProfileRequest;
 use Illuminate\Http\RedirectResponse;
 
-class UpdateContactController extends Controller
+class UpdateProfileController extends Controller
 {
-    public function update(UpdateContactRequest $request): RedirectResponse
+    public function update(UpdateProfileRequest $request): RedirectResponse
     {
         auth()->user()->update($request->validated());
 

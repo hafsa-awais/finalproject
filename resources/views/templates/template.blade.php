@@ -47,12 +47,8 @@
 
     <!-- search -->
     <meta name="_token" content="{{ csrf_token() }}">
-    <title>Live Search</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-
 </head>
 
 <body>
@@ -102,7 +98,7 @@
                 <button onclick="location.href='{{ route('dashboard') }}'" type="button"
                     class="btn btn-link btn-block border-bottom m-0">User account</button>
                 <button onclick="location.href='{{ route('settings.profile.index') }}'" type="button"
-                    class="btn btn-link btn-block border-bottom m-0">Edit user information</button>
+                    class="btn btn-link btn-block border-bottom m-0">Edit profile</button>
                 <button onclick="location.href='{{ route('logout') }}'" type="button"
                     class="btn btn-link btn-block m-0">Logout</button>
             </div>
@@ -116,8 +112,8 @@
             <div class="bg-light shadow-3 p-4">
                 <button onclick="location.href='{{ route('provider.dashboard') }}'" type="button"
                     class="btn btn-link btn-block border-bottom m-0">User account</button>
-                {{-- <button onclick="location.href='{{ route('settings.profile.index') }}'" type="button"
-            class="btn btn-link btn-block border-bottom m-0">Edit user information</button> --}}
+                <button onclick="location.href='{{ route('provider.settings.profile.index') }}'" type="button"
+                    class="btn btn-link btn-block border-bottom m-0">Edit profile</button>
                 <button onclick="location.href='{{ route('provider.logout') }}'" type="button"
                     class="btn btn-link btn-block m-0">Logout</button>
             </div>
@@ -133,19 +129,8 @@
                 <x-application-logo />
             </div>
             <div class="searchcontainerbody">
-                {{-- <form action="{{ route('search') }}" method="GET" class="searchformbody"> --}}
                 <input type="text" id="search" name="search" placeholder="Search your desired location"
                     class="search-fieldbody" required /><span class="input-group-btn">
-                    {{-- <button type="submit" class="search-buttonbody">
-                        <img src="{{ asset('assets/search.png') }}">
-                    </button> --}}
-
-                    {{-- </form> --}}
-
-
-
-
-
             </div>
 
 
@@ -168,10 +153,10 @@
                     {{-- if logged in as user --}}
                     @auth('web')
                         <div class="dropdown">
-                            <button class="btn dashboard">{{ Auth::user()->first_name }}</button>
+                            <button class="dropbtn dashboard">{{ Auth::user()->first_name }}</button>
                             <div class="dropdown-content">
                                 <a href="{{ route('dashboard') }}">User account</a>
-                                <a href="{{ route('settings.profile.index') }}">Edit user information</a>
+                                <a href="{{ route('settings.profile.index') }}">Edit profile</a>
                                 <a href="{{ route('logout') }}">Logout</a>
                             </div>
                         </div>
@@ -180,10 +165,10 @@
                     {{-- if logged in as provider --}}
                     @auth('provider')
                         <div class="dropdown">
-                            <button class="btn dashboard">{{ Auth::guard('provider')->user()->first_name }}</button>
+                            <button class="dropbtn dashboard">{{ Auth::guard('provider')->user()->first_name }}</button>
                             <div class="dropdown-content">
                                 <a href="{{ route('provider.dashboard') }}">User account</a>
-                                {{-- <a href="{{ route('settings.profile.index') }}">Edit user information</a> --}}
+                                <a href="{{ route('provider.settings.profile.index') }}">Edit profile</a>
                                 <a href="{{ route('provider.logout') }}">Logout</a>
                             </div>
                         </div>

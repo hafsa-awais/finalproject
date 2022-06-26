@@ -139,7 +139,7 @@
                 @endauth
 
                 <p class="postcode-des" data-postcode="{{ $property->postcode }}">L-{{ $property->postcode }} &nbsp
-                    ({{ $property->size }} m<sup>2</sup>)
+                    ({{ $property->size }} m<sup>2</sup> / {{$property->nopersons }} persons)
                 </p>
         </div>
 

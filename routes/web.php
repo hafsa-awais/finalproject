@@ -61,9 +61,7 @@ Route::prefix('contact')->name('contact.')->group(function () {
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
-Route::get('/dashboard', [TransactionController::class, 'trans'])->middleware(['auth'])->name('dashboard');
-
-
+Route::get('/dashboard', [TransactionController::class, 'trans'])->middleware(['auth', 'verified'])->name('dashboard');
 
 // property category pages
 Route::prefix('categories')->name('categories.')->group(function () {

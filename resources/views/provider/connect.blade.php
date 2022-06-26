@@ -3,22 +3,25 @@
 
 @section('content')
 
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
 
-
-
-    <div>
-        {{-- <button class="btn dashboard">{{ Auth::provider()->first_name }}</button> --}}
-        <div class="dropdown-content">
-            <a href="{{ route('provider.dashboard') }}">Dashboard</a>
-            <a href="{{ route('provider.logout') }}">Logout</a>
+                        {{-- edit & logout buttons --}}
+                        <div class="d-flex justify-content-center mb-2">
+                            <button onclick="location.href='{{ route('provider.register') }}'"
+                                class="btn btn-outline-primary ms-1">Provider Register</button>
+                        </div>
+                        <div class="d-flex justify-content-center mb-2">
+                            <button onclick="location.href='{{ route('provider.login') }}'" type="button"
+                                class="btn btn-primary">Provider Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <button onclick="location.href='{{ route('provider.login') }}'" type="button" class="btn login">Log
-        in</button>
-
-    <button onclick="location.href='{{ route('provider.register') }}'" type="button"
-        class="btn register">{{ 'Register' }}</button>
-
 
 @endsection

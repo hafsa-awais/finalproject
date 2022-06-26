@@ -8,7 +8,7 @@
 
         <!-- floating elements -->
         <div class="card-dis">
-            <div class="card">Price: 
+            <div class="card">Price:
                 <p>{{ number_format($property->price) }} € / day</p>
 
                 <!-- only users can access this info -->
@@ -64,18 +64,14 @@
             <div class="img-dis">
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="10000">
-                            <img src={{ asset($property->coverphoto) }} class="d-block w-100" id="foto-dis"
-                                alt="...">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="2000">
-                            <img src={{ asset($property->coverphoto) }} class="d-block w-100" id="foto-dis"
-                                alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src={{ asset($property->coverphoto) }} class="d-block w-100" id="foto-dis"
-                                alt="...">
-                        </div>
+                        @foreach (File::allFiles(public_path() . '/assets/propertypics/' . $property->id) as $file)
+                            <div class="carousel-item {{ $file->getFilename() == basename($property->coverphoto) ? 'active' : '' }}"
+                                ata-bs-interval="3000">
+                                <img class="d-block w-100"
+                                    src="{{ '/assets/propertypics/' . $property->id . '/' . $file->getFilename() }}"
+                                    id="map" />
+                            </div>
+                        @endforeach
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
                         data-bs-slide="prev">
@@ -142,8 +138,8 @@
                     </p>
                 @endauth
 
-                <p class="postcode-des" data-postcode="{{ $property->postcode }}">
-                    {{ $property->postcode }} &nbsp ({{ $property->size }} m<sup>2</sup>)
+                <p class="postcode-des" data-postcode="{{ $property->postcode }}">L-{{ $property->postcode }} &nbsp
+                    ({{ $property->size }} m<sup>2</sup>)
                 </p>
         </div>
 
@@ -153,7 +149,7 @@
             </p>
         </div>
 
-
+        {{-- date picker integrated in transaction page --}}
         <div class="container3-dis">
             {{-- <div class="calendar-dis">
                 <div class="calendar-dis">
@@ -195,12 +191,11 @@
                             <div class="card-body py-5">
 
                                 <!-- Carousel wrapper -->
-                                <div id="carouselDarkVariant" class="carousel slide carousel-dark"
-                                    data-mdb-ride="carousel">
+                                <div id="carouselDarkVariant" class="carousel slide carousel-dark" data-mdb-ride="carousel">
                                     <!-- Indicators -->
                                     <div class="carousel-indicators mb-0">
-                                        <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="0" class="active"
+                                            aria-current="true" aria-label="Slide 1"></button>
                                         <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="1"
                                             aria-label="Slide 1"></button>
                                         <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="2"

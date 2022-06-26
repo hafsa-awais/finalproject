@@ -71,24 +71,10 @@ window.onload = (e) => {
             const totalsum = parseFloat(price);
             total.innerHTML = `Total prise ${daysLag * totalsum}`;
 
-            console.log(daysLag, totalsum);
+            console.log(daysLag, totalsum * daysLag);
 
-            function send_data() {
-                var request = new XMLHttpRequest();
-                var one = "123";
-                var two = "456";
-                var send =
-                    "one=" +
-                    encodeURIComponent(one) +
-                    "&two=" +
-                    encodeURIComponent(two);
-                request.open("POST", "http://sitename/index.php");
-                request.setRequestHeader(
-                    "Content-Type",
-                    "application/x-www-form-urlencoded"
-                );
-                request.send(send);
-            }
+            
+   
         }
     );
 };

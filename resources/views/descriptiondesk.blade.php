@@ -159,7 +159,7 @@
                                             <div class="col-md-8 col-lg-9 col-xl-8">
                                                 <div class="d-flex">
                                                     <div class="flex-shrink-0">
-                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90" height="90">
+                                                       
                                                     </div>
                                                     <div class="flex-grow-1 ms-4 ps-3">
                                                         <figure>
@@ -187,7 +187,6 @@
                                             <div class="col-md-8 col-lg-9 col-xl-8">
                                                 <div class="d-flex">
                                                     <div class="flex-shrink-0">
-                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp" class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90" height="90">
                                                     </div>
                                                     <div class="flex-grow-1 ms-4 ps-3">
                                                         <figure>
@@ -215,7 +214,7 @@
                                             <div class="col-md-8 col-lg-9 col-xl-8">
                                                 <div class="d-flex">
                                                     <div class="flex-shrink-0">
-                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp" class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90" height="90">
+                                                       
                                                     </div>
                                                     <div class="flex-grow-1 ms-4 ps-3">
                                                         <figure>

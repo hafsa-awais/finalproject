@@ -16,6 +16,8 @@
             </div>
         </div>
 
+      
+
         <div class="map-dis">
             <!-- <p>
                 <input type="text" id="streetnumInput" placeholder="Street number:">
@@ -37,7 +39,7 @@
                 <div class="carousel-inner">
                     @foreach (File::allFiles(public_path() . "/assets/propertypics/" . $property->id) as $file)
                     <div class="carousel-item {{ $file->getFilename() == basename($property->coverphoto) ? 'active' : '' }}" ata-bs-interval="3000">
-                        <img class="d-block w-100" src="{{ '/assets/propertypics/' . $property->id . '/' . $file->getFilename() }}" id="map"/>
+                        <img class="d-block w-100" src="{{ '/assets/propertypics/' . $property->id . '/' . $file->getFilename() }}" id="map" />
                     </div>
                     @endforeach
                 </div>
@@ -100,7 +102,6 @@
 
     <p class="main-dis-p">
         {{$property->description}}
-
     </p>
 
 
@@ -159,7 +160,7 @@
                                             <div class="col-md-8 col-lg-9 col-xl-8">
                                                 <div class="d-flex">
                                                     <div class="flex-shrink-0">
-                                                       
+
                                                     </div>
                                                     <div class="flex-grow-1 ms-4 ps-3">
                                                         <figure>
@@ -214,7 +215,7 @@
                                             <div class="col-md-8 col-lg-9 col-xl-8">
                                                 <div class="d-flex">
                                                     <div class="flex-shrink-0">
-                                                       
+
                                                     </div>
                                                     <div class="flex-grow-1 ms-4 ps-3">
                                                         <figure>

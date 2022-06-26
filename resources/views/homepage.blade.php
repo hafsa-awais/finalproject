@@ -49,12 +49,13 @@
             <div class="picturecontainerbody">
                 @foreach ($properties as $property)
                     <div class="pictureboxes">
-                        <a href="{{ route('description', $property->id) }}"><object data={{ asset("$property->coverphoto") }}
-                                width=100% height=100% class="proppics"></object></a><br>
-                        <p class="proptext"><strong>Place: </strong>{{ $property->title }}<br>
-                        <p class="proptext"><strong>{{ $property->address }}</strong>
-                            <strong>{{ $property->price }}</strong> € / day <br>
-                            <strong>{{ $property->locality }}</strong><br>
+                        <a href="{{ route('description', $property->id) }}">
+                            <object data={{ asset("$property->coverphoto") }} width=100% height=100% class="proppics"></object>
+                        </a><br>
+                        <p class="proptext">
+                            <strong>Name: </strong>{{ $property->title }}<br>
+                            <strong>Locality: </strong>{{ $property->locality }}<br>
+                            {{ $property->price }} € / day
                         </p>
                     </div>
                 @endforeach

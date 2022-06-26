@@ -45,6 +45,14 @@
     <!-- calendar -->
     <script src="{{ asset('js/calender.js') }}"></script>
 
+    <!-- search -->
+    <meta name="_token" content="{{ csrf_token() }}">
+    <title>Live Search</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
 </head>
 
 <body>
@@ -126,13 +134,18 @@
             </div>
             <div class="searchcontainerbody">
                 {{-- <form action="{{ route('search') }}" method="GET" class="searchformbody"> --}}
-                <input type="text" name="search" placeholder="Search your desired location" class="search-fieldbody"
-                    required /><span class="input-group-btn">
-                    <button type="submit" class="search-buttonbody">
+                <input type="text" id="search" name="search" placeholder="Search your desired location"
+                    class="search-fieldbody" required /><span class="input-group-btn">
+                    {{-- <button type="submit" class="search-buttonbody">
                         <img src="{{ asset('assets/search.png') }}">
-                    </button>
+                    </button> --}}
 
                     {{-- </form> --}}
+
+
+
+
+
             </div>
 
 
@@ -178,88 +191,121 @@
                 </li>
             </ul>
         </nav>
-        <!-- end desktop version -->
+    </section>
+    <!-- end desktop version -->
 
-        <!-- END HEADER -->
-
-
-        <!-- MAIN CONTENT -->
-        <main class="content">
-            {{-- validation errors --}}
-            @if ($errors->any())
-                <div class="alert danger">
-                    @foreach ($errors->all() as $error)
-                        <li style="color: red"> {{ $error }}</li>
-                    @endforeach
-                </div>
-            @endif
+    <!-- END HEADER -->
 
 
-            <div id="particles-js"></div>
-            @yield('content')
-        </main>
-        <!-- END MAIN CONTENT -->
+    <!-- MAIN CONTENT -->
+    <main class="content">
+        {{-- validation errors --}}
+        @if ($errors->any())
+            <div class="alert danger">
+                @foreach ($errors->all() as $error)
+                    <li style="color: red"> {{ $error }}</li>
+                @endforeach
+            </div>
+        @endif
 
-        <!-- FOOTER -->
-        <Section>
-            <div class="footer">
-                <div id="footerround"></div>
-                <div class="footercontainer">
-                    <div class="footergrid">
-                        <div class="footerbox-init" id="box-init-logo">
-                            <div id="box-init-logo">
-                                <x-application-logo />
-                            </div>
+        <!-- particles -->
+        <div id="particles-js"></div>
+
+        <!-- search -->
+        <div class="picturecontainerbody">
+            <blob></blob>
+        </div>
+
+
+        @yield('content')
+    </main>
+    <!-- END MAIN CONTENT -->
+
+    <!-- FOOTER -->
+    <Section>
+        <div class="footer">
+            <div id="footerround"></div>
+            <div class="footercontainer">
+                <div class="footergrid">
+                    <div class="footerbox-init" id="box-init-logo">
+                        <div id="box-init-logo">
+                            <x-application-logo />
                         </div>
-                        <div class="footerbox-init">
-                            <a href="{{ route('aboutus') }}" class="footerbox-init-description">About Us</a>
-                        </div>
-                        <div class="footerbox-init">
-                            <a href="{{ route('contact.contact') }}" class="footerbutton">Send us a message</a>
-                        </div>
+                    </div>
+                    <div class="footerbox-init">
+                        <a href="{{ route('aboutus') }}" class="footerbox-init-description">About Us</a>
+                    </div>
+                    <div class="footerbox-init">
+                        <a href="{{ route('contact.contact') }}" class="footerbutton">Send us a message</a>
                     </div>
                 </div>
             </div>
-        </Section>
-        <!-- END FOOTER -->
+        </div>
+    </Section>
+    <!-- END FOOTER -->
 
 
-        <!-- JS SCRIPTS -->
+    <!-- JS SCRIPTS -->
 
-        <!-- material design for bootstrap -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
+    <!-- material design for bootstrap -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
 
-        <!-- particles -->
-        <script src="{{ asset('assets/particles.js-2.0.0/particles.js') }}"></script>
-        <script src="{{ asset('assets/particles.js-2.0.0/demo/js/app.js') }}"></script>
+    <!-- particles -->
+    <script src="{{ asset('assets/particles.js-2.0.0/particles.js') }}"></script>
+    <script src="{{ asset('assets/particles.js-2.0.0/demo/js/app.js') }}"></script>
 
-        <!-- calendar -->
-        <script src="{{ asset('js/calender.js') }}"></script>
+    <!-- calendar -->
+    <script src="{{ asset('js/calender.js') }}"></script>
 
-        <!-- OSM & geoportail APIs -->
-        <script src="{{ asset('js/map.js') }}"></script>
+    <!-- OSM & geoportail APIs -->
+    <script src="{{ asset('js/map.js') }}"></script>
 
-        <!-- bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-        </script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
 
-        <!-- popperjs positioning engine -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" crossorigin="anonymous">
-        </script>
+    <!-- popperjs positioning engine -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" crossorigin="anonymous">
+    </script>
 
-        <!-- tempus dominus datepicker -->
-        <script src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/tempus-dominus.js"
-            crossorigin="anonymous"></script>
+    <!-- tempus dominus datepicker -->
+    <script src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/tempus-dominus.js"
+        crossorigin="anonymous"></script>
 
-        <!-- tempus dominus datepicker styles -->
-        <link href="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css"
-            rel="stylesheet" crossorigin="anonymous">
+    <!-- tempus dominus datepicker styles -->
+    <link href="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css"
+        rel="stylesheet" crossorigin="anonymous">
 
-        <!-- font awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- search -->
+    <script type="text/javascript">
+        $('#search').on('keyup', function() {
+            $value = $(this).val();
+            $.ajax({
+                type: 'get',
+                url: '{{ URL::to('search') }}',
+                data: {
+                    'search': $value
+                },
+                success: function(data) {
+                    $('blob').html(data);
+                }
+            });
+        })
+
+        $.ajaxSetup({
+            headers: {
+                'csrftoken': '{{ csrf_token() }}'
+            }
+        });
+    </script>
+
 
 </body>
 

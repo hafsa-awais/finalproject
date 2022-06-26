@@ -54,7 +54,6 @@
                                         <span class='fa-solid fa-calendar'></span>
                                     </span>
                                 </div>
-
                             </div>
                         </div>
                     </div>

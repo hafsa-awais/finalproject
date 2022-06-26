@@ -46,7 +46,7 @@ Route::put('/transaction/{id}', [TransactionController::class, 'store']);
 // search
 // Route::get('/search', [PropertiesController::class, 'search'])->name('search');
 // Route::get('/1', [SearchController::class, 'search']);
-Route::get('/1', [SearchController::class, 'index']);
+// Route::get('/1', [SearchController::class, 'index']);
 Route::get('/search', [SearchController::class, 'search']);
 
 

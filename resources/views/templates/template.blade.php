@@ -12,12 +12,14 @@
     <link rel="stylesheet" href="{{ asset('css/styleheader.css') }}">
     <link rel="stylesheet" href="{{ asset('css/stylefooter.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styleaboutus.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dropdown.css') }}">
 
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- font-awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
@@ -26,22 +28,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
 
     <!-- particles -->
-    <link rel="stylesheet" href="{{ asset('assets/particles.js-2.0.0/demo/css/style.css') }} " />
+    <link rel="stylesheet" href="{{ asset('assets/particles.js-2.0.0/demo/css/style.css') }}" />
 
-    <!-- tempus dominus datepicker styles -->
-    <link href="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css" rel="stylesheet"
-        crossorigin="anonymous">
+    <!-- animation icons -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- OSM with leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
 
+    <!-- calendar -->
+    <script src="{{ asset('js/calender.js') }}"></script>
 
 </head>
 
 <body>
-
     <!-- HEADER -->
 
     <!-- mobile version -->
@@ -49,12 +55,12 @@
 
         <div class="container-fluid">
             <div class="searchcontainerheader">
-                <form action="/" method="GET" class="searchformbody">
-                    <input type="search" placeholder="Search your desired location" class="search-fieldbody" />
-                    <button type="submit" class="search-buttonbody">
-                        <img src="{{ asset('assets/search.png') }}">
-                    </button>
-                </form>
+                {{-- <form action="/" method="GET" class="searchformbody"> --}}
+                <input type="search" placeholder="Search your desired location" class="search-fieldbody" />
+                <button type="submit" class="search-buttonbody">
+                    <img src="{{ asset('assets/search.png') }}">
+                </button>
+                {{-- </form> --}}
             </div>
             <button class="navbar-toggler ms-auto" type="button" data-mdb-toggle="collapse"
                 data-mdb-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent3"
@@ -103,7 +109,7 @@
                 <button onclick="location.href='{{ route('provider.dashboard') }}'" type="button"
                     class="btn btn-link btn-block border-bottom m-0">User account</button>
                 {{-- <button onclick="location.href='{{ route('settings.profile.index') }}'" type="button"
-                class="btn btn-link btn-block border-bottom m-0">Edit user information</button> --}}
+            class="btn btn-link btn-block border-bottom m-0">Edit user information</button> --}}
                 <button onclick="location.href='{{ route('provider.logout') }}'" type="button"
                     class="btn btn-link btn-block m-0">Logout</button>
             </div>
@@ -126,7 +132,7 @@
                         <img src="{{ asset('assets/search.png') }}">
                     </button>
 
-                    </form>
+                    {{-- </form> --}}
             </div>
 
 
@@ -188,6 +194,8 @@
                 </div>
             @endif
 
+
+            <div id="particles-js"></div>
             @yield('content')
         </main>
         <!-- END MAIN CONTENT -->
@@ -213,7 +221,7 @@
                             <a href="#." class="footerbox-init-description">Carrieres</a>
                         </div>
                         <div class="footerbox-init">
-                            <a href="{{ route('contact.contact') }}" class="footerbutton">Contact us</a>
+                            <a href="{{ route('contact.contact') }}" class="footerbutton">Send us a message</a>
                         </div>
                     </div>
                 </div>
@@ -228,14 +236,14 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
 
         <!-- particles -->
-        <script src="assets/particles.js-2.0.0/particles.js"></script>
-        <script src="assets/particles.js-2.0.0/demo/js/app.js"></script>
+        <script src="{{ asset('assets/particles.js-2.0.0/particles.js') }}"></script>
+        <script src="{{ asset('assets/particles.js-2.0.0/demo/js/app.js') }}"></script>
 
         <!-- calendar -->
-        <script type="text/javascript" src="{{ asset('js/calender.js') }}"></script>
+        <script src="{{ asset('js/calender.js') }}"></script>
 
         <!-- OSM & geoportail APIs -->
-        <script type="text/javascript" src="{{ asset('js/map.js') }}"></script>
+        <script src="{{ asset('js/map.js') }}"></script>
 
         <!-- bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -250,14 +258,14 @@
         <script src="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/tempus-dominus.js"
             crossorigin="anonymous"></script>
 
-        <!-- animation icons -->
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+        <!-- tempus dominus datepicker styles -->
+        <link href="https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css"
+            rel="stylesheet" crossorigin="anonymous">
 
-        <!-- OSM with leaflet -->
-        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-
-
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </body>
 

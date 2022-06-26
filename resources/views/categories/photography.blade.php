@@ -5,33 +5,48 @@
 
 
 @section('content')
+
+    <!-- category banner -->
     <section class="bodycontent">
-
         <div class="text">
-
-            <div id="particles-js"></div>
             <div class="iconscontainer">
+                {{-- wedding logo --}}
                 <div class="categoryicons">
-                    <i class="fas fa-2x fa-glass-cheers"></i>
-                    <p>Wedding Venues</p>
+                    <a href="{{ route('categories.wedding') }}">
+                        <i class="fas fa-2x fa-glass-cheers"></i>
+                        <p>Wedding Venues</p>
+                    </a>
                 </div>
+                {{-- birthday logo --}}
                 <div class="categoryicons">
-                    <i class="fas fa-2x fa-birthday-cake"></i>
-                    <p>Birthday Venues</p>
+                    <a href="{{ route('categories.birthday') }}">
+                        <i class="fas fa-2x fa-birthday-cake"></i>
+                        <p>Birthday Venues</p>
+                    </a>
                 </div>
+                {{-- photoshoot logo --}}
                 <div class="categoryicons">
-                    <i class="fas fa-2x fa-video"></i>
-                    <p>Photoshoot Venues</p>
+                    <a href="{{ route('categories.photoshoot') }}">
+                        <i class="fas fa-2x fa-video"></i>
+                        <p>Photoshoot Venues</p>
+                    </a>
                 </div>
+                {{-- photography logo --}}
                 <div class="categoryicons">
-                    <i class="fas fa-2x fa-camera"></i>
-                    <p>Photography Studios</p>
+                    <a href="{{ route('categories.photography') }}">
+                        <i class="fas fa-2x fa-camera"></i>
+                        <p>Photography Studios</p>
+                    </a>
                 </div>
+                {{-- music logo --}}
                 <div class="categoryicons">
-                    <i class="fas fa-2x fa-guitar"></i>
-                    <p>Music Studios</p>
+                    <a href="{{ route('categories.music') }}">
+                        <i class="fas fa-2x fa-guitar"></i>
+                        <p>Music Events</p>
+                    </a>
                 </div>
             </div>
+
 
             <div class="pictureheadings">
                 <h3>Photography Studios</h3>
@@ -40,15 +55,15 @@
             <div class="picturecontainerbody">
                 @foreach ($properties as $property)
                     <div class="pictureboxes">
-                        <object data={{ $property->coverphoto }} width=100% height=100% class="proppics"></object><br>
+                        <a href="{{route('description',$property->id)}}"><object data={{ asset("$property->coverphoto") }} width=100% height=100%
+                            class="proppics"></object></a><br>
                         <p class="proptext"><strong>Place:</strong>{{ $property->title }}<br>
                         <p class="proptext"><strong>{{ $property->address }}</strong>
-                            <strong>{{ $property->price }}</strong> / day <br>
+                            <strong>{{ number_format($property->price) }}</strong> € / day <br>
                             <strong>{{ $property->locality }}</strong><br>
                         </p>
                     </div>
                 @endforeach
-
             </div>
     </section>
 @endsection

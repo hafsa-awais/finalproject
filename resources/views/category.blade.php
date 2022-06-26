@@ -1,9 +1,5 @@
 @extends('templates/template')
-
-
 @section('title', 'Homepage')
-
-
 @section('content')
 
     <!-- category banner -->
@@ -12,35 +8,35 @@
             <div class="iconscontainer">
                 {{-- wedding logo --}}
                 <div class="categoryicons">
-                    <a href="{{ route('categories.wedding') }}">
+                    <a href="{{route('category','wedding')}}">
                         <i class="fas fa-2x fa-glass-cheers"></i>
                         <p>Wedding Venues</p>
                     </a>
                 </div>
                 {{-- birthday logo --}}
                 <div class="categoryicons">
-                    <a href="{{ route('categories.birthday') }}">
+                    <a href="{{ route('category','birthday') }}">
                         <i class="fas fa-2x fa-birthday-cake"></i>
                         <p>Birthday Venues</p>
                     </a>
                 </div>
                 {{-- photoshoot logo --}}
                 <div class="categoryicons">
-                    <a href="{{ route('categories.photoshoot') }}">
+                    <a href="{{ route('category','photoshoot') }}">
                         <i class="fas fa-2x fa-video"></i>
                         <p>Photoshoot Venues</p>
                     </a>
                 </div>
                 {{-- photography logo --}}
                 <div class="categoryicons">
-                    <a href="{{ route('categories.photography') }}">
+                    <a href="{{ route('category','photography') }}">
                         <i class="fas fa-2x fa-camera"></i>
                         <p>Photography Studios</p>
                     </a>
                 </div>
                 {{-- music logo --}}
                 <div class="categoryicons">
-                    <a href="{{ route('categories.music') }}">
+                    <a href="{{ route('category','music') }}">
                         <i class="fas fa-2x fa-guitar"></i>
                         <p>Music Events</p>
                     </a>
@@ -48,7 +44,7 @@
             </div>
 
             <div class="pictureheadings">
-                <h3>Music Events</h3>
+                <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4">{{ucfirst($event_name->event_name)}} Venues</p>
             </div>
 
             <div class="picturecontainerbody">

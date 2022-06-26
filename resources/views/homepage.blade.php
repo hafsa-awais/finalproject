@@ -7,39 +7,38 @@
     <!-- category banner -->
     <section class="bodycontent">
         <div class="text">
-
             <div class="iconscontainer">
                 {{-- wedding logo --}}
                 <div class="categoryicons">
-                    <a href="{{ route('categories.wedding') }}">
+                    <a href="{{route('category','wedding')}}">
                         <i class="fas fa-2x fa-glass-cheers"></i>
                         <p>Wedding Venues</p>
                     </a>
                 </div>
                 {{-- birthday logo --}}
                 <div class="categoryicons">
-                    <a href="{{ route('categories.birthday') }}">
+                    <a href="{{ route('category','birthday') }}">
                         <i class="fas fa-2x fa-birthday-cake"></i>
                         <p>Birthday Venues</p>
                     </a>
                 </div>
                 {{-- photoshoot logo --}}
                 <div class="categoryicons">
-                    <a href="{{ route('categories.photoshoot') }}">
+                    <a href="{{ route('category','photoshoot') }}">
                         <i class="fas fa-2x fa-video"></i>
                         <p>Photoshoot Venues</p>
                     </a>
                 </div>
                 {{-- photography logo --}}
                 <div class="categoryicons">
-                    <a href="{{ route('categories.photography') }}">
+                    <a href="{{ route('category','photography') }}">
                         <i class="fas fa-2x fa-camera"></i>
                         <p>Photography Studios</p>
                     </a>
                 </div>
                 {{-- music logo --}}
                 <div class="categoryicons">
-                    <a href="{{ route('categories.music') }}">
+                    <a href="{{ route('category','music') }}">
                         <i class="fas fa-2x fa-guitar"></i>
                         <p>Music Events</p>
                     </a>

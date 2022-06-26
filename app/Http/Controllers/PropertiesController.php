@@ -4,7 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Properties;
+use App\Models\Events;
+use App\Models\Transaction;
+use Illuminate\Support\Facades\Auth;
+
+
 use Browser;
+use PhpParser\Builder\Property;
 
 class PropertiesController extends Controller
 {
@@ -22,27 +28,9 @@ class PropertiesController extends Controller
 
         if (Browser::isDesktop()) {
             return view('descriptiondesk', ['property' => $properties]);
-        }
-        else {
+        } else {
             return view('descriptionmobi', ['property' => $properties]);
         }
-    }
-
-    // search function
-    public function search(Request $request)
-
-    {
-        // $search = $request->input('search');
-        // $properties = Properties::query()
-
-        // ->where('locality', 'LIKE', '%{$search}%')
-        // ->get();
-
-        // if(count($properties) > 0)
-        // return view('/search', ['properties' => $properties]);
-        // else 
-        //     return view ('search')->withMessage('No properties found in this location. Try to search again!');
-
     }
 
     // upload file function
@@ -69,49 +57,134 @@ class PropertiesController extends Controller
         $request->myFile->move($publicPath, $fileName);
     }
 
+
     // category pages
-    public function get_data_wedding()
+    public function get_data_categories($event)
     {
         $properties = Properties::join("events", "properties.id", "=", "events.properties_id")
-            ->where("events.event_name", "=", "wedding")
+            ->where("events.event_name", "=", "$event")
             ->get();
 
-        return view('categories.wedding', ['properties' => $properties]);
+        $event_name = Events::where("events.event_name", "=", "$event")
+            ->get()[0];
+
+        return view('category', ['properties' => $properties], ['event_name' => $event_name]);
     }
 
-    public function get_data_birthday()
+
+    // new property
+    public function create()
     {
-        $properties = Properties::join("events", "properties.id", "=", "events.properties_id")
-            ->where("events.event_name", "=", "birthday")
-            ->get();
-
-        return view('categories.birthday', ['properties' => $properties]);
+        return view('provider.register-property');
     }
 
-    public function get_data_photoshoot()
+    public function store(Request $request)
     {
-        $properties = Properties::join("events", "properties.id", "=", "events.properties_id")
-            ->where("events.event_name", "=", "photoshoot")
-            ->get();
+        $request->validate([
+            'title' => 'required|max:30',
+            'description' => 'required',
+            'size' => 'required|integer',
+            'price' => 'required|numeric|min:2|max:100',
+            'nopersons' => 'required|integer',
+            'houseno' => 'required|max:5',
+            'street' => 'required',
+            'postcode' => 'required|integer|max:4',
+            'locality' => 'required|max:30',
+            'coverphoto' => 'required|max:30',
+        ]);
 
-        return view('categories.photoshoot', ['properties' => $properties]);
+        $result = new Properties;
+        $result->title = $request->name;
+        $result->description = $request->description;
+        $result->size = $request->size;
+        $result->price = $request->price;
+        $result->nopersons = $request->nopersons;
+        $result->houseno = $request->houseno;
+        $result->street = $request->street;
+        $result->postcode = $request->postcode;
+        $result->locality = $request->locality;
+        $result->coverphoto = $request->coverphoto;
+        $result->provider_id = Auth::guard('provider')->user()->id;
+        $result->save();
+
+        if ($result)
+            return redirect('provider.dashboard')->with('success', 'Successfully inserted');
+        else
+            return redirect('provider.dashboard')->with('failed', 'Problem with insertion. Please try again.');
     }
 
-    public function get_data_photography()
+
+    // update property
+    public function edit($id)
     {
-        $properties = Properties::join("events", "properties.id", "=", "events.properties_id")
-            ->where("events.event_name", "=", "photography")
-            ->get();
-
-        return view('categories.photography', ['properties' => $properties]);
+        $properties = Properties::where('id', $id)->first();
+        return view('update-property', ['properties' => $properties]);
     }
-    
-    public function get_data_music()
+
+    public function update(Request $request, $id)
     {
-        $properties = Properties::join("events", "properties.id", "=", "events.properties_id")
-            ->where("events.event_name", "=", "music")
-            ->get();
+        $request->validate([
+            'title' => 'required|max:30',
+            'description' => 'required',
+            'size' => 'required|integer',
+            'price' => 'required|numeric|min:2|max:100',
+            'nopersons' => 'required|integer',
+            'houseno' => 'required|max:5',
+            'street' => 'required',
+            'postcode' => 'required|integer|max:4',
+            'locality' => 'required|max:30',
+            'coverphoto' => 'required|max:30',
+        ]);
 
-        return view('categories.music', ['properties' => $properties]);
+        $result = Properties::where('id', $id)->first();
+        $result->title = $request->name;
+        $result->description = $request->description;
+        $result->size = $request->size;
+        $result->price = $request->price;
+        $result->nopersons = $request->nopersons;
+        $result->houseno = $request->houseno;
+        $result->street = $request->street;
+        $result->postcode = $request->postcode;
+        $result->locality = $request->locality;
+        $result->coverphoto = $request->coverphoto;
+        $result->save();
+
+        if ($result)
+            return redirect('provider.dashboard')->with('success', 'Successfully updated');
+        else
+            return redirect('provider.dashboard')->with('failed', 'Problem with update. Try again.');
     }
+
+
+    // delete property
+    public function destroy($id)
+    {
+        Events::where('property_id',$id)->delete();
+        Transaction:where('property_id',$id)->delete();
+        $result = Properties::destroy($id);
+
+
+        if ($result)
+            return redirect('provider.dashboard')->with('success', 'Successfully deleted');
+        else
+            return redirect('provider.dashboard')->with('failed', 'Problem with deletion. Try again.');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

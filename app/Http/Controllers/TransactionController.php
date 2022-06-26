@@ -49,7 +49,7 @@ class TransactionController extends Controller
     }
 
 
-    // current_transactions (dashboard)
+    // user dashboard
     public function trans()
     { {
             $transactionsCurrent = Transaction::join("properties", "properties.id", "=", "transaction.properties_id")
@@ -64,9 +64,8 @@ class TransactionController extends Controller
                 ->orderBy('transaction.startdate', 'DESC')
                 ->get();
 
-
-
             return view('dashboard', ['transactionsCurrent' => $transactionsCurrent], ['transactionsPrevious' => $transactionsPrevious]);
         }
     }
+
 }

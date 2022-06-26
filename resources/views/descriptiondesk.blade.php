@@ -8,13 +8,14 @@
 
         <!-- floating elements -->
         <div class="card-dis">
-            <div class="card">Price:
-                <p>{{ number_format($property->price) }} € / day</p>
+            <div class="card">
+                <h5 class="card-header" data-price="{{ $property->price }}">{{ number_format($property->price) }} €/day
+                </h5>
 
                 <!-- only users can access this info -->
-                @auth('web')
-                    <!-- calendar items -->
-                    {{-- <div class="calendar-dis">
+
+                <!-- calendar items -->
+                {{-- <div class="calendar-dis">
                         <div class="calendar-dis">
                             <div class='column'>
                                 <label for='linkedPickers1Input' class='form-label'>From</label>
@@ -42,14 +43,21 @@
                         </div>
                     </div> --}}
 
-                    <!-- price element -->
-                    <div class="card-body">
+                <!-- price element -->
+                <div class="card-body">
+                    @guest
+                        @guest('provider')
+                            <p class="card-title">Please login to book</p>
+                        @endguest
+                    @endguest
+                    @auth('web')
                         <p class="card-title">Continue choosing your dates:</p>
                         <p class="card-text"></p>
                         <br>
                         <a href="{{ route('transaction', $property->id) }}" class="btn btn-primary">BOOK NOW</a>
-                    </div>
-                @endauth
+                    @endauth
+                </div>
+
             </div>
             <!-- map -->
             <div class="map-dis">
@@ -128,7 +136,7 @@
             <h3 class="locality-des" data-locality="{{ $property->locality }}">
                 {{ $property->locality }} &nbsp
 
-                @auth('web')
+                {{-- @auth('web') --}}
                     <!-- only users can access this info -->
                     <p class="houseno-des" data-houseno="{{ $property->houseno }}">
                         {{ $property->houseno }} &nbsp
@@ -136,11 +144,16 @@
                             {{ $property->street }} &nbsp
                         </span>
                     </p>
-                @endauth
+                {{-- @endauth --}}
+                
 
                 <p class="postcode-des" data-postcode="{{ $property->postcode }}">L-{{ $property->postcode }} &nbsp
-                    ({{ $property->size }} m<sup>2</sup> / {{$property->nopersons }} persons)
+                    ({{ $property->size }} m<sup>2</sup> / {{ $property->nopersons }} persons)
                 </p>
+
+
+
+
         </div>
 
         <div class="main-dis">
@@ -194,8 +207,8 @@
                                 <div id="carouselDarkVariant" class="carousel slide carousel-dark" data-mdb-ride="carousel">
                                     <!-- Indicators -->
                                     <div class="carousel-indicators mb-0">
-                                        <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="0" class="active"
-                                            aria-current="true" aria-label="Slide 1"></button>
+                                        <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="0"
+                                            class="active" aria-current="true" aria-label="Slide 1"></button>
                                         <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="1"
                                             aria-label="Slide 1"></button>
                                         <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="2"

@@ -7,7 +7,6 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\SearchController;
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,12 +43,7 @@ Route::get('/transaction/{id}', [TransactionController::class, 'create'])->name(
 Route::put('/transaction/{id}', [TransactionController::class, 'store']);
 
 // search
-// Route::get('/search', [PropertiesController::class, 'search'])->name('search');
-// Route::get('/1', [SearchController::class, 'search']);
-// Route::get('/1', [SearchController::class, 'index']);
 Route::get('/search', [SearchController::class, 'search']);
-
-
 
 // contact form pages
 Route::prefix('contact')->name('contact.')->group(function () {
@@ -57,19 +51,16 @@ Route::prefix('contact')->name('contact.')->group(function () {
     Route::post('/contact-form', [ContactController::class, 'storeContactForm'])->name('contact-form.store');
 });
 
-// dashboard (user & provider profile pages)
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+// dashboard (user profile pages)
 Route::get('/dashboard', [TransactionController::class, 'trans'])->middleware(['auth', 'verified'])->name('dashboard');
 
 // property category pages
-Route::prefix('categories')->name('categories.')->group(function () {
-    Route::get('/wedding', [PropertiesController::class, 'get_data_wedding'])->name('wedding');
-    Route::get('/birthday', [PropertiesController::class, 'get_data_birthday'])->name('birthday');
-    Route::get('/photoshoot', [PropertiesController::class, 'get_data_photoshoot'])->name('photoshoot');
-    Route::get('/photography', [PropertiesController::class, 'get_data_photography'])->name('photography');
-    Route::get('/music', [PropertiesController::class, 'get_data_music'])->name('music');
+Route::get('category/{event}', [PropertiesController::class, 'get_data_categories'])->name('category');
+
+// add property
+Route::prefix('provider')->name('provider.')->group(function () {
+    Route::get('/register-property', [PropertiesController::class, 'create'])->name('register-property');
+    Route::put('/update-property', [PropertiesController::class, 'store']);
 });
 
 

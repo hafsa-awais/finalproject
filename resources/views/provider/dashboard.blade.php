@@ -37,6 +37,24 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+
+                        {{-- property buttons --}}
+                        <div class="d-flex justify-content-center mb-2">
+                            <button onclick="location.href='{{ route('provider.register-property') }}'" type="button"
+                                class="btn btn-primary">Add property</button>
+                            <button onclick="location.href='{{ route('logout') }}'"
+                                class="btn btn-outline-primary ms-1">Edit property</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
             </div>
             
             <div class="col-lg-8">
@@ -103,7 +121,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($transactionsCurrent as $transaction)
+                                @foreach ($transactionsCurrent as $transaction)
                                     <tr>
                                         <th scope="row">
                                             {{ $transaction->id }}</th>
@@ -113,7 +131,7 @@
                                         <td>{{ date_format(new DateTime($transaction->created_at), 'd-m-Y') }}</td>
                                         <td>{{ $transaction->status }}</td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -132,7 +150,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($transactionsPrevious as $transaction)
+                                @foreach ($transactionsPrevious as $transaction)
                                     <tr>
                                         <th scope="row">
                                             {{ $transaction->id }}</th>
@@ -142,7 +160,7 @@
                                         <td>{{ date_format(new DateTime($transaction->created_at), 'd-m-Y') }}</td>
                                         <td>{{ $transaction->status }}</td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

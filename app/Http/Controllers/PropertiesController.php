@@ -160,7 +160,7 @@ class PropertiesController extends Controller
     public function destroy($id)
     {
         Events::where('property_id',$id)->delete();
-        Transaction:where('property_id',$id)->delete();
+        Transaction::where('property_id',$id)->delete();
         $result = Properties::destroy($id);
 
         

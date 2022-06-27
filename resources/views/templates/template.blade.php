@@ -228,11 +228,6 @@
                         <div class="footerbox-init">
                             <a href="{{ route('aboutus') }}" class="footerbox-init-description">About Us</a>
                         </div>
-                        
-                        
-                        <div class="footerbox-init">
-                        <a href="{{ route('contact-form') }}" class="footerbutton">Contact Us</a>
-                        </div>
                         <div class="footerbox-init">
                              <p>Privacy Policy</p>
                         </div>
@@ -317,7 +312,5 @@
         });
     </script>
 
-
 </body>
-
 </html>

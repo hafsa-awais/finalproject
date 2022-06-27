@@ -137,15 +137,15 @@
                 {{ $property->locality }} &nbsp
 
                 {{-- @auth('web') --}}
-                    <!-- only users can access this info -->
-                    <p class="houseno-des" data-houseno="{{ $property->houseno }}">
-                        {{ $property->houseno }} &nbsp
-                        <span class="street-des" data-street="{{ $property->street }}">
-                            {{ $property->street }} &nbsp
-                        </span>
-                    </p>
+                <!-- only users can access this info -->
+                <p class="houseno-des" data-houseno="{{ $property->houseno }}">
+                    {{ $property->houseno }} &nbsp
+                    <span class="street-des" data-street="{{ $property->street }}">
+                        {{ $property->street }} &nbsp
+                    </span>
+                </p>
                 {{-- @endauth --}}
-                
+
 
                 <p class="postcode-des" data-postcode="{{ $property->postcode }}">L-{{ $property->postcode }} &nbsp
                     ({{ $property->size }} m<sup>2</sup> / {{ $property->nopersons }} persons)

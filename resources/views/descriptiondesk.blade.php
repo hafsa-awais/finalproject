@@ -100,33 +100,33 @@
         <div class="container2-dis">
             <div class="dancing-dis">
                 <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qrvqpgft.json" background="transparent"
-                    speed="0.5" style="width: 50px; height: 50px;" autoplay></lottie-player>
+                    speed="0.5" style="width: 40px; height: 50px;" autoplay></lottie-player>
                 <p class="dancingp-dis">DANCE FLOOR</p>
             </div>
             <div class="church-dis">
                 <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_1gtlkp5r.json" background="transparent"
-                    speed="0.5" style="width: 50px; height: 50px;" autoplay></lottie-player>
+                    speed="0.5" style="width: 40px; height: 50px;" autoplay></lottie-player>
                 <p class="churchp-dis">CHURCH</p>
             </div>
             <div class="scenery-dis">
                 <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_h9qzdfz8.json" background="transparent"
-                    speed="0.5" style="width: 50px; height: 50px;" autoplay></lottie-player>
+                    speed="0.5" style="width: 40px; height: 50px;" autoplay></lottie-player>
                 <p class="sceneryp-dis">DECOR</p>
             </div>
             <div class="fireworks-dis">
                 <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_idbtqrtg.json" background="transparent"
-                    speed="0.5" style="width: 50px; height: 50px;" autoplay></lottie-player>
+                    speed="0.5" style="width: 40px; height: 50px;" autoplay></lottie-player>
                 <p class="fireworksp-dis">FIREWORKS</p>
             </div>
             <div class="karaoke-dis">
                 <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_7rvfhjdu.json" background="transparent"
-                    speed="0.5" style="width: 70px; height: 50px;" autoplay></lottie-player>
+                    speed="0.5" style="width: 40px; height: 50px;" autoplay></lottie-player>
                 <p class="karaokep-dis">DJ</p>
             </div>
 
             <div class="catering-dis">
                 <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_7tduzoyu.json" background="transparent"
-                    speed="0.5" style="width: 70px; height: 70px;" autoplay></lottie-player>
+                    speed="0.5" style="width: 40px; height: 50px;" autoplay></lottie-player>
                 <p class="cateringp-dis">CATERING</p>
             </div>
         </div>
@@ -223,9 +223,8 @@
                                                 <div class="col-md-8 col-lg-9 col-xl-8">
                                                     <div class="d-flex">
                                                         <div class="flex-shrink-0">
-                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
-                                                                class="rounded-circle mb-4 mb-lg-0 shadow-2"
-                                                                alt="woman avatar" width="90" height="90">
+                                                           
+                                                             
                                                         </div>
                                                         <div class="flex-grow-1 ms-4 ps-3">
                                                             <figure>
@@ -258,9 +257,8 @@
                                                 <div class="col-md-8 col-lg-9 col-xl-8">
                                                     <div class="d-flex">
                                                         <div class="flex-shrink-0">
-                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
-                                                                class="rounded-circle mb-4 mb-lg-0 shadow-2"
-                                                                alt="woman avatar" width="90" height="90">
+                                                           
+                                                               
                                                         </div>
                                                         <div class="flex-grow-1 ms-4 ps-3">
                                                             <figure>
@@ -292,9 +290,7 @@
                                                 <div class="col-md-8 col-lg-9 col-xl-8">
                                                     <div class="d-flex">
                                                         <div class="flex-shrink-0">
-                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
-                                                                class="rounded-circle mb-4 mb-lg-0 shadow-2"
-                                                                alt="woman avatar" width="90" height="90">
+                                                         
                                                         </div>
                                                         <div class="flex-grow-1 ms-4 ps-3">
                                                             <figure>

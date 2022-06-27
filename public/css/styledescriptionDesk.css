@@ -60,11 +60,13 @@
 .card-text {
     font-family: "Montserrat";
     font-weight: 800;
+    
+    
 }
 
 .container2-dis {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-auto-columns: 1fr;
     gap: 3px 3px;
@@ -208,7 +210,7 @@
     align-self: center;
 }
 
-.main-dis h3 {
+.main-dis h3{
     font-family: "Montserrat";
     font-size: large;
     font-weight: 700;
@@ -218,24 +220,26 @@
 
 .main-dis-p {
     font-size: large;
-    margin-top: 10px;
-    margin-left: 10%;
-    margin-right: 18.5%;
     padding: 5px;
     direction: ltr;
     text-align: justify;
+
 }
 
 .main-dis {
     display: flex;
     flex-direction: row;
     font-family: "Montserrat";
+    font-weight: 200;
+    line-height:25px;
     font-size: large;
     margin-left: 10%;
     margin-right: 18.5%;
     justify-self: stretch;
     text-align: justify;
 }
+
+
 
 /* calendar */
 .input-group-append {
@@ -279,4 +283,5 @@
 
 #map {
     border-radius: 20px;
+    height: 500px;
 }

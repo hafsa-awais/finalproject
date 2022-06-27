@@ -1,5 +1,4 @@
-@extends('templates/headerAndFooterTemplate')
-
+@extends('templates/template')
 
 @section('title', 'Provider')
 

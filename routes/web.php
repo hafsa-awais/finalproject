@@ -25,6 +25,8 @@ Route::get('/', [PropertiesController::class, 'index'])->name('homepage');
 
 Route::get('/descriptiondesk/{id}', [PropertiesController::class, 'show'])->name('descriptiondesk');
 
+// Route::get('/description/{id}', [PropertiesController::class, 'show'])->name('description');
+
 
 Route::get('/upload-file', [PropertiesController::class, 'upload_file']);
 Route::post('/upload-file', [PropertiesController::class, 'upload_file_submit']);
@@ -41,11 +43,27 @@ Route::get('/loginform', function () {
     return view('auth/login');
 });
 
+Route::get('/register-property', function () {
+    return view('register-property');
+});
+
+Route::get('/user-account', function () {
+    return view('user-account');
+});
+
+Route::get('/transaction', function () {
+    return view('transaction');
+});
+
+Route::get('/provider-account', function () {
+    return view('provider-account');
+});
+
 Route::get('/aboutus', function () {
     return view('aboutus');
 })->name('aboutus');
 
-Route::get('/description', [PropertiesController::class, 'show'])->name('description');
+
 
 
 Route::get('/contact', function () {
@@ -59,17 +77,16 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+// transaction
+Route::get('/transaction/{id}', [TransactionController::class, 'create'])->name('transaction');
+Route::put('/transaction/{id}', [TransactionController::class, 'store']);
 
 // property category pages
 Route::prefix('categories')->name('categories.')->group(function () {
     Route::get('/wedding', [PropertiesController::class, 'get_data_wedding'])->name('wedding');
-
     Route::get('/birthday', [PropertiesController::class, 'get_data_birthday'])->name('birthday');
-
     Route::get('/photoshoot', [PropertiesController::class, 'get_data_photoshoot'])->name('photoshoot');
-
     Route::get('/photography', [PropertiesController::class, 'get_data_photography'])->name('photography');
-
     Route::get('/music', [PropertiesController::class, 'get_data_music'])->name('music');
 });
 

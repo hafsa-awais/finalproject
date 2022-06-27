@@ -1,13 +1,9 @@
-
-
-
 @extends('templates/template')
 
 @section('title', 'Upload a file')
 
 @section('content')
-    <h2>Upload a file</h2>
-
+    
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -18,9 +14,16 @@
         </div>
     @endif
 
+<h2 class="headingupload"> Upload your files </h2>
+<div class="uploadfile">
+    
     <form method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="file" name="myFile"><br>
-        <input type="submit" value="Upload a file">
+        <input type="file" name="myFile" class="form-control uploadfilecontainer" id="customFile" />
+        <button type="submit" class="btn btn-default btn-lg uploadfilebutton" value="Upload">Upload</button>
+        
     </form>
+
+</div>
+
 @endsection

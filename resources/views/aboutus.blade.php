@@ -3,22 +3,30 @@
 
 
 @section('content')
+<section class="bodycontent">
+<div id="particles-js"></div>
+
     <div class="contentaboutus">
+    <div class="headerlogo">
+                <img src="assets/Logo.png">
+            </div>
         <div class="mainaboutus">
             <div class="textourteam">
                 <h1 class="aboutusslogan"><strong>Exclusive events, priceless memories.</strong></h1><br>
-                <p class="aboutustext"> Are you looking for a place to celebrate your birthday? Or a venue for a wedding? Or
+                
+            </div>
+            <p class="aboutustext"> Are you looking for a place to celebrate your birthday? Or a venue for a wedding? Or
                     that big party that you've been planning for a while? <br>
                     If yes, you've landed on the right page! atEvent is an online marketplace for small and large get
                     togethers, and photography and music studios. We have a solution for all your needs, and it's just a
                     click away! </p>
-            </div>
 
-            <div class="aboutusimage">
+            <!-- <div class="aboutusimage">
                 <img src="{{ asset('assets/ourteam.jpg') }}">
-            </div>
+            </div> -->
         </div>
     </div>
+</div>
 
 
 @endsection

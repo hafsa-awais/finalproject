@@ -1,5 +1,5 @@
 @extends('templates/template')
-@section('title', 'atEvent')
+@section('title', 'Search Results')
 
 @section('content')
 

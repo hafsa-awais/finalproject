@@ -38,3 +38,4 @@ const searchAddress = searchBtn.addEventListener("click", () => {
         marker1.addTo(map)
     });
 })
+

@@ -26,6 +26,7 @@ class PropertiesSeeder extends Seeder
                     'description' => $property->description,
                     'size' => $property->size,
                     'price' => $property->price,
+                    'nopersons' => $property->nopersons,
                     'houseno' => $property->houseno,
                     'street' => $property->street,
                     'postcode' => $property->postcode,

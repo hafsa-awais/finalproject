@@ -15,8 +15,15 @@ return new class extends Migration
     {
         Schema::create('transaction', function (Blueprint $table) {
             $table->id();
-            $table->float('total_price');
-            $table->date('date');
+            $table->decimal('total_price', 10, 2);
+            $table->datetime('startdate');
+            $table->datetime('enddate');
+            $table->enum('status', ['pending', 'processing', 'completed', 'decline'])->default('pending');
+            $table->string('cardname');
+            $table->integer('cardnumber');
+            $table->string('cardexp');
+            $table->integer('cardcvv');
+            $table->string('cardtype');
             $table->unsignedBigInteger('properties_id');
             $table->foreign('properties_id')->references('id')->on('properties');
             $table->unsignedBigInteger('users_id');

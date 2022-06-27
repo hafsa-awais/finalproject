@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ asset('css/styledescriptionDesk.css') }}">
 
-@extends('templates/headerAndFooterTemplate')
-@section('title', "{{$property->title}}")
+@extends('templates/template')
+@section('title', "atEvent")
 @section('content')
 
     <div>
@@ -9,11 +9,14 @@
 
             <div class="card">
                 <h5 class="card-header">{{number_format($property->price)}} €/day</h5>
+                @auth('web')
                 <div class="card-body">
-                    <h5 class="card-title">special offer 10% discount</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in.</p>
-                    <a href="#" class="btn btn-primary">BOOK NOW</a>
+                <h5 class="card-title">Total price</h5>
+                <p class="card-text"></p>
+                <br>
+                <a href="#" class="btn btn-primary">BOOK NOW</a>
                 </div>
+                @endauth
             </div>
 
             <div class="map-dis">
@@ -31,7 +34,7 @@
         </div>
         <!-- photos grid -->
         <div class="container-dis">
-            <div class="name-dis"> {{$property->title}} </div>
+            <div class="name-dis"> {{$property->title}} </div><br><br>
             <div class="img-dis">
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -61,42 +64,43 @@
         <div class="container2-dis">
             <div class="dancing-dis">
                 <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qrvqpgft.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
-                <p class="dancingp-dis">DANCE FLOOR</p>
+               
             </div>
             <div class="church-dis">
                 <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_1gtlkp5r.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
-                <p class="churchp-dis">CHURCH</p>
+                
             </div>
             <div class="scenery-dis">
                 <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_h9qzdfz8.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
-                <p class="sceneryp-dis">DECOR</p>
+                
             </div>
             <div class="fireworks-dis">
                 <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_idbtqrtg.json" background="transparent" speed="0.5" style="width: 50px; height: 70px;" autoplay></lottie-player>
-                <p class="fireworksp-dis">FIREWORKS</p>
+                
             </div>
             <div class="karaoke-dis">
                 <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_7rvfhjdu.json" background="transparent" speed="0.5" style="width: 70px; height: 70px;" autoplay></lottie-player>
-                <p class="karaokep-dis">DJ</p>
+                
             </div>
 
             <div class="catering-dis">
                 <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_7tduzoyu.json" background="transparent" speed="0.5" style="width: 70px; height: 70px;" autoplay></lottie-player>
-                <p class="cateringp-dis">CATERING</p>
+                
             </div>
         </div>
         <!-- Basic explanation -->
         <div class="main-dis">
-            <h3>
+            <h4>
                 
                 {{$property->locality}}
-            </h3>
+            </h4>
             <p>
                {{$property->size}} m<sup>2</sup><br>
                @auth
-               {{$property->houseno}} |  {{$property->street}} | 
-               @endauth
+               {{$property->houseno}} |  {{$property->street}}  <br>
                {{$property->postcode}} | {{$property->locality}} <br> 
+               @endauth
+                <br>
                {{$property->description}}
             </p>
 
@@ -167,21 +171,19 @@
                                         <div class="row d-flex justify-content-center">
                                             <div class="col-md-8 col-lg-9 col-xl-8">
                                                 <div class="d-flex">
-                                                    <div class="flex-shrink-0">
+                                                    <!-- <div class="flex-shrink-0">
                                                         <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90" height="90">
-                                                    </div>
+                                                    </div> -->
                                                     <div class="flex-grow-1 ms-4 ps-3">
                                                         <figure>
                                                             <blockquote class="blockquote mb-4">
                                                                 <p>
                                                                     <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
-                                                                    <span class="font-italic">Lorem ipsum dolor sit amet consectetur adipisicing
-                                                                        elit. Pariatur sint nesciunt ad itaque aperiam expedita officiis incidunt
-                                                                        minus facere, molestias quisquam impedit inventore.</span>
+                                                                    <span class="font-italic">Beautiful little place! It was truly a paradise of solitude and tranquility. Will recommend 10/10.</span>
                                                                 </p>
                                                             </blockquote>
                                                             <figcaption class="blockquote-footer">
-                                                                Miranda Smith in <cite title="Source Title">The Guardian</cite>
+                                                            Brigitte Probst
                                                             </figcaption>
                                                         </figure>
                                                     </div>
@@ -195,21 +197,19 @@
                                         <div class="row d-flex justify-content-center">
                                             <div class="col-md-8 col-lg-9 col-xl-8">
                                                 <div class="d-flex">
-                                                    <div class="flex-shrink-0">
+                                                    <!-- <div class="flex-shrink-0">
                                                         <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp" class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90" height="90">
-                                                    </div>
+                                                    </div> -->
                                                     <div class="flex-grow-1 ms-4 ps-3">
                                                         <figure>
                                                             <blockquote class="blockquote mb-4">
                                                                 <p>
                                                                     <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
-                                                                    <span class="font-italic">Sed ut perspiciatis unde omnis iste natus error sit
-                                                                        voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                                                                        quae ab illo inventore veritatis.</span>
+                                                                    <span class="font-italic">Had a wonderful experience with the venue and the hosts! They were very cooperative and were there to help out if needed. </span>
                                                                 </p>
                                                             </blockquote>
                                                             <figcaption class="blockquote-footer">
-                                                                Annie Hall <cite title="Source Title">New York Times</cite>
+                                                            Yves Lepage
                                                             </figcaption>
                                                         </figure>
                                                     </div>
@@ -223,21 +223,19 @@
                                         <div class="row d-flex justify-content-center">
                                             <div class="col-md-8 col-lg-9 col-xl-8">
                                                 <div class="d-flex">
-                                                    <div class="flex-shrink-0">
+                                                    <!-- <div class="flex-shrink-0">
                                                         <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp" class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90" height="90">
-                                                    </div>
+                                                    </div> -->
                                                     <div class="flex-grow-1 ms-4 ps-3">
                                                         <figure>
                                                             <blockquote class="blockquote mb-4">
                                                                 <p>
                                                                     <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
-                                                                    <span class="font-italic">At vero eos et accusamus et iusto odio dignissimos
-                                                                        qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-                                                                        et quas molestias excepturi sint amet dolore.</span>
+                                                                    <span class="font-italic">If you are looking for a unique and unforgettable experience- look no further! This is the place for you.</span>
                                                                 </p>
                                                             </blockquote>
                                                             <figcaption class="blockquote-footer">
-                                                                Jason More in <cite title="Source Title">Smash Magazine</cite>
+                                                            Carlo Ries
                                                             </figcaption>
                                                         </figure>
                                                     </div>

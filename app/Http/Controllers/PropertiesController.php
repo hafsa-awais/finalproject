@@ -15,30 +15,34 @@ class PropertiesController extends Controller
         return view('homepage', ['properties' => $properties]);
     }
 
+        // description (single property)
     public function show($id)
     {
         $properties = Properties::find($id);
         return view('descriptiondesk', ['property' => $properties]);
     }
 
-    public function search(Request $request)
+    
 
-    {
-        // $search = $request->input('search');
-        $properties = Properties::query()
+    // public function search(Request $request)
+
+    // {
+    //     // $search = $request->input('search');
+    //     $properties = Properties::query()
         
-        // ->where('locality', 'LIKE', '%{$search}%')
-        // ->get();
+    //     // ->where('locality', 'LIKE', '%{$search}%')
+    //     // ->get();
 
-            // if(count($properties) > 0)
-                return view('/search', ['properties' => $properties]);
-            // else 
-            //     return view ('search')->withMessage('No properties found in this location. Try to search again!');
+    //         // if(count($properties) > 0)
+    //             return view('/search', ['properties' => $properties]);
+    //         // else 
+    //         //     return view ('search')->withMessage('No properties found in this location. Try to search again!');
 
-    }
+    // }
     
 
 
+    // upload file function
     public function upload_file()
     {
         return view('upload-file');
@@ -56,31 +60,21 @@ class PropertiesController extends Controller
         $fileName = $request->myFile->getClientOriginalName();
 
         // Save the public path 
-        $publicPath = public_path('uploads');
+        $publicPath = public_path('assets/propertypics/');
 
         // Save the file in the public/uploads folder
         $request->myFile->move($publicPath, $fileName);
     }
 
-
-
+    // category pages
     public function get_data_wedding()
     {
-        $properties = Properties::select(
-            "properties.coverphoto",
-            "properties.title",
-            "properties.price",
-            "properties.locality",
-
-        )
-            ->join("events", "properties.id", "=", "events.properties_id")
+        $properties = Properties::join("events", "properties.id", "=", "events.properties_id")
             ->where("events.event_name", "=", "wedding")
             ->get();
 
-            return view('categories.wedding', ['properties' => $properties]);  
+        return view('categories.wedding', ['properties' => $properties]);
     }
-
-    
 
     public function get_data_birthday()
     {
@@ -95,8 +89,9 @@ class PropertiesController extends Controller
             ->where("events.event_name", "=", "birthday")
             ->get();
 
-            return view('categories.birthday', ['properties' => $properties]);  
+        return view('categories.birthday', ['properties' => $properties]);
     }
+
     public function get_data_photoshoot()
     {
         $properties = Properties::select(
@@ -110,8 +105,9 @@ class PropertiesController extends Controller
             ->where("events.event_name", "=", "photoshoot")
             ->get();
 
-            return view('categories.photoshoot', ['properties' => $properties]);  
+        return view('categories.photoshoot', ['properties' => $properties]);
     }
+
     public function get_data_photography()
     {
         $properties = Properties::select(
@@ -125,8 +121,9 @@ class PropertiesController extends Controller
             ->where("events.event_name", "=", "photography")
             ->get();
 
-            return view('categories.photography', ['properties' => $properties]);  
+        return view('categories.photography', ['properties' => $properties]);
     }
+    
     public function get_data_music()
     {
         $properties = Properties::select(
@@ -137,11 +134,9 @@ class PropertiesController extends Controller
 
         )
             ->join("events", "properties.id", "=", "events.properties_id")
-            ->where("events.event_name", "=", "music_studios")
+            ->where("events.event_name", "=", "music")
             ->get();
 
-            return view('categories.music', ['properties' => $properties]);  
+        return view('categories.music', ['properties' => $properties]);
     }
-     
-    
 }

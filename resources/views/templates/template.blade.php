@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- meta description tag (SEO) -->
+    <meta name="description" content="Find the most beautiful event venues in Luxembourg: birthdays, weddings, parties, you name it!">
     <title>@yield('title')</title>
 
     <!-- local stylesheets -->
@@ -14,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('css/styleaboutus.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dropdown.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style-upload.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styletransaction.css') }}">
 
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -45,8 +49,9 @@
     <!-- HEADER -->
 
     <!-- mobile version -->
+    <div class="mobileversionnavbar">
     <nav class="navbar navbar-light bg-light">
-
+    <!-- search bar -->
         <div class="container-fluid">
             <div class="searchcontainerheader">
                 <form action="/" method="GET" class="searchformbody">
@@ -109,6 +114,7 @@
             </div>
         </div>
     @endauth
+</div>
     <!--/end mobile version-->
 
 
@@ -120,7 +126,7 @@
             </div>
             <div class="searchcontainerbody">
                 <form action="{{ route('search') }}" method="GET" class="searchformbody">
-                    <input type="text" name="search" placeholder="Search your desired location" class="search-fieldbody" required /><span class="input-group-btn">
+                    <input type="text" name="search" placeholder="Search your desired location" class="search-fieldbody" required />
                     <button type="submit" class="search-buttonbody">
                         <img src="{{ asset('assets/search.png') }}">
                     </button>
@@ -137,7 +143,7 @@
                     @guest
                         @guest('provider')
                             <button onclick="location.href='{{ route('connect') }}'" type="button"
-                                class="headerbtn headerregister">Provider</button>
+                                class="headerbtn headerprovider">Provider</button>
                             <button onclick="location.href='{{ route('register') }}'" type="button"
                                 class="headerbtn headerregister">Register</button>
                             <button onclick="location.href='{{ route('login') }}'" type="button"
@@ -148,7 +154,7 @@
                     {{-- if logged in as user --}}
                     @auth('web')
                         <div class="dropdown">
-                            <button class="btn dashboard">{{ Auth::user()->first_name }}</button>
+                            <button class="btn dashboard loggedinbutton">{{ Auth::user()->first_name }}</button>
                             <div class="dropdown-content">
                                 <a href="{{ route('dashboard') }}">User account</a>
                                 <a href="{{ route('settings.profile.index') }}">Edit user information</a>
@@ -182,11 +188,11 @@
             @if ($errors->any())
                 <div class="alert danger">
                     @foreach ($errors->all() as $error)
-                        <li style="color: red"> {{ $error }}</li>
+                        <li class="errormessage"> {{ $error }}</li>
                     @endforeach
                 </div>
             @endif
-
+            <div id="particles-js"></div>
             @yield('content')
         </main>
         <!-- END MAIN CONTENT -->
@@ -203,16 +209,24 @@
                             </div>
                         </div>
                         <div class="footerbox-init">
+                            <p>14 porte de France,<br> L-4364 Esch/Alzette</p>
+                        </div>
+                        <div class="footerbox-init">
                             <a href="{{ route('aboutus') }}" class="footerbox-init-description">About Us</a>
                         </div>
+                        
+                        
                         <div class="footerbox-init">
-                            <a href="#." class="footerbox-init-description">Contact</a>
+                        <a href="{{ route('contact-form') }}" class="footerbutton">Contact Us</a>
                         </div>
                         <div class="footerbox-init">
-                            <a href="#." class="footerbox-init-description">Carrieres</a>
+                             <p>Privacy Policy</p>
                         </div>
                         <div class="footerbox-init">
-                            <a href="" class="footerbutton">Send us a message</a>
+                             <p>Terms and Conditions</p>
+                        </div>
+                        <div class="footerbox-init">
+                             <p>&copy atEvent 2022</p>
                         </div>
                     </div>
                 </div>
@@ -226,9 +240,7 @@
         <!-- material design for bootstrap -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
 
-        <!-- particles -->
-        <script src="assets/particles.js-2.0.0/particles.js"></script>
-        <script src="assets/particles.js-2.0.0/demo/js/app.js"></script>
+        
 
         <!-- calendar -->
         <script src="{{ asset('js/calender.js') }}"></script>
@@ -240,6 +252,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
         </script>
+
+        <!-- particles -->
+        <script src="{{ asset('assets/particles.js-2.0.0/particles.js') }}"></script>
+        <script src="{{ asset('assets/particles.js-2.0.0/demo/js/app.js') }}"></script>
 
         <!-- popperjs positioning engine -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" crossorigin="anonymous">

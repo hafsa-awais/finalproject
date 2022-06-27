@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="{{ asset('css/styledescriptionMobi.css') }}">
-@extends('templates/headerAndFooterTemplate')
+@extends('templates/template')
 
 
-@section('title', 'Homepage')
+@section('title', 'atEvent')
 
 
 @section('content')
@@ -83,16 +83,17 @@
         <div id="map"></div>
     </div>
 
-    <div class="card-prise-des">
-        <div class="card prise-des">
-            <h5 class="card-header">PRICE</h5>
-            <div class="card-body">
-                <h5 class="card-title">special offer 10% discount</h5>
-                <p class="card-text">With supporting text below as a natural lead-in.</p>
-                <a href="#" class="btn btn-primary">BUY NOW</a>
+    <div class="card">
+                <h5 class="card-header">{{number_format($property->price)}} €/day</h5>
+                @auth('web')
+                <div class="card-body">
+                <h5 class="card-title">Total price</h5>
+                <p class="card-text"></p>
+                <br>
+                <a href="#" class="btn btn-primary">BOOK NOW</a>
+                </div>
+                @endauth
             </div>
-        </div>
-    </div>
     <div class="calendar-dis">
         <div class='row '>
             <div class='col-sm-6'>

@@ -1,5 +1,5 @@
 
-@extends('templates/headerAndFooterTemplate')
+@extends('templates/template')
 @section('title', "{{$property->title}}")
 @section('content')
 

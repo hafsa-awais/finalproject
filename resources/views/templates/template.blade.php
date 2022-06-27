@@ -194,7 +194,7 @@
         @if ($errors->any())
             <div class="alert danger">
                 @foreach ($errors->all() as $error)
-                    <li style="color: red"> {{ $error }}</li>
+                    <li class="errormessage"> {{ $error }}</li>
                 @endforeach
             </div>
         @endif
@@ -228,10 +228,9 @@
                         <div class="footerbox-init">
                             <a href="{{ route('aboutus') }}" class="footerbox-init-description">About Us</a>
                         </div>
-                        
-                        
+                                         
                         <div class="footerbox-init">
-                        <a href="{{ route('contact-form') }}" class="footerbutton">Contact Us</a>
+                        <a href="{{ route('contact.contact') }}" class="footerbutton">Contact Us</a>
                         </div>
                         <div class="footerbox-init">
                              <p>Privacy Policy</p>
@@ -242,12 +241,6 @@
                         <div class="footerbox-init">
                              <p>&copy atEvent 2022</p>
                         </div>
-                    </div>
-                    <div class="footerbox-init">
-                        <a href="{{ route('aboutus') }}" class="footerbox-init-description">About Us</a>
-                    </div>
-                    <div class="footerbox-init">
-                        <a href="{{ route('contact.contact') }}" class="footerbutton">Send us a message</a>
                     </div>
                 </div>
             </div>

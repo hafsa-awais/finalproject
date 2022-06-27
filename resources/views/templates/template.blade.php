@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- meta description tag (SEO) -->
+    <meta name="description" content="Find the most beautiful event venues in Luxembourg: birthdays, weddings, parties, you name it!">
     <title>@yield('title')</title>
 
     <!-- local stylesheets -->
@@ -13,6 +15,8 @@
     <link rel="stylesheet" href="{{ asset('css/stylefooter.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styleaboutus.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dropdown.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style-upload.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styletransaction.css') }}">
 
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -55,8 +59,9 @@
     <!-- HEADER -->
 
     <!-- mobile version -->
+    <div class="mobileversionnavbar">
     <nav class="navbar navbar-light bg-light">
-
+    <!-- search bar -->
         <div class="container-fluid">
             <div class="searchcontainerheader">
                 {{-- <form action="/" method="GET" class="searchformbody"> --}}
@@ -119,6 +124,7 @@
             </div>
         </div>
     @endauth
+</div>
     <!--/end mobile version-->
 
 
@@ -142,7 +148,7 @@
                     @guest
                         @guest('provider')
                             <button onclick="location.href='{{ route('connect') }}'" type="button"
-                                class="headerbtn headerregister">Provider</button>
+                                class="headerbtn headerprovider">Provider</button>
                             <button onclick="location.href='{{ route('register') }}'" type="button"
                                 class="headerbtn headerregister">Register</button>
                             <button onclick="location.href='{{ route('login') }}'" type="button"
@@ -153,7 +159,7 @@
                     {{-- if logged in as user --}}
                     @auth('web')
                         <div class="dropdown">
-                            <button class="dropbtn dashboard">{{ Auth::user()->first_name }}</button>
+                            <button class="btn dashboard loggedinbutton">{{ Auth::user()->first_name }}</button>
                             <div class="dropdown-content">
                                 <a href="{{ route('dashboard') }}">User account</a>
                                 <a href="{{ route('settings.profile.index') }}">Edit profile</a>
@@ -215,6 +221,26 @@
                     <div class="footerbox-init" id="box-init-logo">
                         <div id="box-init-logo">
                             <x-application-logo />
+                        </div>
+                        <div class="footerbox-init">
+                            <p>14 porte de France,<br> L-4364 Esch/Alzette</p>
+                        </div>
+                        <div class="footerbox-init">
+                            <a href="{{ route('aboutus') }}" class="footerbox-init-description">About Us</a>
+                        </div>
+                        
+                        
+                        <div class="footerbox-init">
+                        <a href="{{ route('contact-form') }}" class="footerbutton">Contact Us</a>
+                        </div>
+                        <div class="footerbox-init">
+                             <p>Privacy Policy</p>
+                        </div>
+                        <div class="footerbox-init">
+                             <p>Terms and Conditions</p>
+                        </div>
+                        <div class="footerbox-init">
+                             <p>&copy atEvent 2022</p>
                         </div>
                     </div>
                     <div class="footerbox-init">

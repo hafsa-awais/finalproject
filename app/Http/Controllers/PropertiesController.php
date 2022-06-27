@@ -163,7 +163,7 @@ class PropertiesController extends Controller
         Transaction:where('property_id',$id)->delete();
         $result = Properties::destroy($id);
 
-
+        
         if ($result)
             return redirect('provider.dashboard')->with('success', 'Successfully deleted');
         else

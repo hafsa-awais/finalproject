@@ -7,9 +7,7 @@
 <div id="particles-js"></div>
 
     <div class="contentaboutus">
-    <div class="headerlogo">
-                <img src="assets/Logo.png">
-            </div>
+   
         <div class="mainaboutus">
             <div class="textourteam">
                 <h1 class="aboutusslogan"><strong>Exclusive events, priceless memories.</strong></h1><br>

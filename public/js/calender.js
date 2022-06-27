@@ -1,11 +1,37 @@
 window.onload = (e) => {
     // const buttondis = document.getElementById("buttonCalendar");
     const linkedPicker1Element = document.getElementById("linkedPickers1");
-    const linked1 = new tempusDominus.TempusDominus(linkedPicker1Element);
+    const linked1 = new tempusDominus.TempusDominus(
+        document.getElementById("linkedPickers1"),
+        {
+            display: {
+                components: {
+                    decades: true,
+                    year: true,
+                    month: true,
+                    date: true,
+                    hours: false,
+                    minutes: false,
+                    seconds: false,
+                },
+            },
+        }
+    );
     const linked2 = new tempusDominus.TempusDominus(
         document.getElementById("linkedPickers2"),
         {
-            useCurrent: false,
+            useCurrent: true,
+            display: {
+                components: {
+                    decades: true,
+                    year: true,
+                    month: true,
+                    date: true,
+                    hours: false,
+                    minutes: false,
+                    seconds: false,
+                },
+            },
         }
     );
 
@@ -38,15 +64,41 @@ window.onload = (e) => {
             daysLag = Math.ceil(
                 Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24)
             );
-            console.log(daysLag);
-            const price = document.getElementsByClassName("card-header")[0].getAttribute('data-price');
+            const price = document
+                .getElementsByClassName("card-header")[0]
+                .getAttribute("data-price");
             const total = document.getElementsByClassName("card-text")[0];
-            console.log(parseFloat(price))
-            total.innerHTML = `Total prise ${daysLag * parseFloat(price)}`
+            const totalsum = parseFloat(price);
+            total.innerHTML = `${(daysLag * totalsum).toLocaleString(
+                "en-GB"
+            )} €`;
 
+            console.log(daysLag, totalsum);
 
+            // n° of days
+            document.getElementsByClassName("card-days")[0].innerHTML = daysLag;
 
+            // total_sum into input form (for transaction)
+            document.getElementById("total_sum").value = `${
+                daysLag * totalsum
+            }`;
 
+            function send_data() {
+                var request = new XMLHttpRequest();
+                var one = "123";
+                var two = "456";
+                var send =
+                    "one=" +
+                    encodeURIComponent(one) +
+                    "&two=" +
+                    encodeURIComponent(two);
+                request.open("POST", "http://sitename/index.php");
+                request.setRequestHeader(
+                    "Content-Type",
+                    "application/x-www-form-urlencoded"
+                );
+                request.send(send);
+            }
         }
     );
 };

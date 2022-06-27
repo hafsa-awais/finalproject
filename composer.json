@@ -7,9 +7,12 @@
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
+        "hisorange/browser-detect": "^4.5",
+        "jenssegers/agent": "^2.6",
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
+        "mobiledetect/mobiledetectlib": "^2.8",
         "painlesscode/breeze-multiauth": "^3.1"
     },
     "require-dev": {

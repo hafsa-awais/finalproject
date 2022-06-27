@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             ProviderSeeder::class,
             PropertiesSeeder::class,
             EventsSeeder::class,
+            TransactionsSeeder::class,
         ]);
     }
 }

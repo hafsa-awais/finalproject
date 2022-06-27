@@ -14,10 +14,14 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('provider')->name('provider.')->group(function () {
 
     Route::get('/', [DashboardController::class, 'index'])
-        ->middleware('auth:provider');
+        ->middleware(['auth:provider']);
 
     Route::get('/dashboard', [DashboardController::class, 'index'])
-        ->middleware('auth:provider')
+        ->middleware(['auth:provider'])
+        ->name('dashboard');
+
+    Route::get('/dashboard', [DashboardController::class, 'provtrans'])
+        ->middleware(['auth:provider'])
         ->name('dashboard');
 
     Route::get('/register', [RegisteredUserController::class, 'create'])

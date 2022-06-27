@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ asset('css/styledescriptionMobi.css') }}">
-@extends('templates/headerAndFooterTemplate')
+@extends('templates/template')
 
 
 @section('title', 'Homepage')

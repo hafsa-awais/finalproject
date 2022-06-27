@@ -6,7 +6,7 @@
 
 
 
-    <section class="vh-50" style="background-color: #eee;padding-top: 50px; padding-bottom: 50px;">
+    <section class="vh-50" style="padding-top: 50px; padding-bottom: 50px;">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-lg-12 col-xl-11">
@@ -94,11 +94,7 @@
                                         </div>
 
                                         <div class="form-check d-flex justify-content-center mb-5">
-                                            <input class="form-check-input me-2" type="checkbox" value=""
-                                                id="form2Example3c" />
-                                            <label class="form-check-label" for="form2Example3">
-                                                I agree all statements in <a href="#!">Terms of service</a>
-                                            </label>
+                                            By registering you agree to the terms of service.</a>
                                         </div>
 
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
